@@ -925,19 +925,78 @@ Linux系统是一个超大号小区,可以支持65535个端口,这6万多个端�
 
 ## 主机状态监控
 
+### top命令
+
+功能：查看主机运行状态
+
+语法：`top`，查看基础信息
+
+可用选项
+
+当top以交互式运行(非`-b`选项启动)，可以用以下交互式命令进行控制
+
+| 按键 |                             功能                             |
+| :--: | :----------------------------------------------------------: |
+| h键  |                   按下h键，会显示帮助画面                    |
+| c键  | 按下c键，会显示产生进程的完整命令，等同于-c参数，再次按下c键，变为默认显示 |
+| f键  |               按下f键，可以选择需要展示的项目                |
+| M键  |              按下M键，根据驻留内存大小(RES)排序              |
+| P键  |            按下P键，根据CPU使用百分比大小进行排序            |
+| T键  |              按下T键，根据时间/累计时间进行排序              |
+| E键  |                按下E键，切换顶部内存显示单位                 |
+| e键  |                按下e键，切换进程内存显示单位                 |
+| l键  |           按下l键，切换显示平均负载和启动时间信息            |
+| i键  | 按下i键，不显示闲置或无用的进程，等同于-i参数，再次按下，变为默认显示i键 |
+| t键  |                 按下t键，切换显示CPU状态信息                 |
+| m键  |                  按下m键，切换显示内存信息                   |
+
+示例：
+
 - top:命令名称,14:39:58:当前系统时间,up6min:启动了6分钟,2users:2个用户登录,load:1、5、15分钟负载
 
-![**6d0fe5aa-f081-4404-b2d0-2c4bdfc3068b**](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\6d0fe5aa-f081-4404-b2d0-2c4bdfc3068b.png)
+![**6d0fe5aa-f081-4404-b2d0-2c4bdfc3068b**](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409151839190.png)
 
 - Tasks:175个进程,1running:1个进程子在运行,174sleeping: 174个进程睡眠,0个停止进程,0个僵尸进程
 
-![image-20240915161328575](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161328575.png)
+![image-20240915161328575](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409151839191.png)
 
 - %Cpu(5):CPU使用率,S:用户CPU使用率,sv:系统CPU使用率,ni:高优先级进程占用CPU时间百分比,id:空闲CPU率,wa: 0等待CPU占用率,hi: CPU硬件中断率，si:CPU软件中断率，st:强制等待占用CPU率
 
-![image-20240915161347731](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161347731.png)
+![image-20240915161347731](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409151839192.png)
 
 - Kib Mem:物理内存,total: 总量,free:盛闲,used:使用,buff/cache:buff和cache占用
 - Kibswap:虚拟内存(交换空间),total:总量,free:空闲,used: 使用,buff/cache:buff和cache占用
 
-![image-20240915161538033](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161538033.png)
+![image-20240915161538033](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409151839193.png)
+
+![image-20240915161736053](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409151839194.png)
+
+- PID:进程id
+- USER:进程所属用户
+- PR:进程优先级，越小越高
+- N1:负值表示高优先级，正表示低优先级
+- VIRT:进程使用虚拟内存，单位KB
+- RES:进程使用物理内存，单位KB
+- SHR:进程使用共享内存，单位KB
+- S:进程状态（S休眠，R运行,Z僵死状态，N负数优先级，空闲状态）
+- %CPU:进程占用CPU率
+- %MEM:进程占用内存率
+- TIME+:进程使用CPU时间总计，单位10毫秒
+- COMMAND:进程的命令或名称或程序件路径
+
+### df命令
+
+查看磁盘使用率
+
+### iostat命令
+
+查看磁盘速率等信息
+
+### sar命令
+
+`sar -n DEV`
+
+查看网络情况
+
+
+
