@@ -925,3 +925,19 @@ Linux系统是一个超大号小区,可以支持65535个端口,这6万多个端�
 
 ## 主机状态监控
 
+- top:命令名称,14:39:58:当前系统时间,up6min:启动了6分钟,2users:2个用户登录,load:1、5、15分钟负载
+
+![**6d0fe5aa-f081-4404-b2d0-2c4bdfc3068b**](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\6d0fe5aa-f081-4404-b2d0-2c4bdfc3068b.png)
+
+- Tasks:175个进程,1running:1个进程子在运行,174sleeping: 174个进程睡眠,0个停止进程,0个僵尸进程
+
+![image-20240915161328575](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161328575.png)
+
+- %Cpu(5):CPU使用率,S:用户CPU使用率,sv:系统CPU使用率,ni:高优先级进程占用CPU时间百分比,id:空闲CPU率,wa: 0等待CPU占用率,hi: CPU硬件中断率，si:CPU软件中断率，st:强制等待占用CPU率
+
+![image-20240915161347731](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161347731.png)
+
+- Kib Mem:物理内存,total: 总量,free:盛闲,used:使用,buff/cache:buff和cache占用
+- Kibswap:虚拟内存(交换空间),total:总量,free:空闲,used: 使用,buff/cache:buff和cache占用
+
+![image-20240915161538033](F:\Documents\GitHub\hwj-s-study-notes\Linux\assets\image-20240915161538033.png)
