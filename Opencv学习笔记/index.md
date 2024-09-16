@@ -135,7 +135,6 @@ OpenCV的优势:
 ​	先安装OpenCV-Pytion,由于一些经典的算法被申请了版权，新版本有很大的限制，所以选用3.4.3以下的版本
 
 ```shell
-pip install opencv-python==3.4.2.17(python版本过高安装不了)
 pip install opencv-python==3.4.1.15(python版本过高安装不了)
 ```
 
