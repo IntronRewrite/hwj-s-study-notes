@@ -7,5 +7,11 @@
 2024/9/15 学习Linux     
 [笔记](https://intronrewrite.github.io/hwj-s-study-notes/Linux学习笔记/index.html)
 
-2024/9/16 学习Opemcv     
+2024/9/16 学习Opencv     
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+
+2024/9/17 中秋，不上班
+
+2024/9/18 学习Opencv
+
 [笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
