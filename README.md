@@ -16,6 +16,10 @@
 
 [笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
 
-2024/9/18 学习图像处理与OpenCV    
+2024/9/19 学习图像处理与OpenCV    
+
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+
+2024/9/19 OpenCV完结，图像处理还未学透彻。   
 
 [笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
