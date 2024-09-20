@@ -1776,7 +1776,7 @@ plt.show()
 
 ![image-20191024105039014](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409181730073.png)
 
-​	为了解决这个问题， 需要使用自适应的直方图均衡化。 此时， 整幅图像会被分成很多小块，这些小块被称为“tiles”（在 OpenCV 中 tiles 的 大小默认是 8x8），然后再对每一个小块分别进行直方图均衡化。 所以在每一个的区域中， 直方图会集中在某一个小的区域中）。如果有噪声的话，噪声会被放大。为了避免这种情况的出现要使用对比度限制。对于每个小块来说，如果直方图中的 bin 超过对比度的上限的话，就把 其中的像素点均匀分散到其他 bins 中，然后在进行直方图均衡化。
+​	为了解决这个问题， 需要使用自适应的直方图均衡化。 此时， 整幅图像会被分成很多小块，这些小块被称为“tiles”（在 OpenCV 中 tiles 的 大小默认是 8x8），然后再对每一个小块分别进行直方图均衡化。 所以在每一个的区域中， 直方图会集中在某一个小的区域中）。如果有噪声的话，噪声会被放大。为了避免这种情况的出现要使用对比度限制。对于每个小块来说，如果直方图中的 bin 超过对比度的上限的话，就把其中的像素点均匀分散到其他 bins 中，然后在进行直方图均衡化。
 
 ![image-20191024105353109](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409181730074.png)
 
@@ -2597,21 +2597,37 @@ C 和 D 也很简单。它们是建筑的边缘。可以找到它们的近似位
 
 **<u>原理</u>**
 
-​	Harris角点检测的思想是通过图像的局部的小窗口观察图像，角点的特征是窗口沿任意方向移动都会导致图像灰度的明显变化，如下图所示：
+​	Harris角点检测的思想是通过图像的局部的小窗口观察图像，角点的特征是窗口沿任意方向移动都会导致图像**灰度的明显变化**，如下图所示：
 
 ![image-20191008144647540](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304496.png)
 
-​	将上述思想转换为数学形式，即将局部窗口向各个方向移动(𝑢,𝑣)(*u*,*v*)并计算所有灰度差异的总和，表达式如下：𝐸(𝑢,𝑣)=∑𝑥,𝑦𝑤(𝑥,𝑦)[𝐼(𝑥+𝑢,𝑦+𝑣)−𝐼(𝑥,𝑦)]2*E*(*u*,*v*)=*x*,*y*∑*w*(*x*,*y*)[*I*(*x*+*u*,*y*+*v*)−*I*(*x*,*y*)]2其中𝐼(𝑥,𝑦)*I*(*x*,*y*)是局部窗口的图像灰度，𝐼(𝑥+𝑢,𝑦+𝑣)*I*(*x*+*u*,*y*+*v*)是平移后的图像灰度，𝑤(𝑥,𝑦)*w*(*x*,*y*)是窗口函数，该可以是矩形窗口，也可以是对每一个像素赋予不同权重的高斯窗口，如下所示：
+​	将上述思想转换为数学形式，即将局部窗口向各个方向移动(𝑢,𝑣)(*u*,*v*)并计算所有灰度差异的总和，表达式如下：
+$$
+E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2
+$$
+​	其中$𝐼(𝑥,𝑦)$是局部窗口的图像灰度，$𝐼(𝑥+𝑢,𝑦+𝑣)$是平移后的图像灰度，$𝑤(𝑥,𝑦)$是窗口函数，该可以是矩形窗口，也可以是对每一个像素赋予不同权重的高斯窗口，如下所示：
 
 ![image-20191008153014984](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304497.png)
 
-​	角点检测中使𝐸(𝑢,𝑣)*E*(*u*,*v*)的值最大。利用一阶泰勒展开有：𝐼(𝑥+𝑢,𝑦+𝑣)=𝐼(𝑥,𝑦)+𝐼𝑥𝑢+𝐼𝑦𝑣*I*(*x*+*u*,*y*+*v*)=*I*(*x*,*y*)+*I**x**u*+*I**y**v*其中𝐼𝑥*I**x*和 𝐼𝑦*I**y* 是沿x和y方向的导数，可用sobel算子计算。
+​	角点检测中使𝐸(𝑢,𝑣)的值最大。利用一阶泰勒展开有：
+$$
+I(x+u,y+v)=I(x,y)+I_xu+I_yv
+$$
+其中𝐼~𝑥~和 𝐼~𝑦~ 是沿x和y方向的导数，可用sobel算子计算。
 
 推导如下：
 
-![image-20191015180016665](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304498.png)
-
-​	𝑀*M*矩阵决定了𝐸(𝑢,𝑣)*E*(*u*,*v*)的取值，下面我们利用𝑀*M*来求角点，𝑀*M*是𝐼𝑥*I**x*和𝐼𝑦*I**y*的二次项函数，可以表示成椭圆的形状，椭圆的长短半轴由𝑀*M*的特征值𝜆1*λ*1和𝜆2*λ*2决定，方向由特征矢量决定，如下图所示：
+$$
+\begin{gathered}
+E(u,v)=\sum_{x,y}w(x,y)[I(x+u,y+v)-I(x,y)]^2 \\
+=\sum_{x,y}w(x,y)[I(x,y)+I_xu+I_yv-I(x,y)]^2 \\
+=\sum_{x,y}w(x,y)[I_x^2u^2+2I_xI_yuv+I_y^2v^2] \\
+=\sum_{x,y}w(x,y)\left[\left.u,v\right]\right]\begin{bmatrix}I_x^2,I_xI_y\\I_xI_y,I_y^2\end{bmatrix}\begin{bmatrix}u\\v\end{bmatrix} \\
+=[ u,v ]\sum_{x,y}w(x,y)\begin{bmatrix}I_x^2,I_xI_y\\I_xI_y,I_y^2\end{bmatrix}\begin{bmatrix}u\\v\end{bmatrix} \\
+=\left[\begin{array}{c}u,v\end{array}\right]M\left[\begin{array}{c}u\\v\end{array}\right] 
+\end{gathered}
+$$
+​	𝑀矩阵决定了𝐸(𝑢,𝑣)的取值，下面我们利用𝑀来求角点，𝑀是𝐼~𝑥~和𝐼~𝑦~的二次项函数，可以表示成椭圆的形状，椭圆的长短半轴由𝑀*M*的特征值𝜆~1~和𝜆~2~决定，方向由特征矢量决定，如下图所示：
 
 ![image-20191008160908338](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304499.png)
 
@@ -2625,11 +2641,17 @@ C 和 D 也很简单。它们是建筑的边缘。可以找到它们的近似位
 - 图像中的平面。两个特征值都小，且近似相等；椭圆函数数值在各个方向上都小。
 - 图像中的角点。两个特征值都大，且近似相等，椭圆函数在所有方向都增大
 
-​	Harris给出的角点计算方法并不需要计算具体的特征值，而是计算一个**角点响应值𝑅\*R\***来判断角点。𝑅*R*的计算公式为：𝑅=𝑑𝑒𝑡𝑀−𝛼(𝑡𝑟𝑎𝑐𝑒𝑀)2*R*=*d**e**t**M*−*α*(*t**r**a**c**e**M*)2式中，detM为矩阵M的行列式；traceM为矩阵M的迹；α为常数，取值范围为0.04~0.06。事实上，特征是隐含在detM和traceM中，因为:
+​	Harris给出的角点计算方法并不需要计算具体的特征值，而是计算一个角点响应值𝑅来判断角点。𝑅的计算公式为：
+$$
+R=detM-\alpha(traceM)^2
+$$
+式中，detM为矩阵M的行列式；traceM为矩阵M的迹；α为常数，取值范围为0.04~0.06。事实上，特征是隐含在detM和traceM中，因为:
+$$
+detM=\lambda_1\lambda_2\\traceM=\lambda_1+\lambda_2
+$$
+那我们怎么判断角点呢？如下图所示：
 
-![image-20191015181643847](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304501.png)
-
-那我们怎么判断角点呢？如下图所示：![image-20191008161904372](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304502.png)
+![image-20191008161904372](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304502.png)
 
 - 当R为大数值的正数时是角点
 - 当R为大数值的负数时是边界
@@ -2694,7 +2716,11 @@ Harris角点检测的优缺点：
 
 **<u>原理</u>**
 
-​	Shi-Tomasi算法是对Harris角点检测算法的改进，一般会比Harris算法得到更好的角点。Harris 算法的角点响应函数是将矩阵 M 的行列式值与 M 的迹相减，利用差值判断是否为角点。后来Shi 和Tomasi 提出改进的方法是，若矩阵M的两个特征值中较小的一个大于阈值，则认为他是角点，即：𝑅=𝑚𝑖𝑛(𝜆1,𝜆2)*R*=*m**i**n*(*λ*1,*λ*2)如下图所示：
+​	Shi-Tomasi算法是对Harris角点检测算法的改进，一般会比Harris算法得到更好的角点。Harris 算法的角点响应函数是将矩阵 M 的行列式值与 M 的迹相减，利用差值判断是否为角点。后来Shi 和Tomasi 提出改进的方法是，若矩阵M的两个特征值中较小的一个大于阈值，则认为他是角点，即：
+$$
+𝑅=𝑚𝑖𝑛(𝜆1,𝜆2)
+$$
+如下图所示：
 
 ![image-20191008171309192](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304504.png)
 
@@ -2802,11 +2828,13 @@ Lowe将SIFT算法分解为如下**四步**：
 > 高斯核是唯一可以产生多尺度空间的核函数。-《Scale-space theory: A basic tool for analysing structures at different scales》。
 
 ​	一个图像的尺度空间L(x,y,σ)，定义为原始图像I(x,y)与一个可变尺度的2维高斯函数G(x,y,σ)卷积运算 ，即：
-
-𝐿(𝑥,𝑦,𝜎)=𝐺(𝑥,𝑦,𝜎)∗𝐼(𝑥,𝑦)*L*(*x*,*y*,*σ*)=*G*(*x*,*y*,*σ*)∗*I*(*x*,*y*)其中：
-
-𝐺(𝑥,𝑦,𝜎)=12𝜋𝜎2𝑒−𝑥2+𝑦22𝜎2*G*(*x*,*y*,*σ*)=2*π**σ*21*e*−2*σ*2*x*2+*y*2𝜎*σ*
-
+$$
+L(x,y,\sigma)=G(x,y,\sigma)*I(x,y)
+$$
+其中：
+$$
+G(x,y,\sigma)=\frac1{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}
+$$
 是尺度空间因子，它决定了图像的模糊的程度。在大尺度下（𝜎*σ*值大）表现的是图像的概貌信息，在小尺度下（𝜎*σ*值小）表现的是图像的细节信息。
 
 ​	在计算高斯函数的离散近似时，在大概3σ距离之外的像素都可以看作不起作用，这些像素的计算也就可以忽略。所以，在实际应用中，只计算**(6σ+1)\*(6σ+1)**的高斯卷积核就可以保证相关像素影响。
@@ -2843,12 +2871,16 @@ Lowe将SIFT算法分解为如下**四步**：
 
 ​	经过上述两个步骤，图像的关键点就完全找到了，这些关键点具有尺度不变性。为了实现旋转不变性，还需要为每个关键点分配一个方向角度，也就是根据检测到的关键点所在高斯尺度图像的邻域结构中求得一个方向基准。
 
-对于任一关键点，我们采集其所在高斯金字塔图像以r为半径的区域内所有像素的梯度特征（幅值和幅角），半径r为：𝑟=3×1.5𝜎*r*=3×1.5*σ*其中σ是关键点所在octave的图像的尺度，可以得到对应的尺度图像。
+对于任一关键点，我们采集其所在高斯金字塔图像以r为半径的区域内所有像素的梯度特征（幅值和幅角），半径r为：
+$$
+r=3\times1.5\sigma
+$$
+其中σ是关键点所在octave的图像的尺度，可以得到对应的尺度图像。
 
-梯度的幅值和方向的计算公式为：𝑚(𝑥,𝑦)=(𝐿(𝑥+1,𝑦)−𝐿(𝑥−1,𝑦)2+(𝐿(𝑥,𝑦+1)−𝐿(𝑥,𝑦−1))2*m*(*x*,*y*)=√(*L*(*x*+1,*y*)−*L*(*x*−1,*y*)2+(*L*(*x*,*y*+1)−*L*(*x*,*y*−1))2
-
-𝜃(𝑥,𝑦)=𝑎𝑟𝑐𝑡𝑎𝑛(𝐿(𝑥,𝑦+1)−𝐿(𝑥,𝑦−1)𝐿(𝑥+1,𝑦)−𝐿(𝑥−1),𝑦)*θ*(*x*,*y*)=*a**r**c**t**a**n*(*L*(*x*+1,*y*)−*L*(*x*−1),*y**L*(*x*,*y*+1)−*L*(*x*,*y*−1))
-
+梯度的幅值和方向的计算公式为：
+$$
+m(x,y)=\sqrt{(L(x+1,y)-L(x-1,y))^2+(L(x,y+1)-L(x,y-1))^2}\\\theta(x,y)=arctan(\frac{L(x,y+1)-L(x,y-1)}{L(x+1,y)-L(x-1,y)})
+$$
 邻域像素梯度的计算结果如下图所示：
 
 ![image-20191009143818527](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304511.png)
@@ -2871,7 +2903,7 @@ Lowe将SIFT算法分解为如下**四步**：
 
 ​	通过以上步骤，每个关键点就被分配了位置，尺度和方向信息。接下来我们为每个关键点建立一个描述符，该描述符既具有可区分性，又具有对某些变量的不变性，如光照，视角等。而且描述符不仅仅包含关键点，也包括关键点周围对其有贡献的的像素点。主要思路就是通过将关键点周围图像区域分块，计算块内的梯度直方图，生成具有特征向量，对图像信息进行抽象。
 
-​	描述符与特征点所在的尺度有关，所以我们在关键点所在的高斯尺度图像上生成对应的描述符。以特征点为中心，将其附近邻域划分为𝑑∗𝑑*d*∗*d*个子区域（一般取d=4)，每个子区域都是一个正方形，边长为3σ，考虑到实际计算时，需进行三次线性插值，所以特征点邻域的为3𝜎(𝑑+1)∗3𝜎(𝑑+1)3*σ*(*d*+1)∗3*σ*(*d*+1)的范围，如下图所示：
+​	描述符与特征点所在的尺度有关，所以我们在关键点所在的高斯尺度图像上生成对应的描述符。以特征点为中心，将其附近邻域划分为𝑑∗𝑑个子区域（一般取d=4)，每个子区域都是一个正方形，边长为3σ，考虑到实际计算时，需进行三次线性插值，所以特征点邻域的为$3𝜎(𝑑+1)∗3𝜎(𝑑+1)$的范围，如下图所示：
 
 ![image-20191009161647267](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304515.png)
 
@@ -2883,10 +2915,10 @@ Lowe将SIFT算法分解为如下**四步**：
 
 ![image-20191009162914982](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304517.png)
 
-​	每个种子点的梯度都是由覆盖其的4个子区域插值而得的。如图中的红色点，落在第0行和第1行之间，对这两行都有贡献。对第0行第3列种子点的贡献因子为dr，对第1行第3列的贡献因子为1-dr，同理，对邻近两列的贡献因子为dc和1-dc，对邻近两个方向的贡献因子为do和1-do。则最终累加在每个方向上的梯度大小为：
-
-𝑤𝑒𝑖𝑔ℎ𝑡=𝑤∗𝑑𝑟𝑘(1−𝑑𝑟)(1−𝑘)𝑑𝑐𝑚(1−𝑑𝑐)1−𝑚𝑑𝑜𝑛(1−𝑑𝑜)1−𝑛*w**e**i**g**h**t*=*w*∗*d**r**k*(1−*d**r*)(1−*k*)*d**c**m*(1−*d**c*)1−*m**d**o**n*(1−*d**o*)1−*n*
-
+​	每个种子点的梯度都是由覆盖其的4个子区域插值而得的。如图中的红色点，落在第0行和第1行之间，对这两行都有贡献。对第0行第3列种子点的贡献因子为dr，对第1行第3列的贡献因子为$1-dr$，同理，对邻近两列的贡献因子为dc和1-dc，对邻近两个方向的贡献因子为$do$和$1-do$。则最终累加在每个方向上的梯度大小为：
+$$
+weight=w*dr^k(1-dr)^{(1-k)}dc^m(1-dc)^{1-m}do^n(1-do)^{1-n}
+$$
 ​	其中k，m，n为0或为1。 如上统计4∗4∗8=1284∗4∗8=128个梯度信息即为该关键点的特征向量，按照特征点的对每个关键点的特征向量进行排序，就得到了SIFT特征描述向量。
 
 
@@ -2899,7 +2931,11 @@ Lowe将SIFT算法分解为如下**四步**：
 
 ​	使用 SIFT 算法进行关键点检测和描述的执行速度比较慢， 需要速度更快的算法。 2006 年 Bay提出了 SURF 算法，是SIFT算法的增强版，它的计算量小，运算速度快，提取的特征与SIFT几乎相同，将其与SIFT算法对比如下：
 
-![image-20191016163330835](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304518.png)
+|            | SIFT                                                         | $SURF$                                                       |
+| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 特征点检测 | 使用不同尺度的图片与高斯函数进行卷积                         | 使用不同大小的盒滤波器与原始图像做卷积，易于并行             |
+| 方向       | 关键点邻接矩形区域内，利用梯度计算                           | 关键点邻接圆域内，计算x，y方向的haar小波                     |
+| 描述符生成 | 关键点邻域内划分$\mathrm{d} ^*$d子 区 域 , 每个子区域计算采样点的8个方向的直方图 | 关 键 点 邻 域 内 划 分 $\mathrm{d} ^* \mathrm{d}$个子区域，每个子区域内计算采样点的haar小波响应，记录：$\sum dx,\sum dy,\sum|dx|,\sum|dy|$ |
 
 ### 4.3.3 实现
 
@@ -2907,9 +2943,7 @@ Lowe将SIFT算法分解为如下**四步**：
 
 1.实例化sift
 
-```python
 sift = cv.xfeatures2d.SIFT_create()
-```
 
 2.利用sift.detectAndCompute()检测关键点并计算
 
@@ -3004,7 +3038,7 @@ SURF算法：
 
 ---
 
-# 4.4.1 Fast算法
+### 4.4.1 Fast算法
 
 **<u>原理</u>**
 
@@ -3016,7 +3050,7 @@ SURF算法：
 
 1. 在图像中选取一个像素点 p，来判断它是不是关键点。$$I_p$$等于像素点 p的灰度值。
 
-2. 以r为半径画圆，覆盖p点周围的M个像素，通常情狂下，设置 r=3，则 M=16，如下图所示：
+2. 以r为半径画圆，覆盖p点周围的M个像素，通常情况下，设置 r=3，则 M=16，如下图所示：
 
    ![image17](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304520.jpg)
 
@@ -3074,7 +3108,7 @@ OpenCV中的FAST检测算法是用传统方法实现的，
 1.实例化fast
 
 ```python
-fast = =cv.FastFeatureDetector_create( threshold, nonmaxSuppression)
+fast = cv.FastFeatureDetector_create( threshold, nonmaxSuppression)
 ```
 
 参数：
@@ -3151,7 +3185,7 @@ plt.show()
 
 ![image-20191010120822413](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201304523.png)
 
-## 4.2 ORB 算法
+### 4.4.2 ORB 算法
 
 
 
@@ -3696,3 +3730,165 @@ Meanshift和camshift算法都各有优势，自然也有劣势：
    API：cv.camshift()
 
    优缺点：可适应运动目标的大小形状的改变，具有较好的跟踪效果，但当背景色和目标颜色接近时，容易使目标的区域变大，最终有可能导致目标跟踪丢失
+
+
+
+# 6. 案例:人脸案例
+
+**学习目标**
+
+1. 了解opencv进行人脸检测的流程
+2. 了解Haar特征分类器的内容
+
+------
+
+## 6.1 基础
+
+我们使用机器学习的方法完成人脸检测，首先需要大量的正样本图像（面部图像）和负样本图像（不含面部的图像）来训练分类器。我们需要从其中提取特征。下图中的 Haar 特征会被使用，就像我们的卷积核，每一个特征是一 个值，这个值等于黑色矩形中的像素值之后减去白色矩形中的像素值之和。
+
+![image-20191014152218924](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201954495.png)
+
+Haar特征值反映了图像的灰度变化情况。例如：脸部的一些特征能由矩形特征简单的描述，眼睛要比脸颊颜色要深，鼻梁两侧比鼻梁颜色要深，嘴巴比周围颜色要深等。
+
+Haar特征可用于于图像任意位置，大小也可以任意改变，所以矩形特征值是矩形模版类别、矩形位置和矩形大小这三个因素的函数。故类别、大小和位置的变化，使得很小的检测窗口含有非常多的矩形特征。
+
+![image-20191014152716626](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201954496.png)
+
+得到图像的特征后，训练一个决策树构建的adaboost级联决策器来识别是否为人脸。
+
+![image-20191014160504382](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201954497.png)
+
+## 6.2 实现
+
+OpenCV中自带已训练好的检测器，包括面部，眼睛，猫脸等，都保存在XML文件中，我们可以通过以下程序找到他们：
+
+```python
+import cv2 as cv
+print(cv.__file__)
+```
+
+找到的文件如下所示：
+
+![image-20191014160719733](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201954498.png)
+
+那我们就利用这些文件来识别人脸，眼睛等。检测流程如下：
+
+1. 读取图片，并转换成灰度图
+
+2. 实例化人脸和眼睛检测的分类器对象
+
+   ```python
+   # 实例化级联分类器
+   classifier =cv.CascadeClassifier( "haarcascade_frontalface_default.xml" ) 
+   # 加载分类器
+   classifier.load('haarcascade_frontalface_default.xml')
+   ```
+
+3. 进行人脸和眼睛的检测
+
+   ```python
+   rect = classifier.detectMultiScale(gray, scaleFactor, minNeighbors, minSize,maxsize)
+   ```
+
+   参数：
+
+   - Gray: 要进行检测的人脸图像
+   - scaleFactor: 前后两次扫描中，搜索窗口的比例系数
+   - minneighbors：目标至少被检测到minNeighbors次才会被认为是目标
+   - minsize和maxsize: 目标的最小尺寸和最大尺寸
+
+4. 将检测结果绘制出来就可以了。
+
+主程序如下所示：
+
+```python
+import cv2 as cv
+import matplotlib.pyplot as plt
+# 1.以灰度图的形式读取图片
+img = cv.imread("16.jpg")
+gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+
+# 2.实例化OpenCV人脸和眼睛识别的分类器 
+face_cas = cv.CascadeClassifier( "haarcascade_frontalface_default.xml" ) 
+face_cas.load('haarcascade_frontalface_default.xml')
+
+eyes_cas = cv.CascadeClassifier("haarcascade_eye.xml")
+eyes_cas.load("haarcascade_eye.xml")
+
+# 3.调用识别人脸 
+faceRects = face_cas.detectMultiScale( gray, scaleFactor=1.2, minNeighbors=3, minSize=(32, 32)) 
+for faceRect in faceRects: 
+    x, y, w, h = faceRect 
+    # 框出人脸 
+    cv.rectangle(img, (x, y), (x + h, y + w),(0,255,0), 3) 
+    # 4.在识别出的人脸中进行眼睛的检测
+    roi_color = img[y:y+h, x:x+w]
+    roi_gray = gray[y:y+h, x:x+w]
+    eyes = eyes_cas.detectMultiScale(roi_gray) 
+    for (ex,ey,ew,eh) in eyes:
+        cv.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+# 5. 检测结果的绘制
+plt.figure(figsize=(8,6),dpi=100)
+plt.imshow(img[:,:,::-1]),plt.title('检测结果')
+plt.xticks([]), plt.yticks([])
+plt.show()
+```
+
+结果：
+
+![image-20240920195408309](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202409201954884.png)
+
+我们也可在视频中对人脸进行检测：
+
+```python
+import cv2 as cv
+import matplotlib.pyplot as plt
+# 1.读取视频
+cap = cv.VideoCapture("movie.mp4")
+# 2.在每一帧数据中进行人脸识别
+while(cap.isOpened()):
+    ret, frame = cap.read()
+    if ret==True:
+        gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        # 3.实例化OpenCV人脸识别的分类器 
+        face_cas = cv.CascadeClassifier( "haarcascade_frontalface_default.xml" ) 
+        face_cas.load('haarcascade_frontalface_default.xml')
+        # 4.调用识别人脸 
+        faceRects = face_cas.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=3, minSize=(32, 32)) 
+        for faceRect in faceRects: 
+            x, y, w, h = faceRect 
+            # 框出人脸 
+            cv.rectangle(frame, (x, y), (x + h, y + w),(0,255,0), 3) 
+        cv.imshow("frame",frame)
+        if cv.waitKey(1) & 0xFF == ord('q'):
+            break
+# 5. 释放资源
+cap.release()  
+cv.destroyAllWindows()
+```
+
+------
+
+**总结**
+
+opencv中人脸识别的流程是：
+
+1. 读取图片，并转换成灰度图
+2. 实例化人脸和眼睛检测的分类器对象
+
+```python
+# 实例化级联分类器
+classifier =cv.CascadeClassifier( "haarcascade_frontalface_default.xml" ) 
+# 加载分类器
+classifier.load('haarcascade_frontalface_default.xml')
+```
+
+1. 进行人脸和眼睛的检测
+
+```python
+rect = classifier.detectMultiScale(gray, scaleFactor, minNeighbors, minSize,maxsize)
+```
+
+1. 将检测结果绘制出来就可以了。
+
+我们也可以在视频中进行人脸识别
