@@ -27,3 +27,7 @@
 2024/9/20-2024/9/27 学习YOLO，看代码
 
 2024/9/28 看R-CNN,Fast-RCNN,Faster-RCNN
+
+2024/9/20-2024/10/15 学习python算法
+
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Python学习笔记/index.html)
