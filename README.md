@@ -69,3 +69,5 @@ OpenCV完结，图像处理还未学透彻。
 复习python所学
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
+
+![image-20241016222602935](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410162226980.png)
