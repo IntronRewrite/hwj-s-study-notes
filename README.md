@@ -71,3 +71,29 @@ OpenCV完结，图像处理还未学透彻。
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
 ![image-20241016222602935](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410162226980.png)
+
+### 2024/10/17
+
+[2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
+
+![image-20241018081419016](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241018081419016.png)
+
+### 2024/10/18
+
+python学习（1）
+
+![image-20241020094326982](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241020094326982.png)
+
+[2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
+
+### 2024/10/19
+
+pythoch学习(2)
+
+![image-20241020095335082](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241020095335082.png)
+
+[深入浅出PyTorch — 深入浅出PyTorch](https://datawhalechina.github.io/thorough-pytorch/index.html#)
+
+安装win11，修复网络连接
+
+### 2024/10/20
