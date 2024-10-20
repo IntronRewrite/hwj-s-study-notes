@@ -76,13 +76,13 @@ OpenCV完结，图像处理还未学透彻。
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
-![image-20241018081419016](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241018081419016.png)
+![image-20241018081419016](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842852.png)
 
 ### 2024/10/18
 
 python学习（1）
 
-![image-20241020094326982](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241020094326982.png)
+![image-20241020094326982](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842854.png)
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
@@ -90,7 +90,7 @@ python学习（1）
 
 pythoch学习(2)
 
-![image-20241020095335082](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241020095335082.png)
+![image-20241020095335082](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842855.png)
 
 [深入浅出PyTorch — 深入浅出PyTorch](https://datawhalechina.github.io/thorough-pytorch/index.html#)
 
