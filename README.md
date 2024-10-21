@@ -159,5 +159,5 @@ argparse进行调参
 
 整理所学，做markdown文档准备开组会
 
-[组会 markdown](https://intronrewrite.github.io/hwj-s-study-notes/tree/main/组会记/2024-10-22组会.html)
+[组会 markdown](https://intronrewrite.github.io/hwj-s-study-notes/tree/main/组会/2024-10-22组会.html)
 
