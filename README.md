@@ -124,9 +124,9 @@ argparse进行调参
 
 
 
-![image-20241022032113830](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220332744.png)
+![image-20241022032113830](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220349473.png)
 
-![image-20241022032440997](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220332745.png)
+![image-20241022032440997](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220349474.png)
 
 #### FashionMNIST数据集
 
