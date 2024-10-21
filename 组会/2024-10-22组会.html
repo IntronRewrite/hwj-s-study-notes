@@ -1,0 +1,1305 @@
+<!doctype html>
+<html style='font-size:17px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* 
+ *     Typora Theme - Lapis    /    Author - YiNN 
+ *     https://github.com/YiNNx/typora-theme-lapis
+ */
+
+:root {
+    --text-color: #40464f;
+    /* Text */
+    --primary-color: #4870ac;
+    /* Primary Color */
+    --bg-color: #ffffff;
+    --side-bar-bg-color: var(--bg-color);
+    /* Background */
+
+    --marker-color: #a2b6d4;
+    /* List Marker */
+    --source-color: #a8a8a9;
+    /* for comment / link source */
+    --highlight-color: #ffffb5c2;
+    /* Highlight */
+    --header-span-color: var(--primary-color);
+    /* h2 Span Color */
+    --block-bg-color: #f6f8fa;
+    /* Block Background */
+    --img-shadow-color: #e3e8f0;
+
+    /* Overwrite of Typora Base Color */
+    --search-hit-bg-color: var(--select-text-bg-color);
+    --search-select-bg-color: #5bb3ff;
+    --control-text-hover-color: #a2b6d4;
+    --rawblock-edit-panel-bd: var(--block-bg-color);
+    --item-hover-bg-color: rgb(246 248 250);
+    --active-file-bg-color: var(--block-bg-color);
+}
+
+@media print {
+    :root {
+        --text-color: rgb(0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent !important;
+    }
+}
+
+/*
+ * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
+ */
+
+/*
+ * Basic Style
+ */
+
+#write {
+    max-width: 950px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+
+    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+    margin-bottom: 20rem;
+}
+
+.searchpanel-search-option-btn {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    right: 5px;
+    top: 5px;
+    z-index: 99;
+    cursor: pointer;
+    margin-top: 1px;
+    padding: 1px;
+    border-radius: 3px;
+    line-height: 10px;
+    border: 1px solid #ddd;
+    border-color: var(--active-toggle-btn-color);
+}
+
+/* Strong */
+
+#write strong {
+    color: var(--primary-color);
+}
+
+/* Link */
+
+#write a {
+    color: var(--primary-color);
+    /* font-family: "Cantarell"; */
+}
+
+#write .md-p a,
+#write .md-heading a,
+[md-inline=url],
+[md-inline=link]>.md-content {
+    word-wrap: break-word;
+    text-decoration: underline solid;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+#write h2.md-heading a {
+    text-decoration: underline;
+    border-bottom: 0;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.2px;
+}
+
+.md-meta,
+[md-inline=link]>.md-content,
+[md-inline=image]>.md-meta,
+.md-image>.md-meta {
+    word-break: break-all;
+    font-weight: normal;
+    color: var(--source-color);
+    font-family: "JetBrainsMono";
+    font-size: 90%;
+}
+
+
+/* 
+ * TOC
+ */
+
+.md-toc-content {
+    font-family: 'SourceHanSerifCN';
+}
+
+.md-toc-content:empty:before {
+    color: var(--primary-color);
+}
+
+#write div.md-toc-tooltip {
+    font-family: 'SourceHanSerifCN';
+    color: var(--primary-color);
+    position: static;
+    margin-top: 10px;
+    background-color: var(--block-bg-color);
+    line-height: 1.6rem;
+    padding: 0.3rem 0.75rem;
+    border-top: none;
+    /* border-left: 2px solid var(--primary-color);
+     */
+    border-radius: .5rem;
+}
+
+.md-toc:focus .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 9px -1px;
+    margin-top: 9px;
+}
+
+.md-toc .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 10px 0px;
+    margin-top: 10px;
+}
+
+
+/* mark */
+
+mark {
+    background: var(--highlight-color);
+    padding: 1px .15rem;
+    border-radius: 1px;
+    color: inherit;
+}
+
+/* 
+ * Paragraph
+ */
+
+#write+p,
+#write blockquote p {
+    font-size: 1.1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    margin: 0;
+    line-height: 1.8rem;
+    color: var(--text-color);
+}
+
+/*
+ * Header
+ */
+
+#write h4,
+#write h5,
+#write h6 {
+    font-weight: normal;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-family: 'SourceHanSerifCN';
+    padding: 0px;
+    color: var(--primary-color);
+}
+
+#write h1 {
+    text-align: center;
+}
+
+#write h2 {
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#write h2,
+#write h2 code {
+    background-color: var(--header-span-color);
+}
+
+#write h2,
+#write h2 a,
+#write h2 code,
+#write h2 strong,
+#write h2 script {
+    color: var(--bg-color);
+}
+
+#write h2 a {
+    border-bottom-color: var(--bg-color) !important;
+}
+
+#write h1 {
+    font-size: 2rem;
+}
+
+#write h2 {
+    font-size: 1.5rem;
+}
+
+#write h3 {
+    font-size: 1.4rem;
+}
+
+#write h4 {
+    font-size: 1.2rem;
+}
+
+#write h5 {
+    font-size: 1.1rem;
+}
+
+#write h6 {
+    font-size: 1.1rem;
+}
+
+#write h1 {
+    padding-top: 0.9rem;
+    margin-bottom: 2.3rem;
+}
+
+#write h2 {
+    margin: .3em 0;
+}
+
+#write h3 {
+    margin: 1em 0 1em;
+}
+
+#write h4 {
+    margin: 0.8em 0 0.8em;
+}
+
+#write h5 {
+    margin: 0.6em 0 0.6em;
+}
+
+#write h6 {
+    margin: 0.4em 0 0.4em;
+}
+
+blockquote h3.md-focus:before,
+blockquote h4.md-focus:before,
+blockquote h5.md-focus:before,
+blockquote h6.md-focus:before {
+    left: -1.3rem;
+}
+
+/*
+ * List
+ */
+
+::marker {
+    font-weight: bold;
+    color: var(--marker-color);
+}
+
+li.md-list-item {
+    margin: 0.4rem 0;
+}
+
+#write ul,
+#write ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+#write em {
+    padding: 0 3px 0 0;
+}
+
+#write ul ul {
+    list-style-type: square;
+}
+
+#write ol {
+    list-style-type: decimal;
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/*
+ * Quote
+ */
+
+#write blockquote {
+    display: block;
+    font-size: .9em;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert {
+    display: block;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert-text-container {
+    font-size: 1.2em;
+}
+
+.md-end-block.md-p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-block-start: 2.8px;
+    padding-block-end: 2.8px;
+}
+
+.md-alert-text-important {
+    color: #614f9c;
+}
+
+.md-alert.md-alert-important {
+    background-color: #614f9c0a;
+    border-left-color: #614f9c;
+}
+
+.md-alert-text-note {
+    color: #527da8;
+}
+
+.md-alert.md-alert-note {
+    background-color: #527da80a;
+    border-left-color: #527da8;
+}
+
+.md-alert-text-tip {
+    color: #428485;
+}
+
+.md-alert.md-alert-tip {
+    background-color: #4284850a;
+    border-left-color: #428485;
+}
+
+.md-alert-text-warning {
+    color: #a88652;
+}
+
+.md-alert.md-alert-warning {
+    background-color: #9b80490a;
+    border-left-color: #a88652;
+}
+
+
+.md-alert-text-caution {
+    color: #a34f55;
+}
+
+.md-alert.md-alert-caution {
+    background-color: #a34f550a;
+    border-left-color: #a34f55;
+}
+
+
+/*
+ * Inline code
+ */
+
+#write code {
+    color: var(--primary-color);
+    font-size: 94%;
+    font-weight: normal;
+    word-wrap: break-word;
+    padding: 2px 4px 2px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: var(--block-bg-color);
+    font-family: 'JetBrainsMono';
+    word-break: break-all;
+}
+
+/*
+ * Img
+ */
+
+#write img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#write p>.md-image:only-child:not(.md-img-error) img,
+#write p>img:only-child {
+    filter: drop-shadow(var(--img-shadow-color) 0px 6px 6px);
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*
+ * Table
+ */
+#write table {
+    display: table;
+    text-align: justify;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 1em;
+    margin: 0px 0px 20px;
+    width: 100%;
+}
+
+#write tbody {
+    border: 0;
+}
+
+#write table tr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#write table tr th,
+#write table tr td {
+    font-size: 1rem;
+    border: 1px solid #d9dfe4;
+    padding: 5px 10px;
+    text-align: justify;
+}
+
+#write table tr th {
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    min-width: 10rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#write table tr td:hover,
+#write table tr th:hover {
+    background-color: var(--block-bg-color);
+}
+
+table td {
+    min-width: 32px;
+}
+
+.md-table-resize-popover {
+    width: auto !important;
+}
+
+/* Footnote */
+
+sup.md-footnote {
+    background-color: var(--block-bg-color);
+    color: var(--primary-color);
+}
+
+.md-def-name {
+    color: var(--primary-color);
+}
+
+/*
+ * Math Script 
+ */
+
+.md-inline-math script {
+    color: var(--primary-color);
+}
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: var(--bg-color);
+    color: var(--md-char-color);
+}
+
+
+.code-tooltip {
+    box-shadow: none;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+    border-radius: 1rem;
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/* 
+ * Comment
+ */
+.md-comment {
+    color: var(--source-color);
+    opacity: 1;
+    font-family: 'JetBrainsMono';
+}
+
+/*
+ * Dividing line
+ */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+
+/* Checkbox */
+
+#write input[type=checkbox] {
+    width: 0;
+}
+
+.task-list-item input::before {
+    content: "";
+    display: inline-block;
+    width: 1.0125rem;
+    height: 1.0125rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid var(--marker-color);
+    border-radius: 1.2rem;
+    background-color: #fdfdfd;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -.6rem;
+}
+
+.task-list-item input:checked::before {
+    content: '✓';
+    font-weight: bold;
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+}
+
+blockquote .task-list-item input::before {
+    margin-top: .2rem;
+}
+
+/*
+ * Sidebar
+ */
+#typora-sidebar {
+    font-family: 'Cantarell', 'SourceHanSerifCN';
+    height: 100%;
+    color: var(--text-color);
+    font-size: 0.92rem;
+    background-color: var(--bg-color);
+}
+
+#sidebar-content.sidebar-content {
+    margin-top: .5rem;
+}
+
+.html-for-mac #write input[type=checkbox] {
+    margin-top: 0.65rem;
+}
+
+.html-for-mac #write .task-list-item input::before {
+    margin-top: -.85rem;
+}
+
+
+/*
+ * Sidebar - FileNode
+ */
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.file-node-content {
+    color: var(--primary-color);
+    line-height: 1.6rem;
+}
+
+span.file-node-title-name-part {
+    color: var(--text-color);
+}
+
+span.file-node-title-ext-part {
+    color: var(--text-color);
+}
+
+.file-node-icon {
+    padding-right: 0.2rem;
+}
+
+.file-tree-node.active>.file-node-background {
+    border-left: 4px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/*
+ * Sidebar - Outline
+ */
+
+#outline-content {
+    height: 100%;
+    overflow-x: hidden;
+    line-height: 1.6rem;
+    font-size: .96rem;
+}
+
+#outline-content .outline-active,
+.pin-outline .outline-active {
+    color: var(--primary-color);
+}
+
+.outline-item {
+    padding-left: 2em;
+}
+
+.outline-item>.outline-expander:before {
+    transform: translateY(-1px) !important;
+}
+
+/* Meta Block */
+
+pre.md-meta-block {
+    font-family: 'JetBrainsMono';
+    color: var(--primary-color);
+    background: #f6f8fa;
+    padding: 1.5rem;
+    margin: -37px 0rem 3.8rem;
+    /* border-radius: 1rem; */
+    filter: drop-shadow(var(--img-shadow-color) 0px 3px 3px);
+    /* border-top: 1px solid var(--primary-color); */
+    /* border-bottom: 1px solid var(--primary-color); */
+}
+
+pre.md-fences-advanced.md-focus .md-fences-adv-panel {
+    border-radius: .8rem;
+}
+
+/*
+ * Scrollbar
+ */
+
+#outline-content::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#file-library::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.425);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* 
+ * Code Block - Style
+ */
+
+.md-fences:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    /* background-color: #282c34; */
+    margin-bottom: -7px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto;
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin: 1.5rem 0;
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 1.2rem .8rem;
+    color: #4f5467;
+    font-family: 'JetBrainsMono';
+    border-radius: 10px;
+    background-color: var(--block-bg-color);
+    /* border: 1px solid #eef2f5;*/
+    line-height: 1.6rem;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #a2b6d452;
+    background: inherit;
+    white-space: nowrap;
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem;
+}
+
+.CodeMirror-linenumber {
+    white-space: nowrap;
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+/* 
+ * Code Block - Color Scheme
+ */
+
+.cm-s-inner .cm-keyword {
+    color: #1694b6 !important;
+}
+
+.cm-s-inner .cm-operator {
+    color: #2f86d2 !important;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-builtin,
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-quote {
+    color: #b9218e !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7aadad !important;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type,
+.cm-s-inner .cm-atom {
+    color: #378ed8 !important;
+}
+
+.cm-s-inner .cm-number {
+    color: #1a5494 !important;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-qualifier {
+    color: #0744ac !important;
+}
+
+.cm-s-inner .cm-string {
+    color: #6f42c2 !important;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #27638f !important;
+}
+
+.cm-s-inner .cm-comment {
+    color: #9a9a9a !important;
+}
+
+.cm-s-inner .cm-meta {
+    color: #0b93be !important;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #8f6aa8 !important;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: #b9218e40 !important;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid var(--primary-color);
+    z-index: 3;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext {
+    background-color: rgba(167, 178, 189, 0.0) !important;
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/*
+ * Sitting - Unibody
+ */
+
+.megamenu-menu-header {
+    border: none;
+    color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-back-btn,
+.megamenu-menu-header .megamenu-menu-header-title-back,
+.megamenu-menu-header .megamenu-menu-header-title-menu {
+    color: var(--text-color);
+}
+
+.megamenu-menu {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: none !important;
+}
+
+header,
+#megamenu-content {
+    background-color: var(--bg-color);
+    background-image: none !important;
+}
+
+.md-search-hit {
+    background-color: var(--search-hit-bg-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: var(--recent-file-panel-n-bg-color);
+    color: var(--recent-file-panel-n-color);
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    width: 75%;
+}
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>2024-10-22组会</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='近期工作汇报'><span>近期工作汇报</span></h1><h2 id='914-919'><span>9/14-9/19 </span></h2><h3 id='linux'><span>Linux</span></h3><h4 id='linux操作系统相关知识'><span>Linux操作系统相关知识</span></h4><p><span>什么是Linux操作系统</span></p><p><span>Linux的目录结构(相对路径和绝对路径)</span></p><h4 id='常用命令'><span>常用命令</span></h4><p><span>ls,pwd,cd,，mkdir,cat,more,cp,mv,rm,chmod,chown,wget,curl,tar,zip...</span></p><h4 id='远程连接软件的使用'><span>远程连接软件的使用</span></h4><p><span>Xftp 8（传文件）</span></p><p><span>Xshell（终端，端口转发）</span></p><p>&nbsp;</p><h3 id='数字图像处理和opencv'><span>数字图像处理和opencv</span></h3><h4 id='几何变换'><span>几何变换</span></h4><ol start='' ><li><p><span>图像缩放</span></p></li><li><p><span>图像平移</span></p></li><li><p><span>图像旋转</span></p></li><li><p><span>仿射变换</span></p></li><li><p><span>透射变换</span></p></li><li><p><span>图像金字塔</span></p></li></ol><h4 id='形态学操作'><span>形态学操作</span></h4><ol start='' ><li><p><span>腐蚀和膨胀</span></p></li><li><p><span>开闭运算</span></p></li><li><p><span>礼帽和黑帽</span></p></li></ol><h4 id='噪声和滤波'><span>噪声和滤波</span></h4><ul><li><p><span>图像噪声</span></p></li><li><p><span>均值滤波</span></p></li><li><p><span>高斯滤波</span></p></li><li><p><span>中值滤波</span></p></li></ul><h4 id='直方图'><span>直方图</span></h4><ol start='' ><li><p><span>灰度直方图</span></p></li><li><p><span>直方图的计算和绘制</span></p></li><li><p><span>掩膜的应用</span></p></li><li><p><span>直方图均衡化</span></p></li><li><p><span>自适应的直方图均衡化</span></p></li></ol><h4 id='边缘检测'><span>边缘检测</span></h4><ol start='' ><li><p><span>Sobel检测算子</span></p></li><li><p><span>Laplacian算子</span></p></li><li><p><span>Canny边缘检测</span></p></li></ol><h4 id='模板匹配和霍夫变换'><span>模板匹配和霍夫变换</span></h4><ol start='' ><li><p><span>模板匹配</span></p></li><li><p><span>霍夫变换</span></p></li></ol><h4 id='图像特征处理'><span>图像特征处理</span></h4><ol start='' ><li><p><span>Harris角点检测</span>
+<span>Shi-Tomasi角点检测</span></p></li><li><p><span>SIFT/SURF算法</span>
+<span>SURF原理</span></p></li><li><p><span>Fast算法</span>
+<span>ORB 算法</span></p></li></ol><h2 id='920-927'><span>9/20-9/27</span></h2><h3 id='yolo论文汇报'><span>YOLO论文汇报</span></h3><p><span>我们提出的YOLO是一种新的目标检测方法。以前的目标检测方法通过重新利用</span><strong><span>分类器</span></strong><span>来执行检测。与先前的方案不同，我们将目标检测看作</span><strong><span>回归问题</span></strong><span>从空间上</span><strong><span>定位边界框（bounding box）并预测该框的类别概率</span></strong><span>。我们使用单个神经网络，在一次评估中直接从完整图像上预测边界框和类别概率。由于整个检测流程仅用一个网络，所以可以直接对检测性能进行</span><strong><span>端到端</span></strong><span>的优化。</span></p><p><span>我们的统一架构速度极快。我们的基本YOLO模型以</span><strong><span>45 fps</span></strong><span>（帧/秒）的速度实时处理图像。</span></p><ol start='' ><li><p><span>YOLO将目标检测重新定义为</span><strong><span>单个回归问题</span></strong><span>，</span><strong><span>从图像像素直接到边界框坐标和类概率</span></strong><span>。</span></p></li></ol><p><strong><span>R-CNN：</span></strong><span>SS方法提取候选框＋CNN＋分类+回归。</span></p><p><span>YOLO：整个图像输入，提取一次特征，全连接层直接输出检测框位置，大小，类别，置信度信息</span></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332733.png" referrerpolicy="no-referrer" alt="image-20241022003236896"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332735.png" referrerpolicy="no-referrer" alt="image-20241022011537061"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332736.png" referrerpolicy="no-referrer" alt="image-20241022014128246"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332737.png" referrerpolicy="no-referrer" alt="image-20241022012003669"></p><h3 id='yolo的优点'><span>YOLO的优点：</span></h3><p><span>（1）YOLO的速度非常快。能够达到实时的要求。在 Titan X 的 GPU 上 能够达到 45 帧每秒。（对比：RCNN一张图需要40s）</span></p><p><span>（2）YOLO在做预测时使用的是全局图像。与FastR-CNN相比，YOLO产生的背景错误数量不到一半。</span></p><p><span>（3）YOLO 学到物体更泛化的特征表示。因此当应用于新域或意外输入时，不太可能崩溃。</span></p><h3 id='统一检测'><strong><span>统一检测</span></strong></h3><p><span>YOLO将目标检测问题作为</span><strong><span>回归问题</span></strong><span>。会将输入图像分成S×S的网格，如果一个物体的中心点落入到一个cell中，那么该cell就要负责预测该物体，一个格子只能预测一个物体，会生成两个预测框。</span></p><p><span>（1）预测B个边界框，每个框都有一个置信度分数（confidence score）这些框大小尺寸等等都随便，只有一个要求，就是</span><strong><span>生成框的中心点必须在grid cell里</span></strong><span>。</span></p><p><span>（2）每个边界框包含5个元素：(x,y,w,h,c)</span></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332738.png" referrerpolicy="no-referrer" alt="img"></p><p><span>（3）不管框 B 的数量是多少，</span><strong><span>只负责预测一个目标</span></strong><span>。</span></p><p><span>（4）预测 C 个条件概率类别（物体属于每一种类别的可能性）</span></p><h3 id='网络详解'><span>网络详解</span></h3><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332740.png" referrerpolicy="no-referrer" alt="在这里插入图片描述"></p><p><span>（1）YOLO主要是建立一个CNN网络生成预测7×7×1024 的张量 。</span></p><p><span>（2）然后使用两个全连接层执行线性回归，以进行7×7×2 边界框预测。将具有高置信度得分（大于0.25）的结果作为最终预测。</span></p><p><span>（3）在3×3的卷积后通常会接一个通道数更低1×1的卷积，这种方式既降低了计算量，同时也提升了模型的非线性能力。</span></p><p><span>（4）除了最后一层使用了线性激活函数外，其余层的激活函数为 Leaky ReLU 。</span></p><p><span>（5）在训练中使用了 Dropout 与数据增强的方法来防止过拟合。</span></p><p><span>（6）对于最后一个卷积层，它输出一个形状为 (7, 7, 1024) 的张量。 然后张量展开。使用2个全连接层作为一种线性回归的形式，它输出1470个参数，然后reshape为 (7, 7, 30) 。</span></p><p>&nbsp;</p><h3 id='损失函数'><span>损失函数</span></h3><p><span>坐标损失(位置损失，大小损失)</span></p><p><span>置信度损失</span></p><p><span>	</span><span>（训练）如果单元格中不存在对象,则置信度得分应为0。否则, 我们希望置信度分数等于预测框与真实值之间的交并比(IOU)。</span></p><p><span>	</span><span>（测试）</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n119" cid="n119" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-math-container"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="69.029ex" height="2.957ex" role="img" focusable="false" viewBox="0 -922.8 30511 1307" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.869ex;"><defs><path id="MJX-1-TEX-N-50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z"></path><path id="MJX-1-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-N-43" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q322 658 252 588Q173 509 173 342Q173 221 211 151Q232 111 263 84T328 45T384 29T428 24Q517 24 571 93T626 244Q626 251 632 257H660L666 251V236Q661 133 590 56T403 -21Q262 -21 159 83T56 342Z"></path><path id="MJX-1-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path id="MJX-1-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path><path id="MJX-1-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path id="MJX-1-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-N-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path id="MJX-1-TEX-N-4F" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM467 647Q426 665 388 665Q360 665 331 654T269 620T213 549T179 439Q174 411 174 354Q174 144 277 61Q327 20 385 20H389H391Q474 20 537 99Q603 188 603 354Q603 411 598 439Q577 592 467 647Z"></path><path id="MJX-1-TEX-N-62" d="M307 -11Q234 -11 168 55L158 37Q156 34 153 28T147 17T143 10L138 1L118 0H98V298Q98 599 97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V543Q179 391 180 391L183 394Q186 397 192 401T207 411T228 421T254 431T286 439T323 442Q401 442 461 379T522 216Q522 115 458 52T307 -11ZM182 98Q182 97 187 90T196 79T206 67T218 55T233 44T250 35T271 29T295 26Q330 26 363 46T412 113Q424 148 424 212Q424 287 412 323Q385 405 300 405Q270 405 239 390T188 347L182 339V98Z"></path><path id="MJX-1-TEX-N-6A" d="M98 609Q98 637 116 653T160 669Q183 667 200 652T217 609Q217 579 200 564T158 549Q133 549 116 564T98 609ZM28 -163Q58 -168 64 -168Q124 -168 135 -77Q137 -65 137 141T136 353Q132 371 120 377T72 385H52V408Q52 431 54 431L58 432Q62 432 70 432T87 433T108 434T133 436Q151 437 171 438T202 441T214 442H218V184Q217 -36 217 -59T211 -98Q195 -145 153 -175T58 -205Q9 -205 -23 -179T-55 -117Q-55 -94 -40 -79T-2 -64T36 -79T52 -118Q52 -143 28 -163Z"></path><path id="MJX-1-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path id="MJX-1-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"></path><path id="MJX-1-TEX-N-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-1-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-1-TEX-N-49" d="M328 0Q307 3 180 3T32 0H21V46H43Q92 46 106 49T126 60Q128 63 128 342Q128 620 126 623Q122 628 118 630T96 635T43 637H21V683H32Q53 680 180 680T328 683H339V637H317Q268 637 254 634T234 623Q232 620 232 342Q232 63 234 60Q238 55 242 53T264 48T317 46H339V0H328Z"></path><path id="MJX-1-TEX-N-55" d="M128 622Q121 629 117 631T101 634T58 637H25V683H36Q57 680 180 680Q315 680 324 683H335V637H302Q262 636 251 634T233 622L232 418V291Q232 189 240 145T280 67Q325 24 389 24Q454 24 506 64T571 183Q575 206 575 410V598Q569 608 565 613T541 627T489 637H472V683H481Q496 680 598 680T715 683H724V637H707Q634 633 622 598L621 399Q620 194 617 180Q617 179 615 171Q595 83 531 31T389 -22Q304 -22 226 33T130 192Q129 201 128 412V622Z"></path><path id="MJX-1-TEX-N-75" d="M383 58Q327 -10 256 -10H249Q124 -10 105 89Q104 96 103 226Q102 335 102 348T96 369Q86 385 36 385H25V408Q25 431 27 431L38 432Q48 433 67 434T105 436Q122 437 142 438T172 441T184 442H187V261Q188 77 190 64Q193 49 204 40Q224 26 264 26Q290 26 311 35T343 58T363 90T375 120T379 144Q379 145 379 161T380 201T380 248V315Q380 361 370 372T320 385H302V431Q304 431 378 436T457 442H464V264Q464 84 465 81Q468 61 479 55T524 46H542V0Q540 0 467 -5T390 -11H383V58Z"></path><path id="MJX-1-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-1-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path id="MJX-1-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path><path id="MJX-1-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-1-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="50" xlink:href="#MJX-1-TEX-N-50"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(681,0)"></use></g><g data-mml-node="mo" transform="translate(1073,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(1462,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="43" xlink:href="#MJX-1-TEX-N-43"></use><use data-c="6C" xlink:href="#MJX-1-TEX-N-6C" transform="translate(722,0)"></use><use data-c="61" xlink:href="#MJX-1-TEX-N-61" transform="translate(1000,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-N-73" transform="translate(1500,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-N-73" transform="translate(1894,0)"></use></g></g><g data-mml-node="mi" transform="translate(2321,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-1-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(4077,0) translate(0 -0.5)"><use data-c="7C" xlink:href="#MJX-1-TEX-N-7C"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(4355,0)"><g data-mml-node="mi"><use data-c="4F" xlink:href="#MJX-1-TEX-N-4F"></use><use data-c="62" xlink:href="#MJX-1-TEX-N-62" transform="translate(778,0)"></use><use data-c="6A" xlink:href="#MJX-1-TEX-N-6A" transform="translate(1334,0)"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(1640,0)"></use><use data-c="63" xlink:href="#MJX-1-TEX-N-63" transform="translate(2084,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(2528,0)"></use></g></g><g data-mml-node="mo" transform="translate(7272,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(7883.2,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="mo" transform="translate(8605.4,0)"><use data-c="50" xlink:href="#MJX-1-TEX-N-50"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(681,0)"></use></g><g data-mml-node="mo" transform="translate(9678.4,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(10067.4,0)"><g data-mml-node="mi"><use data-c="4F" xlink:href="#MJX-1-TEX-N-4F"></use><use data-c="62" xlink:href="#MJX-1-TEX-N-62" transform="translate(778,0)"></use><use data-c="6A" xlink:href="#MJX-1-TEX-N-6A" transform="translate(1334,0)"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(1640,0)"></use><use data-c="63" xlink:href="#MJX-1-TEX-N-63" transform="translate(2084,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(2528,0)"></use></g></g><g data-mml-node="mo" transform="translate(12984.4,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(13595.6,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="msubsup" transform="translate(14317.8,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="49" xlink:href="#MJX-1-TEX-N-49"></use><use data-c="4F" xlink:href="#MJX-1-TEX-N-4F" transform="translate(361,0)"></use><use data-c="55" xlink:href="#MJX-1-TEX-N-55" transform="translate(1139,0)"></use></g></g><g data-mml-node="TeXAtom" transform="translate(1922,432.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="74" xlink:href="#MJX-1-TEX-N-74"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(389,0)"></use><use data-c="75" xlink:href="#MJX-1-TEX-N-75" transform="translate(781,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(1337,0)"></use><use data-c="68" xlink:href="#MJX-1-TEX-N-68" transform="translate(1726,0)"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(1922,-247) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="70" xlink:href="#MJX-1-TEX-N-70"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(556,0)"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(948,0)"></use><use data-c="64" xlink:href="#MJX-1-TEX-N-64" transform="translate(1392,0)"></use></g></g></g></g><g data-mml-node="mo" transform="translate(18181.2,0)"><use data-c="3D" xlink:href="#MJX-1-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(19237,0)"><use data-c="50" xlink:href="#MJX-1-TEX-N-50"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(681,0)"></use></g><g data-mml-node="mo" transform="translate(20310,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="msub" transform="translate(20699,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="43" xlink:href="#MJX-1-TEX-N-43"></use><use data-c="6C" xlink:href="#MJX-1-TEX-N-6C" transform="translate(722,0)"></use><use data-c="61" xlink:href="#MJX-1-TEX-N-61" transform="translate(1000,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-N-73" transform="translate(1500,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-N-73" transform="translate(1894,0)"></use></g></g><g data-mml-node="mi" transform="translate(2321,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-1-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(23314,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(23925.2,0)"><use data-c="2217" xlink:href="#MJX-1-TEX-N-2217"></use></g><g data-mml-node="msubsup" transform="translate(24647.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="49" xlink:href="#MJX-1-TEX-N-49"></use><use data-c="4F" xlink:href="#MJX-1-TEX-N-4F" transform="translate(361,0)"></use><use data-c="55" xlink:href="#MJX-1-TEX-N-55" transform="translate(1139,0)"></use></g></g><g data-mml-node="TeXAtom" transform="translate(1922,432.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="74" xlink:href="#MJX-1-TEX-N-74"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(389,0)"></use><use data-c="75" xlink:href="#MJX-1-TEX-N-75" transform="translate(781,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-N-74" transform="translate(1337,0)"></use><use data-c="68" xlink:href="#MJX-1-TEX-N-68" transform="translate(1726,0)"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(1922,-247) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="70" xlink:href="#MJX-1-TEX-N-70"></use><use data-c="72" xlink:href="#MJX-1-TEX-N-72" transform="translate(556,0)"></use><use data-c="65" xlink:href="#MJX-1-TEX-N-65" transform="translate(948,0)"></use><use data-c="64" xlink:href="#MJX-1-TEX-N-64" transform="translate(1392,0)"></use></g></g></g></g><g data-mml-node="mstyle" transform="translate(28233,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mo" transform="translate(29233,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(29622,0)"><use data-c="31" xlink:href="#MJX-1-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(30122,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo data-mjx-texclass="OP" movablelimits="true">Pr</mo><mo stretchy="false">(</mo><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">Class</mi></mrow><mi>i</mi></msub><mo data-mjx-texclass="ORD" stretchy="false">|</mo><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">Object</mi></mrow><mo stretchy="false">)</mo><mo>∗</mo><mo data-mjx-texclass="OP" movablelimits="true">Pr</mo><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">Object</mi></mrow><mo stretchy="false">)</mo><mo>∗</mo><msubsup><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">IOU</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">pred</mi></mrow></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">truth</mi></mrow></mrow></msubsup><mo>=</mo><mo data-mjx-texclass="OP" movablelimits="true">Pr</mo><mo stretchy="false">(</mo><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">Class</mi></mrow><mi>i</mi></msub><mo stretchy="false">)</mo><mo>∗</mo><msubsup><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">IOU</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">pred</mi></mrow></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">truth</mi></mrow></mrow></msubsup><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></div></div><p><span>分类损失</span></p><div contenteditable="false" spellcheck="false" class="mathjax-block md-end-block md-math-block md-rawblock" id="mathjax-n121" cid="n121" mdtype="math_block" data-math-tag-before="0" data-math-tag-after="0" data-math-labels="[]"><div class="md-math-container"><mjx-container class="MathJax" jax="SVG" display="true" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="56.011ex" height="38.401ex" role="img" focusable="false" viewBox="0 -8736.5 24757 16973" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -18.635ex;"><defs><path id="MJX-2-TEX-I-1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path><path id="MJX-2-TEX-N-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"></path><path id="MJX-2-TEX-N-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path id="MJX-2-TEX-N-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path id="MJX-2-TEX-N-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path><path id="MJX-2-TEX-LO-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path><path id="MJX-2-TEX-I-1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJX-2-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-2-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-2-TEX-I-1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path><path id="MJX-2-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-2-TEX-I-1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path><path id="MJX-2-TEX-I-1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path><path id="MJX-2-TEX-N-62" d="M307 -11Q234 -11 168 55L158 37Q156 34 153 28T147 17T143 10L138 1L118 0H98V298Q98 599 97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V543Q179 391 180 391L183 394Q186 397 192 401T207 411T228 421T254 431T286 439T323 442Q401 442 461 379T522 216Q522 115 458 52T307 -11ZM182 98Q182 97 187 90T196 79T206 67T218 55T233 44T250 35T271 29T295 26Q330 26 363 46T412 113Q424 148 424 212Q424 287 412 323Q385 405 300 405Q270 405 239 390T188 347L182 339V98Z"></path><path id="MJX-2-TEX-N-6A" d="M98 609Q98 637 116 653T160 669Q183 667 200 652T217 609Q217 579 200 564T158 549Q133 549 116 564T98 609ZM28 -163Q58 -168 64 -168Q124 -168 135 -77Q137 -65 137 141T136 353Q132 371 120 377T72 385H52V408Q52 431 54 431L58 432Q62 432 70 432T87 433T108 434T133 436Q151 437 171 438T202 441T214 442H218V184Q217 -36 217 -59T211 -98Q195 -145 153 -175T58 -205Q9 -205 -23 -179T-55 -117Q-55 -94 -40 -79T-2 -64T36 -79T52 -118Q52 -143 28 -163Z"></path><path id="MJX-2-TEX-LO-5B" d="M224 -649V1150H455V1099H275V-598H455V-649H224Z"></path><path id="MJX-2-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"></path><path id="MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path id="MJX-2-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-2-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path><path id="MJX-2-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"></path><path id="MJX-2-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-2-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-2-TEX-LO-5D" d="M16 1099V1150H247V-649H16V-598H196V1099H16Z"></path><path id="MJX-2-TEX-B-1D41C" d="M447 131H458Q478 131 478 117Q478 112 471 95T439 51T377 9Q330 -6 286 -6Q196 -6 135 35Q39 96 39 222Q39 324 101 384Q169 453 286 453Q359 453 411 431T464 353Q464 319 445 302T395 284Q360 284 343 305T325 353Q325 380 338 396H333Q317 398 295 398H292Q280 398 271 397T245 390T218 373T197 338T183 283Q182 275 182 231Q182 199 184 180T193 132T220 85T270 57Q289 50 317 50H326Q385 50 414 115Q419 127 423 129T447 131Z"></path><path id="MJX-2-TEX-B-1D428" d="M287 -5Q228 -5 182 10T109 48T63 102T39 161T32 219Q32 272 50 314T94 382T154 423T214 446T265 452H279Q319 452 326 451Q428 439 485 376T542 221Q542 156 514 108T442 33Q384 -5 287 -5ZM399 230V250Q399 280 398 298T391 338T372 372T338 392T282 401Q241 401 212 380Q190 363 183 334T175 230Q175 202 175 189T177 153T183 118T195 91T215 68T245 56T287 50Q348 50 374 84Q388 101 393 132T399 230Z"></path><path id="MJX-2-TEX-B-1D42B" d="M405 293T374 293T324 312T305 361Q305 378 312 394Q315 397 315 399Q305 399 294 394T266 375T238 329T222 249Q221 241 221 149V62H308V0H298Q280 3 161 3Q47 3 38 0H29V62H98V210V303Q98 353 96 363T83 376Q69 380 42 380H29V442H32L118 446Q204 450 205 450H210V414L211 378Q247 449 315 449H321Q384 449 413 422T442 360Q442 332 424 313Z"></path><path id="MJX-2-TEX-B-1D41D" d="M351 686L442 690Q533 694 534 694H540V389Q540 327 540 253T539 163Q539 97 541 83T555 66Q569 62 596 62H609V31Q609 0 608 0Q588 0 510 -3T412 -6Q411 -6 411 16V38L401 31Q337 -6 265 -6Q159 -6 99 58T38 224Q38 265 51 303T92 375T165 429T272 449Q359 449 417 412V507V555Q417 597 415 607T402 620Q388 624 361 624H348V686H351ZM411 350Q362 399 291 399Q278 399 256 392T218 371Q195 351 189 320T182 238V221Q182 179 183 159T191 115T212 74Q241 46 288 46Q358 46 404 100L411 109V350Z"></path><path id="MJX-2-TEX-B-1D41B" d="M32 686L123 690Q214 694 215 694H221V409Q289 450 378 450Q479 450 539 387T600 221Q600 122 535 58T358 -6H355Q272 -6 203 53L160 1L129 0H98V301Q98 362 98 435T99 525Q99 591 97 604T83 620Q69 624 42 624H29V686H32ZM227 105L232 99Q237 93 242 87T258 73T280 59T306 49T339 45Q380 45 411 66T451 131Q457 160 457 230Q457 264 456 284T448 329T430 367T396 389T343 398Q282 398 235 355L227 348V105Z"></path><path id="MJX-2-TEX-B-1D423" d="M104 610Q104 649 130 672T191 695Q225 693 249 670T273 610Q273 572 249 549T189 525Q152 525 128 548T104 610ZM78 442L173 446L268 450H274V196Q274 -5 274 -37T269 -83Q256 -132 201 -166T71 -200Q10 -200 -30 -173T-71 -102Q-71 -70 -51 -51T-1 -31Q27 -31 48 -49T69 -100Q69 -121 53 -147H56Q66 -149 77 -149H80Q90 -149 100 -146T127 -125T149 -73Q151 -55 151 149V362Q150 364 148 366T145 370T142 373T138 375T133 377T124 378T113 379T97 380H75V442H78Z"></path><path id="MJX-2-TEX-S4-5B" d="M269 -1249V1750H577V1677H342V-1176H577V-1249H269Z"></path><path id="MJX-2-TEX-LO-28" d="M180 96T180 250T205 541T266 770T353 944T444 1069T527 1150H555Q561 1144 561 1141Q561 1137 545 1120T504 1072T447 995T386 878T330 721T288 513T272 251Q272 133 280 56Q293 -87 326 -209T399 -405T475 -531T536 -609T561 -640Q561 -643 555 -649H527Q483 -612 443 -568T353 -443T266 -270T205 -41Z"></path><path id="MJX-2-TEX-N-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path><path id="MJX-2-TEX-I-1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path><path id="MJX-2-TEX-SO-221A" d="M263 249Q264 249 315 130T417 -108T470 -228L725 302Q981 837 982 839Q989 850 1001 850Q1008 850 1013 844T1020 832V826L741 243Q645 43 540 -176Q479 -303 469 -324T453 -348Q449 -350 436 -350L424 -349L315 -96Q206 156 205 156L171 130Q138 104 137 104L111 130L263 249Z"></path><path id="MJX-2-TEX-LO-29" d="M35 1138Q35 1150 51 1150H56H69Q113 1113 153 1069T243 944T330 771T391 541T416 250T391 -40T330 -270T243 -443T152 -568T69 -649H56Q43 -649 39 -647T35 -637Q65 -607 110 -548Q283 -316 316 56Q324 133 324 251Q324 368 316 445Q278 877 48 1123Q36 1137 35 1138Z"></path><path id="MJX-2-TEX-S3-28" d="M701 -940Q701 -943 695 -949H664Q662 -947 636 -922T591 -879T537 -818T475 -737T412 -636T350 -511T295 -362T250 -186T221 17T209 251Q209 962 573 1361Q596 1386 616 1405T649 1437T664 1450H695Q701 1444 701 1441Q701 1436 681 1415T629 1356T557 1261T476 1118T400 927T340 675T308 359Q306 321 306 250Q306 -139 400 -430T690 -924Q701 -936 701 -940Z"></path><path id="MJX-2-TEX-I-210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path><path id="MJX-2-TEX-LO-221A" d="M1001 1150Q1017 1150 1020 1132Q1020 1127 741 244L460 -643Q453 -650 436 -650H424Q423 -647 423 -645T421 -640T419 -631T415 -617T408 -594T399 -560T385 -512T367 -448T343 -364T312 -259L203 119L138 41L111 67L212 188L264 248L472 -474L983 1140Q988 1150 1001 1150Z"></path><path id="MJX-2-TEX-S3-29" d="M34 1438Q34 1446 37 1448T50 1450H56H71Q73 1448 99 1423T144 1380T198 1319T260 1238T323 1137T385 1013T440 864T485 688T514 485T526 251Q526 134 519 53Q472 -519 162 -860Q139 -885 119 -904T86 -936T71 -949H56Q43 -949 39 -947T34 -937Q88 -883 140 -813Q428 -430 428 251Q428 453 402 628T338 922T245 1146T145 1309T46 1425Q44 1427 42 1429T39 1433T36 1436L34 1438Z"></path><path id="MJX-2-TEX-S4-5D" d="M5 1677V1750H313V-1249H5V-1176H240V1677H5Z"></path><path id="MJX-2-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-2-TEX-N-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-2-TEX-D-1D540" d="M20 666Q20 676 31 683H358Q369 676 369 666Q369 648 331 648Q288 645 282 632Q278 626 278 341Q278 57 282 50Q286 42 295 40T331 35Q369 35 369 16Q369 6 358 -1H31Q20 4 20 16Q20 35 58 35Q84 37 93 39T107 50Q113 60 113 341Q113 623 107 632Q101 645 58 648Q20 648 20 666ZM249 35Q246 40 246 41T244 54T242 83T242 139V341Q242 632 244 639L249 648H140Q146 634 147 596T149 341Q149 124 148 86T140 35H249Z"></path><path id="MJX-2-TEX-I-1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path><path id="MJX-2-TEX-N-2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path><path id="MJX-2-TEX-N-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path id="MJX-2-TEX-N-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path><path id="MJX-2-TEX-N-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path id="MJX-2-TEX-N-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path id="MJX-2-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-2-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-2-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,6896.8)"><g data-mml-node="mtd" transform="translate(3310.3,0)"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D706" xlink:href="#MJX-2-TEX-I-1D706"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="63" xlink:href="#MJX-2-TEX-N-63"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(444,0)"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(944,0)"></use><use data-c="72" xlink:href="#MJX-2-TEX-N-72" transform="translate(1444,0)"></use><use data-c="64" xlink:href="#MJX-2-TEX-N-64" transform="translate(1836,0)"></use></g></g></g></g><g data-mml-node="munderover" transform="translate(2524.1,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(148.2,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1123,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(321.4,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-2-TEX-I-1D446"></use></g><g data-mml-node="TeXAtom" transform="translate(729.6,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g></g><g data-mml-node="munderover" transform="translate(4134.7,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(124.5,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1190,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(453.7,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D435" xlink:href="#MJX-2-TEX-I-1D435"></use></g></g></g><g data-mml-node="msubsup" transform="translate(5745.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mn"><text data-variant="double-struck" transform="scale(1,-1)" font-size="916.7px">𝟙</text></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,498.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F"></use><use data-c="62" xlink:href="#MJX-2-TEX-N-62" transform="translate(500,0)"></use><use data-c="6A" xlink:href="#MJX-2-TEX-N-6A" transform="translate(1056,0)"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,-293.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g></g></g><g data-mml-node="mrow" transform="translate(7388.1,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="5B" xlink:href="#MJX-2-TEX-LO-5B"></use></g><g data-mml-node="msup" transform="translate(472,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-SO-28"></use></g><g data-mml-node="msub" transform="translate(458,0)"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-2-TEX-I-1D465"></use></g><g data-mml-node="TeXAtom" transform="translate(605,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g><g data-mml-node="mo" transform="translate(1579.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(2579.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D465" xlink:href="#MJX-2-TEX-I-1D465"></use></g><g data-mml-node="mo" transform="translate(313.8,16) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(605,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g><g data-mml-node="mo" transform="translate(3478.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-SO-29"></use></g></g><g data-mml-node="TeXAtom" transform="translate(3969.3,576.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(5067.1,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="msup" transform="translate(6067.3,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-SO-28"></use></g><g data-mml-node="msub" transform="translate(458,0)"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-2-TEX-I-1D466"></use></g><g data-mml-node="TeXAtom" transform="translate(523,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g><g data-mml-node="mo" transform="translate(1497.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(2497.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D466" xlink:href="#MJX-2-TEX-I-1D466"></use></g><g data-mml-node="mo" transform="translate(300.6,16) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(523,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g><g data-mml-node="mo" transform="translate(3314.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-SO-29"></use></g></g><g data-mml-node="TeXAtom" transform="translate(3805.3,576.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(10276.2,0) translate(0 -0.5)"><use data-c="5D" xlink:href="#MJX-2-TEX-LO-5D"></use></g></g></g></g><g data-mml-node="mtr" transform="translate(0,3425)"><g data-mml-node="mtd"><g data-mml-node="mo"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D706" xlink:href="#MJX-2-TEX-I-1D706"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D41C" xlink:href="#MJX-2-TEX-B-1D41C"></use><use data-c="1D428" xlink:href="#MJX-2-TEX-B-1D428" transform="translate(511,0)"></use><use data-c="1D428" xlink:href="#MJX-2-TEX-B-1D428" transform="translate(1086,0)"></use><use data-c="1D42B" xlink:href="#MJX-2-TEX-B-1D42B" transform="translate(1661,0)"></use><use data-c="1D41D" xlink:href="#MJX-2-TEX-B-1D41D" transform="translate(2135,0)"></use></g></g></g></g><g data-mml-node="munderover" transform="translate(3572.2,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(148.2,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1123,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(321.4,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-2-TEX-I-1D446"></use></g><g data-mml-node="TeXAtom" transform="translate(729.6,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g></g><g data-mml-node="munderover" transform="translate(5182.8,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(124.5,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1190,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(453.7,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D435" xlink:href="#MJX-2-TEX-I-1D435"></use></g></g></g><g data-mml-node="msubsup" transform="translate(6793.5,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mn"><text data-variant="double-struck" transform="scale(1,-1)" font-size="916.7px">𝟙</text></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,495) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D428" xlink:href="#MJX-2-TEX-B-1D428"></use><use data-c="1D41B" xlink:href="#MJX-2-TEX-B-1D41B" transform="translate(575,0)"></use><use data-c="1D423" xlink:href="#MJX-2-TEX-B-1D423" transform="translate(1214,0)"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,-293.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g></g></g><g data-mml-node="mrow" transform="translate(8579.7,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="5B" xlink:href="#MJX-2-TEX-S4-5B"></use></g><g data-mml-node="msup" transform="translate(583,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-LO-28"></use></g><g data-mml-node="msqrt" transform="translate(597,0)"><g transform="translate(853,0)"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D464" xlink:href="#MJX-2-TEX-I-1D464"></use></g><g data-mml-node="TeXAtom" transform="translate(749,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g></g><g data-mml-node="mo" transform="translate(0,-42.1)"><use data-c="221A" xlink:href="#MJX-2-TEX-N-221A"></use></g><rect width="1043" height="60" x="853" y="697.9"></rect></g><g data-mml-node="mo" transform="translate(2715.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msqrt" transform="translate(3715.4,0)"><g transform="translate(1020,0)"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D464" xlink:href="#MJX-2-TEX-I-1D464"></use></g><g data-mml-node="mo" transform="translate(441.3,17) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(749,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g></g><g data-mml-node="mo" transform="translate(0,191.9)"><use data-c="221A" xlink:href="#MJX-2-TEX-SO-221A"></use></g><rect width="1043" height="60" x="1020" y="981.9"></rect></g><g data-mml-node="mo" transform="translate(5778.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-LO-29"></use></g></g><g data-mml-node="TeXAtom" transform="translate(6408.3,876.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(7617.1,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="msup" transform="translate(8617.3,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-S3-28"></use></g><g data-mml-node="msqrt" transform="translate(736,0)"><g transform="translate(1020,0)"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="210E" xlink:href="#MJX-2-TEX-I-210E"></use></g><g data-mml-node="TeXAtom" transform="translate(609,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g></g><g data-mml-node="mo" transform="translate(0,133.4)"><use data-c="221A" xlink:href="#MJX-2-TEX-SO-221A"></use></g><rect width="903" height="60" x="1020" y="923.4"></rect></g><g data-mml-node="mo" transform="translate(2881.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msqrt" transform="translate(3881.4,0)"><g transform="translate(1020,0)"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="210E" xlink:href="#MJX-2-TEX-I-210E"></use></g><g data-mml-node="mo" transform="translate(260.2,268) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(609,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g></g></g><g data-mml-node="mo" transform="translate(0,317.4)"><use data-c="221A" xlink:href="#MJX-2-TEX-LO-221A"></use></g><rect width="903" height="60" x="1020" y="1407.4"></rect></g><g data-mml-node="mo" transform="translate(5804.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-S3-29"></use></g></g><g data-mml-node="TeXAtom" transform="translate(6573.3,1254.4) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g><g data-mml-node="mo" transform="translate(15594.2,0) translate(0 -0.5)"><use data-c="5D" xlink:href="#MJX-2-TEX-S4-5D"></use></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-46.9)"><g data-mml-node="mtd" transform="translate(7089,0)"><g data-mml-node="mo"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="munderover" transform="translate(944.7,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(148.2,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1123,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(321.4,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-2-TEX-I-1D446"></use></g><g data-mml-node="mn" transform="translate(729.6,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g><g data-mml-node="munderover" transform="translate(2555.3,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(124.5,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1190,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="mi" transform="translate(453.7,1150) scale(0.707)"><use data-c="1D435" xlink:href="#MJX-2-TEX-I-1D435"></use></g></g><g data-mml-node="msubsup" transform="translate(4166,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mn"><text data-variant="double-struck" transform="scale(1,-1)" font-size="916.7px">𝟙</text></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,498.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F"></use><use data-c="62" xlink:href="#MJX-2-TEX-N-62" transform="translate(500,0)"></use><use data-c="6A" xlink:href="#MJX-2-TEX-N-6A" transform="translate(1056,0)"></use></g></g></g><g data-mml-node="TeXAtom" transform="translate(462.9,-293.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g></g></g><g data-mml-node="msup" transform="translate(5642,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-LO-28"></use></g><g data-mml-node="msub" transform="translate(597,0)"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-2-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(748,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(1861.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(2861.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-2-TEX-I-1D436"></use></g><g data-mml-node="mo" transform="translate(474.5,279) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="mi" transform="translate(748,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(3903.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-LO-29"></use></g></g><g data-mml-node="mn" transform="translate(4533.3,876.6) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-3518.7)"><g data-mml-node="mtd" transform="translate(5548.2,0)"><g data-mml-node="mo"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D706" xlink:href="#MJX-2-TEX-I-1D706"></use></g><g data-mml-node="mtext" transform="translate(616,-150) scale(0.707)"><use data-c="6E" xlink:href="#MJX-2-TEX-N-6E"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(556,0)"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(1056,0)"></use><use data-c="62" xlink:href="#MJX-2-TEX-N-62" transform="translate(1556,0)"></use><use data-c="6A" xlink:href="#MJX-2-TEX-N-6A" transform="translate(2112,0)"></use></g></g><g data-mml-node="munderover" transform="translate(3320.5,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(148.2,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1123,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(321.4,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-2-TEX-I-1D446"></use></g><g data-mml-node="mn" transform="translate(729.6,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g><g data-mml-node="munderover" transform="translate(4931.1,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(124.5,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g><g data-mml-node="mo" transform="translate(412,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1190,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="mi" transform="translate(453.7,1150) scale(0.707)"><use data-c="1D435" xlink:href="#MJX-2-TEX-I-1D435"></use></g></g><g data-mml-node="msubsup" transform="translate(6541.8,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D540" xlink:href="#MJX-2-TEX-D-1D540"></use></g></g><g data-mml-node="mtext" transform="translate(422,498.6) scale(0.707)"><use data-c="6E" xlink:href="#MJX-2-TEX-N-6E"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(556,0)"></use><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F" transform="translate(1056,0)"></use><use data-c="62" xlink:href="#MJX-2-TEX-N-62" transform="translate(1556,0)"></use><use data-c="6A" xlink:href="#MJX-2-TEX-N-6A" transform="translate(2112,0)"></use></g><g data-mml-node="TeXAtom" transform="translate(422,-293.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mi" transform="translate(345,0)"><use data-c="1D457" xlink:href="#MJX-2-TEX-I-1D457"></use></g></g></g><g data-mml-node="msup" transform="translate(8723.6,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-LO-28"></use></g><g data-mml-node="msub" transform="translate(597,0)"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-2-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(748,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(1861.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(2861.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-2-TEX-I-1D436"></use></g><g data-mml-node="mo" transform="translate(474.5,279) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="mi" transform="translate(748,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(3903.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-LO-29"></use></g></g><g data-mml-node="mn" transform="translate(4533.3,876.6) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-6990.6)"><g data-mml-node="mtd" transform="translate(5492.3,0)"><g data-mml-node="mo"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"></use></g><g data-mml-node="munderover" transform="translate(944.7,0)"><g data-mml-node="mo"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(148.2,-1087.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g><g data-mml-node="mo" transform="translate(345,0)"><use data-c="3D" xlink:href="#MJX-2-TEX-N-3D"></use></g><g data-mml-node="mn" transform="translate(1123,0)"><use data-c="30" xlink:href="#MJX-2-TEX-N-30"></use></g></g><g data-mml-node="TeXAtom" transform="translate(321.4,1150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><use data-c="1D446" xlink:href="#MJX-2-TEX-I-1D446"></use></g><g data-mml-node="mn" transform="translate(729.6,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g><g data-mml-node="msubsup" transform="translate(2555.3,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D540" xlink:href="#MJX-2-TEX-D-1D540"></use></g></g><g data-mml-node="TeXAtom" transform="translate(422,498.6) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="6F" xlink:href="#MJX-2-TEX-N-6F"></use><use data-c="62" xlink:href="#MJX-2-TEX-N-62" transform="translate(500,0)"></use><use data-c="6A" xlink:href="#MJX-2-TEX-N-6A" transform="translate(1056,0)"></use></g></g><g data-mml-node="mi" transform="translate(422,-293.8) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="munder" transform="translate(4157.1,0)"><g data-mml-node="mo" transform="translate(673.8,0)"><use data-c="2211" xlink:href="#MJX-2-TEX-LO-2211"></use></g><g data-mml-node="TeXAtom" transform="translate(0,-1107.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D450" xlink:href="#MJX-2-TEX-I-1D450"></use></g><g data-mml-node="mo" transform="translate(433,0)"><use data-c="2208" xlink:href="#MJX-2-TEX-N-2208"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1100,0)"><g data-mml-node="mi"><use data-c="63" xlink:href="#MJX-2-TEX-N-63"></use><use data-c="6C" xlink:href="#MJX-2-TEX-N-6C" transform="translate(444,0)"></use><use data-c="61" xlink:href="#MJX-2-TEX-N-61" transform="translate(722,0)"></use><use data-c="73" xlink:href="#MJX-2-TEX-N-73" transform="translate(1222,0)"></use><use data-c="73" xlink:href="#MJX-2-TEX-N-73" transform="translate(1616,0)"></use><use data-c="65" xlink:href="#MJX-2-TEX-N-65" transform="translate(2010,0)"></use><use data-c="73" xlink:href="#MJX-2-TEX-N-73" transform="translate(2454,0)"></use></g></g></g></g><g data-mml-node="msup" transform="translate(7115.4,0)"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="28" xlink:href="#MJX-2-TEX-SO-28"></use></g><g data-mml-node="msub" transform="translate(458,0)"><g data-mml-node="mi"><use data-c="1D45D" xlink:href="#MJX-2-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(536,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(1288,0)"><use data-c="28" xlink:href="#MJX-2-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1677,0)"><use data-c="1D450" xlink:href="#MJX-2-TEX-I-1D450"></use></g><g data-mml-node="mo" transform="translate(2110,0)"><use data-c="29" xlink:href="#MJX-2-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(2721.2,0)"><use data-c="2212" xlink:href="#MJX-2-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(3721.4,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use data-c="1D45D" xlink:href="#MJX-2-TEX-I-1D45D"></use></g><g data-mml-node="mo" transform="translate(334.8,16) translate(-250 0)"><use data-c="5E" xlink:href="#MJX-2-TEX-N-5E"></use></g></g></g><g data-mml-node="mi" transform="translate(536,-150) scale(0.707)"><use data-c="1D456" xlink:href="#MJX-2-TEX-I-1D456"></use></g></g><g data-mml-node="mo" transform="translate(4551.3,0)"><use data-c="28" xlink:href="#MJX-2-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(4940.3,0)"><use data-c="1D450" xlink:href="#MJX-2-TEX-I-1D450"></use></g><g data-mml-node="mo" transform="translate(5373.3,0)"><use data-c="29" xlink:href="#MJX-2-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(5762.3,0) translate(0 -0.5)"><use data-c="29" xlink:href="#MJX-2-TEX-SO-29"></use></g></g><g data-mml-node="mn" transform="translate(6253.3,576.6) scale(0.707)"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"></use></g></g></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtable displaystyle="true" columnspacing="1em" rowspacing="3pt"><mtr><mtd><msub><mi>λ</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">coord</mi></mrow></mrow></msub><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>S</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></mrow></munderover><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><mi>B</mi></mrow></munderover><msubsup><mrow data-mjx-texclass="ORD"><mn mathvariant="double-struck">1</mn></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">obj</mi></mrow></mrow></msubsup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>x</mi><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub><mo>−</mo><msub><mrow data-mjx-texclass="ORD"><mover><mi>x</mi><mo stretchy="false">^</mo></mover></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>y</mi><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub><mo>−</mo><msub><mrow data-mjx-texclass="ORD"><mover><mi>y</mi><mo stretchy="false">^</mo></mover></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="CLOSE">]</mo></mrow></mtd></mtr><mtr><mtd><mo>+</mo><msub><mi>λ</mi><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">coord</mi></mrow></mrow></msub><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>S</mi><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></mrow></munderover><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><mi>B</mi></mrow></munderover><msubsup><mrow data-mjx-texclass="ORD"><mn mathvariant="double-struck">1</mn></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">obj</mi></mrow></mrow></msubsup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msqrt><msub><mi>w</mi><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub></msqrt><mo>−</mo><msqrt><msub><mrow data-mjx-texclass="ORD"><mover><mi>w</mi><mo stretchy="false">^</mo></mover></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub></msqrt><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo>+</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msqrt><msub><mi>h</mi><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub></msqrt><mo>−</mo><msqrt><msub><mrow data-mjx-texclass="ORD"><mover><mi>h</mi><mo stretchy="false">^</mo></mover></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi></mrow></msub></msqrt><mo data-mjx-texclass="CLOSE">)</mo></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup><mo data-mjx-texclass="CLOSE">]</mo></mrow></mtd></mtr><mtr><mtd><mo>+</mo><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>S</mi><mn>2</mn></msup></mrow></munderover><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>B</mi></munderover><msubsup><mrow data-mjx-texclass="ORD"><mn mathvariant="double-struck">1</mn></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">obj</mi></mrow></mrow></msubsup><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo>−</mo><msub><mrow data-mjx-texclass="ORD"><mover><mi>C</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>+</mo><msub><mi>λ</mi><mtext>noobj</mtext></msub><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>S</mi><mn>2</mn></msup></mrow></munderover><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>B</mi></munderover><msubsup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">I</mi></mrow><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow><mtext>noobj</mtext></msubsup><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>C</mi><mi>i</mi></msub><mo>−</mo><msub><mrow data-mjx-texclass="ORD"><mover><mi>C</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo data-mjx-texclass="CLOSE">)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><mo>+</mo><munderover><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow data-mjx-texclass="ORD"><msup><mi>S</mi><mn>2</mn></msup></mrow></munderover><msubsup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">I</mi></mrow><mi>i</mi><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">obj</mi></mrow></msubsup><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>c</mi><mo>∈</mo><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">classes</mi></mrow></mrow></munder><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo><mo>−</mo><msub><mrow data-mjx-texclass="ORD"><mover><mi>p</mi><mo stretchy="false">^</mo></mover></mrow><mi>i</mi></msub><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo><mo data-mjx-texclass="CLOSE">)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math></mjx-assistive-mml></mjx-container></div></div><h4 id='与其他检测系统的比较'><span>与其他检测系统的比较</span></h4><p><span>	</span><span>我们将YOLO检测系统与几个顶级检测框架进行了比较，突出了关键的相似性和差异性。</span></p><h5 id='dpm'><span>DPM</span></h5><p><span>我们的统一架构带来了比DPM更快、更准确的模型。</span></p><h5 id='r-cnn'><span>R-CNN</span></h5><p><span>选择性搜索-&gt;2k个潜在的边界框-&gt;卷积网络提取特征-&gt;支持向量机评分-&gt;线性模型调整边界框-&gt;非最大抑制消除重复检测</span></p><p><span>这个复杂的流水线的每个阶段都必须精确地独立调整，结果系统非常慢，在测试时每张图像需要40多秒</span></p><h5 id='fast-rcnnfaster-rcnn'><span>Fast-RCNN,Faster-RCNN</span></h5><p><span>专注于通过共享计算和使用提议网络而不是选择性搜索来加速R-CNN框架,但两者的实时性仍然不足。</span></p><h5 id='许多研究的重点是加快dpm流程'><span>许多研究的重点是加快DPM流程</span></h5><p><span>然而，实际上只有30Hz DPM[31]是实时运行的。</span></p><p>&nbsp;</p><p><span>YOLO不是试图优化大型检测流水线的单个组件，而是完全抛弃了流水线，并且设计得很快。</span></p><h5 id='人脸识别'><span>人脸识别</span></h5><p><span>人脸或人等单一类别的检测器可以高度优化，因为它们必须处理的变化要少得多[37]。YOLO是一个通用的检测器，学习同时检测各种物体。</span></p><h5 id='overfeat'><span>OverFeat</span></h5><p><span>OverFeat可以有效地进行滑动窗口检测，但仍然是一个不相交的系统。OverFeat优化的是定位，而不是检测性能。</span></p><h5 id='multigrasp'><span>MultiGrasp</span></h5><p><span>抓握检测是一个比物体检测简单得多的任务。只需要找到一个适合抓取的区域。YOLO预测图像中多个类别的多个对象的边界框和类别概率。</span></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332741.png" referrerpolicy="no-referrer" alt="image-20241022015646901"></p><h5 id='泛化性艺术品中的人物检测'><span>泛化性:艺术品中的人物检测</span></h5><p><span>我们将YOLO与其他检测系统在Picasso数据 集[12]和People-Art数据集[3]上进行了比较,这两个数 据集用于测试艺术品上的人物检测。</span></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332742.png" referrerpolicy="no-referrer" alt="image-20241022024245819"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332743.png" referrerpolicy="no-referrer" alt="image-20241022024326124"></p><h3 id='局限'><span>局限</span></h3><p><span>每个网格单元只能预测两个框，并且只能有一个类。限制了我们的模型可以预测的附近物体的数量。</span></p><p><span>有多个下采样层，不利于检测小目标。</span></p><h2 id='928-10-12'><span>9/28-10-12</span></h2><h3 id='r-cnn略'><span>R-CNN(略)</span></h3><h3 id='fast-rcnn略'><span>Fast-RCNN(略)</span></h3><h3 id='faster-rcnn略'><span>Faster-RCNN(略)</span></h3><h3 id='resnet略'><span>ResNet(略)</span></h3><h2 id='1013-1015'><span>10/13-10/15</span></h2><h3 id='复习python代码'><span>复习python代码</span></h3><p><span>变量类型，类型转化，输入输出方法、</span></p><p><span>算术运算和逻辑运算，控制结构（if,elif,else,while,for)</span></p><p><span>列表，二维列表，字典，集合，字符串</span></p><p><span>基础语题库（50题）</span></p><p><a href='https://www.dotcpp.com/course/python/'><span>Python入门基础教程(附Python题库) - C语言网</span></a></p><p>&nbsp;</p><h2 id='1016-1021'><span>10/16-10/21</span></h2><h3 id='学习pytorch'><span>学习pytorch</span></h3><p><a href='https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html'><span>2.1. 数据操作 — 动手学深度学习 2.0.0 documentation (d2l.ai)</span></a></p><p><span>数据操作（张量的使用，点积，矩阵乘法，降维）</span></p><p><span>数据预处理（pandas处理csv，处理缺失值，和生成独热编码）</span></p><p><span>pytorch中的自动求导</span></p><p><a href='https://datawhalechina.github.io/thorough-pytorch/index.html#'><span>深入浅出PyTorch — 深入浅出PyTorch</span></a></p><p><span>数据读入</span>
+<span>模型构建</span>
+<span>模型初始化</span>
+<span>损失函数</span>
+<span>训练和评估</span></p><p><span>使用模块搭建复杂网络</span></p><p><span>tensorboard可视化，可视化网络参数，可视化训练过程</span></p><p><span>动态调整学习率</span></p><p><span>模型微调，使用预训练模型</span></p><p><span>半精度训练</span></p><p><span>argparse进行调参</span></p><h3 id='实现fashionmnist分类'><span>实现FashionMNIST分类</span></h3><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332744.png" referrerpolicy="no-referrer" alt="image-20241022032113830"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220332745.png" referrerpolicy="no-referrer" alt="image-20241022032440997"></p><h4 id='fashionmnist数据集'><span>FashionMNIST数据集</span></h4><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>lr</span></th><th style='text-align:center;' ><span>epochs</span></th><th style='text-align:center;' ><span>Training Loss</span></th><th style='text-align:center;' ><span>Validation Loss</span></th><th style='text-align:center;' ><span>Accuracy</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>0.1</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>2.302978</span></td><td style='text-align:center;' ><span>2.303285</span></td><td style='text-align:center;' ><span>0.100160</span></td></tr><tr><td style='text-align:center;' ><span>0.05</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.817705</span></td><td style='text-align:center;' ><span>0.816947</span></td><td style='text-align:center;' ><span>0.672877</span></td></tr><tr><td style='text-align:center;' ><span>0.01</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.349256</span></td><td style='text-align:center;' ><span>0.339863</span></td><td style='text-align:center;' ><span>0.870192</span></td></tr><tr><td style='text-align:center;' ><span>0.01</span></td><td style='text-align:center;' ><span>401</span></td><td style='text-align:center;' ><span>0.312429</span></td><td style='text-align:center;' ><span>0.316438</span></td><td style='text-align:center;' ><span>0.884415</span></td></tr><tr><td style='text-align:center;' ><span>0.01(normal_,bia=0.3)</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>2.361437</span></td><td style='text-align:center;' ><span>2.302825</span></td><td style='text-align:center;' ><span>0.100060</span></td></tr><tr><td style='text-align:center;' ><span>0.01(xavier_uniform_,bia=0)</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.318755</span></td><td style='text-align:center;' ><span>0.320410</span></td><td style='text-align:center;' ><span>0.881811</span></td></tr><tr><td style='text-align:center;' ><span>0.1（lr*0.1/10轮）</span></td><td style='text-align:center;' ><span>40</span></td><td style='text-align:center;' ><span>2.298950</span></td><td style='text-align:center;' ><span>2.299133</span></td><td style='text-align:center;' ><span>0.099860</span></td></tr><tr><td style='text-align:center;' ><span>0.01(lr*0.1/10轮)</span></td><td style='text-align:center;' ><span>40</span></td><td style='text-align:center;' ><span>0.258692</span></td><td style='text-align:center;' ><span>0.264882</span></td><td style='text-align:center;' ><span>0.900841</span></td></tr><tr><td style='text-align:center;' ><span>0.01(lr*0.8/轮)</span></td><td style='text-align:center;' ><span>40</span></td><td style='text-align:center;' ><span>0.218625</span></td><td style='text-align:center;' ><span>0.246748</span></td><td style='text-align:center;' ><span>0.910156</span></td></tr><tr><td style='text-align:center;' ><span>0.01(lr*0.85/轮)</span></td><td style='text-align:center;' ><span>80</span></td><td style='text-align:center;' ><span>0.206507</span></td><td style='text-align:center;' ><span>0.238813</span></td><td style='text-align:center;' ><span>0.913762</span></td></tr><tr><td style='text-align:center;' ><span>0.01(kaiming_uniform_,bia=0)</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.372171</span></td><td style='text-align:center;' ><span>0.336938</span></td><td style='text-align:center;' ><span>0.871494</span></td></tr><tr><td style='text-align:center;' ><span>0.01(kaiming_uniform_,bia=0)</span></td><td style='text-align:center;' ><span>40</span></td><td style='text-align:center;' ><span>0.351744</span></td><td style='text-align:center;' ><span>0.324420</span></td><td style='text-align:center;' ><span>0.877704</span></td></tr><tr><td style='text-align:center;' ><span>0.01(kaiming_normal_,bia=0)</span></td><td style='text-align:center;' ><span>40</span></td><td style='text-align:center;' ><span>0.323300</span></td><td style='text-align:center;' ><span>0.323402</span></td><td style='text-align:center;' ><span>0.885517</span></td></tr><tr><td style='text-align:center;' ><span>0.01(10轮</span><em><span>0.1，耐心</span></em><span>0.1)</span></td><td style='text-align:center;' ><span>100</span></td><td style='text-align:center;' ><span>0.278295</span></td><td style='text-align:center;' ><span>0.271341</span></td><td style='text-align:center;' ><span>0.899439</span></td></tr><tr><td style='text-align:center;' ><span>0.01(10轮</span><em><span>0.5，耐心</span></em><span>0.5)</span></td><td style='text-align:center;' ><span>100</span></td><td style='text-align:center;' ><span>0.244082</span></td><td style='text-align:center;' ><span>0.253909</span></td><td style='text-align:center;' ><span>0.905749</span></td></tr><tr><td style='text-align:center;' ><span>0.01(0.95每轮，耐心*0.5))</span></td><td style='text-align:center;' ><span>100</span></td><td style='text-align:center;' ><span>0.171156</span></td><td style='text-align:center;' ><span>0.248037</span></td><td style='text-align:center;' ><span>:0.913161</span></td></tr><tr><td style='text-align:center;' ><span>0.01(0.95每轮，耐心*0.5))</span></td><td style='text-align:center;' ><span>100</span></td><td style='text-align:center;' ><span>0.194997</span></td><td style='text-align:center;' ><span>0.250352</span></td><td style='text-align:center;' ><span>0.911659</span></td></tr><tr><td style='text-align:center;' ><span>0.01(0.95每轮，耐心*0.5)</span></td><td style='text-align:center;' ><span>100</span></td><td style='text-align:center;' ><span>0.170374</span></td><td style='text-align:center;' ><span>0.255083</span></td><td style='text-align:center;' ><span>0.914163</span></td></tr><tr><td style='text-align:center;' ><span>0.005</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.252192</span></td><td style='text-align:center;' ><span>0.276143</span></td><td style='text-align:center;' ><span>0.902344</span></td></tr><tr><td style='text-align:center;' ><span>0.001</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.175485</span></td><td style='text-align:center;' ><span>0.230183</span></td><td style='text-align:center;' ><span>0.919271</span></td></tr><tr><td style='text-align:center;' ><span>0.0001</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.334874</span></td><td style='text-align:center;' ><span>0.322388</span></td><td style='text-align:center;' ><span>0.884115</span></td></tr><tr><td style='text-align:center;' ><span>0.00001</span></td><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>0.584782</span></td><td style='text-align:center;' ><span>0.584782</span></td><td style='text-align:center;' ><span>0.777344</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='下两周计划'><span>下两周计划</span></h2><h3 id='复习python'><span>复习python</span></h3><ol start='' ><li><p><span>python函数</span></p></li><li><p><span>python面向对象编程</span></p></li><li><p><span>python算法</span></p></li></ol><p><span>枚举，递归，分治，贪心，试探</span></p><h3 id='学习pytorch框架'><span>学习pytorch框架</span></h3><p><span>自己搭建YOLO，ResNet，Unet等网络</span></p><h3 id='读文献'><span>读文献</span><span>	</span></h3><p><span>看SSD，注意力机制</span></p></div></div>
+</body>
+</html>
