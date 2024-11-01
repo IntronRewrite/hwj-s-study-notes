@@ -161,3 +161,44 @@ argparse进行调参
 
 [组会 markdown](https://intronrewrite.github.io/hwj-s-study-notes/组会/2024-10-22组会.html)
 
+### 2024/10/22
+
+学习python（2）
+
+![image-20241028094612375](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094612375.png)
+
+[Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
+
+### 2024/10/23
+
+学习python（3）
+
+![image-20241028094559698](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094559698.png)
+
+[Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
+
+### 2024/10/24
+
+学习python（4）
+
+![image-20241028094544818](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094544818.png)
+
+### 2024/10/25
+
+SSD论文阅读(1)
+
+### 2024/10/26
+
+SSD论文阅读(2)
+
+### 2024/10/27
+
+SSD论文阅读（3）
+
+### 2024/10/28
+
+[41 物体检测和数据集【动手学深度学习v2】](https://www.bilibili.com/video/BV1Lh411Y7LX/)
+
+[42 锚框【动手学深度学习v2】](https://www.bilibili.com/video/BV1aB4y1K7za/)
+
+[44 物体检测算法：R-CNN，SSD，YOLO【动手学深度学习v2】](https://www.bilibili.com/video/BV1Db4y1C71g/)
