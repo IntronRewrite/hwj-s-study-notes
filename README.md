@@ -165,7 +165,7 @@ argparse进行调参
 
 学习python（2）
 
-![image-20241028094612375](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094612375.png)
+![image-20241028094612375](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951774.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -173,7 +173,7 @@ argparse进行调参
 
 学习python（3）
 
-![image-20241028094559698](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094559698.png)
+![image-20241028094559698](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951776.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -181,7 +181,7 @@ argparse进行调参
 
 学习python（4）
 
-![image-20241028094544818](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241028094544818.png)
+![image-20241028094544818](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951778.png)
 
 ### 2024/10/25
 
@@ -202,3 +202,41 @@ SSD论文阅读（3）
 [42 锚框【动手学深度学习v2】](https://www.bilibili.com/video/BV1aB4y1K7za/)
 
 [44 物体检测算法：R-CNN，SSD，YOLO【动手学深度学习v2】](https://www.bilibili.com/video/BV1Db4y1C71g/)
+
+### 2024/10/29
+
+[13.1. 图像增广 — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/image-augmentation.html)
+
+[13.2. 微调 — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/fine-tuning.html)
+
+[13.3. 目标检测和边界框 — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/bounding-box.html)
+
+[13.5. 多尺度目标检测 — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/multiscale-object-detection.html)
+
+SSD算法实现(1)
+
+[13.7. 单发多框检测（SSD） — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html)
+
+### 2024/10/30
+
+SSD算法实现(2)
+
+[13.7. 单发多框检测（SSD） — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html)
+
+### 2024/10/31
+
+敲遗传算法解决仓库分配问题
+
+### 2024/11/01
+
+敲遗传算法解决仓库分配问题
+
+![best_fitness](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951779.svg)
+
+![c4db41e9e5ee61bc1b7b85e5043e84e](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951780.png)
+
+![b69f1235feb9389338af550c8e8f133](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951781.png)
+
+SSD算法实现(3)
+
+[13.7. 单发多框检测（SSD） — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html)
