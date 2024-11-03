@@ -240,3 +240,7 @@ SSD算法实现(2)
 SSD算法实现(3)
 
 [13.7. 单发多框检测（SSD） — 动手学深度学习 2.0.0 documentation](https://zh-v2.d2l.ai/chapter_computer-vision/ssd.html)
+
+### 2024/11/02
+
+![image-20241103110939523](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241103110939523.png)
