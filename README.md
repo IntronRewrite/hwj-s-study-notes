@@ -64,25 +64,25 @@ OpenCV完结，图像处理还未学透彻。
 
 [2.1. 数据操作 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html)
 
-![image-20241016215412346](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410162155164.png)
+![image-20241016215412346](F:\Documents\GitHub\hwj-s-study-notes\assets\202410162155164.png)
 
 复习python所学
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
-![image-20241016222602935](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410162226980.png)
+![image-20241016222602935](F:\Documents\GitHub\hwj-s-study-notes\assets\202410162226980.png)
 
 ### 2024/10/17
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
-![image-20241018081419016](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842852.png)
+![image-20241018081419016](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842852.png)
 
 ### 2024/10/18
 
 python学习（1）
 
-![image-20241020094326982](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842854.png)
+![image-20241020094326982](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842854.png)
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
@@ -90,7 +90,7 @@ python学习（1）
 
 pythoch学习(2)
 
-![image-20241020095335082](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410201842855.png)
+![image-20241020095335082](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842855.png)
 
 [深入浅出PyTorch — 深入浅出PyTorch](https://datawhalechina.github.io/thorough-pytorch/index.html#)
 
@@ -124,9 +124,9 @@ argparse进行调参
 
 
 
-![image-20241022032113830](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220349473.png)
+![image-20241022032113830](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220349473.png)
 
-![image-20241022032440997](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202410220349474.png)
+![image-20241022032440997](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220349474.png)
 
 #### FashionMNIST数据集
 
@@ -165,7 +165,7 @@ argparse进行调参
 
 学习python（2）
 
-![image-20241028094612375](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951774.png)
+![image-20241028094612375](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951774.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -173,7 +173,7 @@ argparse进行调参
 
 学习python（3）
 
-![image-20241028094559698](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951776.png)
+![image-20241028094559698](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951776.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -181,7 +181,7 @@ argparse进行调参
 
 学习python（4）
 
-![image-20241028094544818](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951778.png)
+![image-20241028094544818](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951778.png)
 
 ### 2024/10/25
 
@@ -231,11 +231,11 @@ SSD算法实现(2)
 
 敲遗传算法解决仓库分配问题
 
-![best_fitness](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951779.svg)
+![best_fitness](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951779.svg+xml)
 
-![c4db41e9e5ee61bc1b7b85e5043e84e](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951780.png)
+![c4db41e9e5ee61bc1b7b85e5043e84e](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951780.png)
 
-![b69f1235feb9389338af550c8e8f133](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411011951781.png)
+![b69f1235feb9389338af550c8e8f133](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951781.png)
 
 SSD算法实现(3)
 
@@ -243,4 +243,4 @@ SSD算法实现(3)
 
 ### 2024/11/02
 
-![image-20241103110939523](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241103110939523.png)
+![image-20241103110939523](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241103110939523-1730613921687-14.png)
