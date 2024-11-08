@@ -1,0 +1,1317 @@
+<!doctype html>
+<html style='font-size:17px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* 
+ *     Typora Theme - Lapis    /    Author - YiNN 
+ *     https://github.com/YiNNx/typora-theme-lapis
+ */
+
+:root {
+    --text-color: #40464f;
+    /* Text */
+    --primary-color: #4870ac;
+    /* Primary Color */
+    --bg-color: #ffffff;
+    --side-bar-bg-color: var(--bg-color);
+    /* Background */
+
+    --marker-color: #a2b6d4;
+    /* List Marker */
+    --source-color: #a8a8a9;
+    /* for comment / link source */
+    --highlight-color: #ffffb5c2;
+    /* Highlight */
+    --header-span-color: var(--primary-color);
+    /* h2 Span Color */
+    --block-bg-color: #f6f8fa;
+    /* Block Background */
+    --img-shadow-color: #e3e8f0;
+
+    /* Overwrite of Typora Base Color */
+    --search-hit-bg-color: var(--select-text-bg-color);
+    --search-select-bg-color: #5bb3ff;
+    --control-text-hover-color: #a2b6d4;
+    --rawblock-edit-panel-bd: var(--block-bg-color);
+    --item-hover-bg-color: rgb(246 248 250);
+    --active-file-bg-color: var(--block-bg-color);
+}
+
+@media print {
+    :root {
+        --text-color: rgb(0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent !important;
+    }
+}
+
+/*
+ * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
+ */
+
+/*
+ * Basic Style
+ */
+
+#write {
+    max-width: 950px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+
+    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+    margin-bottom: 20rem;
+}
+
+.searchpanel-search-option-btn {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    right: 5px;
+    top: 5px;
+    z-index: 99;
+    cursor: pointer;
+    margin-top: 1px;
+    padding: 1px;
+    border-radius: 3px;
+    line-height: 10px;
+    border: 1px solid #ddd;
+    border-color: var(--active-toggle-btn-color);
+}
+
+/* Strong */
+
+#write strong {
+    color: var(--primary-color);
+}
+
+/* Link */
+
+#write a {
+    color: var(--primary-color);
+    /* font-family: "Cantarell"; */
+}
+
+#write .md-p a,
+#write .md-heading a,
+[md-inline=url],
+[md-inline=link]>.md-content {
+    word-wrap: break-word;
+    text-decoration: underline solid;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+#write h2.md-heading a {
+    text-decoration: underline;
+    border-bottom: 0;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.2px;
+}
+
+.md-meta,
+[md-inline=link]>.md-content,
+[md-inline=image]>.md-meta,
+.md-image>.md-meta {
+    word-break: break-all;
+    font-weight: normal;
+    color: var(--source-color);
+    font-family: "JetBrainsMono";
+    font-size: 90%;
+}
+
+
+/* 
+ * TOC
+ */
+
+.md-toc-content {
+    font-family: 'SourceHanSerifCN';
+}
+
+.md-toc-content:empty:before {
+    color: var(--primary-color);
+}
+
+#write div.md-toc-tooltip {
+    font-family: 'SourceHanSerifCN';
+    color: var(--primary-color);
+    position: static;
+    margin-top: 10px;
+    background-color: var(--block-bg-color);
+    line-height: 1.6rem;
+    padding: 0.3rem 0.75rem;
+    border-top: none;
+    /* border-left: 2px solid var(--primary-color);
+     */
+    border-radius: .5rem;
+}
+
+.md-toc:focus .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 9px -1px;
+    margin-top: 9px;
+}
+
+.md-toc .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 10px 0px;
+    margin-top: 10px;
+}
+
+
+/* mark */
+
+mark {
+    background: var(--highlight-color);
+    padding: 1px .15rem;
+    border-radius: 1px;
+    color: inherit;
+}
+
+/* 
+ * Paragraph
+ */
+
+#write+p,
+#write blockquote p {
+    font-size: 1.1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    margin: 0;
+    line-height: 1.8rem;
+    color: var(--text-color);
+}
+
+/*
+ * Header
+ */
+
+#write h4,
+#write h5,
+#write h6 {
+    font-weight: normal;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-family: 'SourceHanSerifCN';
+    padding: 0px;
+    color: var(--primary-color);
+}
+
+#write h1 {
+    text-align: center;
+}
+
+#write h2 {
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#write h2,
+#write h2 code {
+    background-color: var(--header-span-color);
+}
+
+#write h2,
+#write h2 a,
+#write h2 code,
+#write h2 strong,
+#write h2 script {
+    color: var(--bg-color);
+}
+
+#write h2 a {
+    border-bottom-color: var(--bg-color) !important;
+}
+
+#write h1 {
+    font-size: 2rem;
+}
+
+#write h2 {
+    font-size: 1.5rem;
+}
+
+#write h3 {
+    font-size: 1.4rem;
+}
+
+#write h4 {
+    font-size: 1.2rem;
+}
+
+#write h5 {
+    font-size: 1.1rem;
+}
+
+#write h6 {
+    font-size: 1.1rem;
+}
+
+#write h1 {
+    padding-top: 0.9rem;
+    margin-bottom: 2.3rem;
+}
+
+#write h2 {
+    margin: .3em 0;
+}
+
+#write h3 {
+    margin: 1em 0 1em;
+}
+
+#write h4 {
+    margin: 0.8em 0 0.8em;
+}
+
+#write h5 {
+    margin: 0.6em 0 0.6em;
+}
+
+#write h6 {
+    margin: 0.4em 0 0.4em;
+}
+
+blockquote h3.md-focus:before,
+blockquote h4.md-focus:before,
+blockquote h5.md-focus:before,
+blockquote h6.md-focus:before {
+    left: -1.3rem;
+}
+
+/*
+ * List
+ */
+
+::marker {
+    font-weight: bold;
+    color: var(--marker-color);
+}
+
+li.md-list-item {
+    margin: 0.4rem 0;
+}
+
+#write ul,
+#write ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+#write em {
+    padding: 0 3px 0 0;
+}
+
+#write ul ul {
+    list-style-type: square;
+}
+
+#write ol {
+    list-style-type: decimal;
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/*
+ * Quote
+ */
+
+#write blockquote {
+    display: block;
+    font-size: .9em;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert {
+    display: block;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert-text-container {
+    font-size: 1.2em;
+}
+
+.md-end-block.md-p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-block-start: 2.8px;
+    padding-block-end: 2.8px;
+}
+
+.md-alert-text-important {
+    color: #614f9c;
+}
+
+.md-alert.md-alert-important {
+    background-color: #614f9c0a;
+    border-left-color: #614f9c;
+}
+
+.md-alert-text-note {
+    color: #527da8;
+}
+
+.md-alert.md-alert-note {
+    background-color: #527da80a;
+    border-left-color: #527da8;
+}
+
+.md-alert-text-tip {
+    color: #428485;
+}
+
+.md-alert.md-alert-tip {
+    background-color: #4284850a;
+    border-left-color: #428485;
+}
+
+.md-alert-text-warning {
+    color: #a88652;
+}
+
+.md-alert.md-alert-warning {
+    background-color: #9b80490a;
+    border-left-color: #a88652;
+}
+
+
+.md-alert-text-caution {
+    color: #a34f55;
+}
+
+.md-alert.md-alert-caution {
+    background-color: #a34f550a;
+    border-left-color: #a34f55;
+}
+
+
+/*
+ * Inline code
+ */
+
+#write code {
+    color: var(--primary-color);
+    font-size: 94%;
+    font-weight: normal;
+    word-wrap: break-word;
+    padding: 2px 4px 2px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: var(--block-bg-color);
+    font-family: 'JetBrainsMono';
+    word-break: break-all;
+}
+
+/*
+ * Img
+ */
+
+#write img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#write p>.md-image:only-child:not(.md-img-error) img,
+#write p>img:only-child {
+    filter: drop-shadow(var(--img-shadow-color) 0px 6px 6px);
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*
+ * Table
+ */
+#write table {
+    display: table;
+    text-align: justify;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 1em;
+    margin: 0px 0px 20px;
+    width: 100%;
+}
+
+#write tbody {
+    border: 0;
+}
+
+#write table tr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#write table tr th,
+#write table tr td {
+    font-size: 1rem;
+    border: 1px solid #d9dfe4;
+    padding: 5px 10px;
+    text-align: justify;
+}
+
+#write table tr th {
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    min-width: 10rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#write table tr td:hover,
+#write table tr th:hover {
+    background-color: var(--block-bg-color);
+}
+
+table td {
+    min-width: 32px;
+}
+
+.md-table-resize-popover {
+    width: auto !important;
+}
+
+/* Footnote */
+
+sup.md-footnote {
+    background-color: var(--block-bg-color);
+    color: var(--primary-color);
+}
+
+.md-def-name {
+    color: var(--primary-color);
+}
+
+/*
+ * Math Script 
+ */
+
+.md-inline-math script {
+    color: var(--primary-color);
+}
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: var(--bg-color);
+    color: var(--md-char-color);
+}
+
+
+.code-tooltip {
+    box-shadow: none;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+    border-radius: 1rem;
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/* 
+ * Comment
+ */
+.md-comment {
+    color: var(--source-color);
+    opacity: 1;
+    font-family: 'JetBrainsMono';
+}
+
+/*
+ * Dividing line
+ */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+
+/* Checkbox */
+
+#write input[type=checkbox] {
+    width: 0;
+}
+
+.task-list-item input::before {
+    content: "";
+    display: inline-block;
+    width: 1.0125rem;
+    height: 1.0125rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid var(--marker-color);
+    border-radius: 1.2rem;
+    background-color: #fdfdfd;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -.6rem;
+}
+
+.task-list-item input:checked::before {
+    content: '✓';
+    font-weight: bold;
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+}
+
+blockquote .task-list-item input::before {
+    margin-top: .2rem;
+}
+
+/*
+ * Sidebar
+ */
+#typora-sidebar {
+    font-family: 'Cantarell', 'SourceHanSerifCN';
+    height: 100%;
+    color: var(--text-color);
+    font-size: 0.92rem;
+    background-color: var(--bg-color);
+}
+
+#sidebar-content.sidebar-content {
+    margin-top: .5rem;
+}
+
+.html-for-mac #write input[type=checkbox] {
+    margin-top: 0.65rem;
+}
+
+.html-for-mac #write .task-list-item input::before {
+    margin-top: -.85rem;
+}
+
+
+/*
+ * Sidebar - FileNode
+ */
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.file-node-content {
+    color: var(--primary-color);
+    line-height: 1.6rem;
+}
+
+span.file-node-title-name-part {
+    color: var(--text-color);
+}
+
+span.file-node-title-ext-part {
+    color: var(--text-color);
+}
+
+.file-node-icon {
+    padding-right: 0.2rem;
+}
+
+.file-tree-node.active>.file-node-background {
+    border-left: 4px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/*
+ * Sidebar - Outline
+ */
+
+#outline-content {
+    height: 100%;
+    overflow-x: hidden;
+    line-height: 1.6rem;
+    font-size: .96rem;
+}
+
+#outline-content .outline-active,
+.pin-outline .outline-active {
+    color: var(--primary-color);
+}
+
+.outline-item {
+    padding-left: 2em;
+}
+
+.outline-item>.outline-expander:before {
+    transform: translateY(-1px) !important;
+}
+
+/* Meta Block */
+
+pre.md-meta-block {
+    font-family: 'JetBrainsMono';
+    color: var(--primary-color);
+    background: #f6f8fa;
+    padding: 1.5rem;
+    margin: -37px 0rem 3.8rem;
+    /* border-radius: 1rem; */
+    filter: drop-shadow(var(--img-shadow-color) 0px 3px 3px);
+    /* border-top: 1px solid var(--primary-color); */
+    /* border-bottom: 1px solid var(--primary-color); */
+}
+
+pre.md-fences-advanced.md-focus .md-fences-adv-panel {
+    border-radius: .8rem;
+}
+
+/*
+ * Scrollbar
+ */
+
+#outline-content::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#file-library::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.425);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* 
+ * Code Block - Style
+ */
+
+.md-fences:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    /* background-color: #282c34; */
+    margin-bottom: -7px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto;
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin: 1.5rem 0;
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 1.2rem .8rem;
+    color: #4f5467;
+    font-family: 'JetBrainsMono';
+    border-radius: 10px;
+    background-color: var(--block-bg-color);
+    /* border: 1px solid #eef2f5;*/
+    line-height: 1.6rem;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #a2b6d452;
+    background: inherit;
+    white-space: nowrap;
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem;
+}
+
+.CodeMirror-linenumber {
+    white-space: nowrap;
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+/* 
+ * Code Block - Color Scheme
+ */
+
+.cm-s-inner .cm-keyword {
+    color: #1694b6 !important;
+}
+
+.cm-s-inner .cm-operator {
+    color: #2f86d2 !important;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-builtin,
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-quote {
+    color: #b9218e !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7aadad !important;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type,
+.cm-s-inner .cm-atom {
+    color: #378ed8 !important;
+}
+
+.cm-s-inner .cm-number {
+    color: #1a5494 !important;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-qualifier {
+    color: #0744ac !important;
+}
+
+.cm-s-inner .cm-string {
+    color: #6f42c2 !important;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #27638f !important;
+}
+
+.cm-s-inner .cm-comment {
+    color: #9a9a9a !important;
+}
+
+.cm-s-inner .cm-meta {
+    color: #0b93be !important;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #8f6aa8 !important;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: #b9218e40 !important;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid var(--primary-color);
+    z-index: 3;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext {
+    background-color: rgba(167, 178, 189, 0.0) !important;
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/*
+ * Sitting - Unibody
+ */
+
+.megamenu-menu-header {
+    border: none;
+    color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-back-btn,
+.megamenu-menu-header .megamenu-menu-header-title-back,
+.megamenu-menu-header .megamenu-menu-header-title-menu {
+    color: var(--text-color);
+}
+
+.megamenu-menu {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: none !important;
+}
+
+header,
+#megamenu-content {
+    background-color: var(--bg-color);
+    background-image: none !important;
+}
+
+.md-search-hit {
+    background-color: var(--search-hit-bg-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: var(--recent-file-panel-n-bg-color);
+    color: var(--recent-file-panel-n-color);
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    width: 75%;
+}
+
+ body {font-variant-ligatures: no-common-ligatures;} 
+        #write { counter-reset: write-h2 Figures Tables Fences; }
+        #write > h1 { counter-reset: write-h2; }
+        #write > h2 { counter-reset: write-h3; }
+        #write > h3 { counter-reset: write-h4; }
+        #write > h4 { counter-reset: write-h5; }
+        #write > h5 { counter-reset: write-h6; }
+        
+        @media print {
+            pb { display: block; page-break-after: always; }
+            h1 { page-break-before: always; }
+            h1:first-of-type { page-break-before: avoid; }
+            p:has(img:first-child) { page-break-inside: avoid; }
+        }
+
+        #write > h2:before {
+            counter-increment: write-h2;
+            content: counter(write-h2) ". ";
+        }
+        
+        #write > h3:before,
+        #write > h3.md-focus.md-heading:before {
+            counter-increment: write-h3;
+            content: counter(write-h2) "." counter(write-h3) " ";
+        }
+        
+        #write > h4:before,
+        #write > h4.md-focus.md-heading:before {
+            counter-increment: write-h4;
+            content: counter(write-h2) "." counter(write-h3) "." counter(write-h4) " ";
+        }
+        
+        #write > h5:before,
+        #write > h5.md-focus.md-heading:before {
+            counter-increment: write-h5;
+            content: counter(write-h2) "." counter(write-h3) "." counter(write-h4) "." counter(write-h5) " "
+        }
+        
+        #write > h6:before,
+        #write > h6.md-focus.md-heading:before {
+            counter-increment: write-h6;
+            content: counter(write-h2) "." counter(write-h3) "." counter(write-h4) "." counter(write-h5) "." counter(write-h6) " "
+        }
+        
+        #write > h3.md-focus:before,
+        #write > h4.md-focus:before,
+        #write > h5.md-focus:before,
+        #write > h6.md-focus:before,
+        h3.md-focus:before,
+        h4.md-focus:before,
+        h5.md-focus:before,
+        h6.md-focus:before {
+            color: inherit;
+            border: inherit;
+            border-radius: inherit;
+            position: inherit;
+            left: initial;
+            float: none;
+            top: initial;
+            font-size: inherit;
+            padding-left: inherit;
+            padding-right: inherit;
+            vertical-align: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            visibility: inherit;
+        }
+
+        .outline-content { counter-reset: outline-h2; }
+        .outline-h1 { counter-reset: outline-h2; }
+        .outline-h2 { counter-reset: outline-h3; }
+        .outline-h3 { counter-reset: outline-h4; }
+        .outline-h4 { counter-reset: outline-h5; }
+        .outline-h5 { counter-reset: outline-h6; }
+        
+        .outline-content .outline-h2 .outline-label:before {
+            counter-increment: outline-h2;
+            content: counter(outline-h2) ". ";
+        }
+        
+        .outline-content .outline-h3 .outline-label:before {
+            counter-increment: outline-h3;
+            content: counter(outline-h2) "." counter(outline-h3) " ";
+        }
+        
+        .outline-content .outline-h4 .outline-label:before {
+            counter-increment: outline-h4;
+            content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) " ";
+        }
+        
+        .outline-content .outline-h5 .outline-label:before {
+            counter-increment: outline-h5;
+            content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "." counter(outline-h5) " ";
+        }
+        
+        .outline-content .outline-h6 .outline-label:before {
+            counter-increment: outline-h6;
+            content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "." counter(outline-h5) "." counter(outline-h6) " ";
+        }
+
+        .md-toc-content { counter-reset: toc-h2; }
+        .md-toc-h1 { counter-reset: toc-h2; }
+        .md-toc-h2 { counter-reset: toc-h3; }
+        .md-toc-h3 { counter-reset: toc-h4; }
+        .md-toc-h4 { counter-reset: toc-h5; }
+        .md-toc-h5 { counter-reset: toc-h6; }
+        
+        .md-toc-content .md-toc-h2 a:before {
+            counter-increment: toc-h2;
+            content: counter(toc-h2) ". ";
+        }
+        
+        .md-toc-content .md-toc-h3 a:before {
+            counter-increment: toc-h3;
+            content: counter(toc-h2) "." counter(toc-h3) " ";
+        }
+        
+        .md-toc-content .md-toc-h4 a:before {
+            counter-increment: toc-h4;
+            content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) " ";
+        }
+        
+        .md-toc-content .md-toc-h5 a:before {
+            counter-increment: toc-h5;
+            content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5) " ";
+        }
+        
+        .md-toc-content .md-toc-h6 a:before {
+            counter-increment: toc-h6;
+            content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5) "." counter(toc-h6) " ";
+        }
+#write p:has(img:first-child)::after {
+            counter-increment: Figures;
+            content: "Figure " counter(Figures) " " attr(data-alt);
+            font-family: monospace;
+            display: block;
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        #write .table-figure::after {
+            counter-increment: Tables;
+            content: "Table " counter(Tables);
+            font-family: monospace;
+            display: block;
+            text-align: center;
+            margin: 4px 0;
+        }
+
+        #write .md-fences {
+            margin-bottom: 2.4em;
+        }
+        #write .md-fences::after {
+            counter-increment: Fences;
+            content: "Fence " counter(Fences);
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-family: monospace;
+            margin: 0.6em 0;
+            font-size: 1.1em;
+            z-index: 9;
+        }
+        #write .md-fences.md-fences-advanced.md-focus::after {
+            content: ""
+        }
+        
+</style><title>index</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#buffer-balancing-accuracy-efficiency-and-generalizability-in-point-cloud-registration">BUFFER: Balancing Accuracy, Efficiency, and Generalizability in Point Cloud Registration</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题和解决的方案">问题和解决的方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要贡献">主要贡献</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验设置">实验设置</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数据集">数据集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#评价指标">评价指标</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#deep-graph-based-spatial-consistency-for-robust-non-rigid-point-cloud-registration">Deep Graph-based Spatial Consistency for Robust Non-rigid Point Cloud Registration</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题和解决的方案-2">问题和解决的方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验设置-2">实验设置</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验使用的数据集">实验使用的数据集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验使用的评价指标">实验使用的评价指标</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验结果-2">实验结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#在4dmatch和4dlomatch数据集上的结果">在4DMatch和4DLoMatch数据集上的结果：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#在cape数据集上的结果">在CAPE数据集上的结果：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#在deepdeform数据集上的结果">在DeepDeform数据集上的结果：</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#peal-prior-embedded-explicit-attention-learning-for-low-overlap-point--cloud-registration">PEAL: Prior-embedded Explicit Attention Learning for Low-overlap Point  Cloud Registration</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题和解决的方案-3">问题和解决的方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要贡献-2">主要贡献：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验设置-3">实验设置</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验数据集">实验数据集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#评估指标">评估指标</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验设置-4">实验设置</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验结果-3">实验结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3dmatch-和-3dlomatch-数据集上的性能">3DMatch 和 3DLoMatch 数据集上的性能：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#使用不同估计器的性能对比">使用不同估计器的性能对比：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#迭代更新模块的效果">迭代更新模块的效果：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#使用不同先验信息的性能对比">使用不同先验信息的性能对比：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#与其他transformer-based网络的结合">与其他Transformer-based网络的结合：</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#定性结果">定性结果：</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#robust-multiview-point-cloud-registration-with-reliable-pose-graph-initialization-and-history-reweighting">Robust Multiview Point Cloud Registration with Reliable Pose Graph Initialization and History Reweighting</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题和解决的方案-4">问题和解决的方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要贡献-3">主要贡献</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验数据集-2">实验数据集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验结果-4">实验结果</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#unsupervised-deep-probabilistic-approach-for-partial-point-cloud-registration">Unsupervised Deep Probabilistic Approach for Partial Point Cloud Registration</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题和解决的方案-5">问题和解决的方案</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要贡献-4">主要贡献</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验数据集和评价指标">实验数据集和评价指标</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验使用的数据集-2">实验使用的数据集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验使用的评价指标-2">实验使用的评价指标</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验结果-5">实验结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实验结果-6">实验结果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3dmatch-和-3dlomatch-数据集上的结果">3DMatch 和 3DLoMatch 数据集上的结果</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#modelnet-和-modellonet-数据集上的结果">ModelNet 和 ModelLoNet 数据集上的结果</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#不同损失函数的组合">不同损失函数的组合</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#不同数量的聚类">不同数量的聚类</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='buffer-balancing-accuracy-efficiency-and-generalizability-in-point-cloud-registration'><span>BUFFER: Balancing Accuracy, Efficiency, and Generalizability in Point Cloud Registration</span></h1><h2 id='问题和解决的方案'><span>问题和解决的方案</span></h2><p><span>这篇论文解决的问题是如何在点云配准中平衡精度、效率和泛化性。点云配准是三维重建、机器人导航和激光雷达SLAM等领域中的一个关键任务，其目标是在不同视角或不同传感器获取的点云数据之间找到最优的刚体变换，使得两个点云之间的几何形状能够精确对齐。</span></p><p><span>具体来说，论文中提到的挑战包括：</span></p><ol start='' ><li><p><span>现有配准技术要么不够精确，要么效率低下，或者泛化能力差。</span></p></li><li><p><span>数据质量的不一致性，如噪声分布、非均匀密度、不同的观测角度以及不同传感器之间的领域差异，使得同时满足效率、准确性和泛化性之间的良好平衡变得具有挑战性。</span></p></li><li><p><span>对应点方法虽然配准性能较好，但在大规模实际应用中效率低下，且泛化能力差。</span></p></li><li><p><span>点云方法虽然效率高，但泛化能力差，尤其是在未见过的场景中。</span></p></li></ol><p><span>为了解决这些问题，论文提出了BUFFER，一个点云配准方法，它通过结合点级（point-wise）和块级（patch-wise）技术，并克服它们的固有缺点。BUFFER的关键在于利用点级和块级技术，同时通过精心设计的网络组件来解决特定问题。具体来说，BUFFER包括以下几个关键组件：</span></p><ul><li><p><strong><span>Point-wise Learner</span></strong><span>：首先引入，通过预测关键点并估计点方向来提高计算效率，增强特征表示能力。</span></p></li><li><p><strong><span>Patch-wise Embedder</span></strong><span>：部署一个轻量级的局部特征学习器，提取高效且泛化的块特征。</span></p></li><li><p><strong><span>Inliers Generator</span></strong><span>：结合简单的神经层和通用特征，搜索内点对应关系。</span></p></li></ul><p><span>通过这些组件，BUFFER在保持高精度的同时，也实现了高效率和良好的泛化能力。论文通过在真实世界场景中的广泛实验，证明了BUFFER在准确性、效率和泛化性方面实现了最佳平衡，特别是在未见过的领域中的泛化能力，并且比强基线方法快约30倍。</span></p><h2 id='主要贡献'><span>主要贡献</span></h2><p><span>论文的主要贡献可以总结为以下三点：</span></p><ol start='' ><li><p><strong><span>提出新的点云配准框架</span></strong><span>：作者提出了一个新的点云配准框架，称为BUFFER，通过巧妙地结合了点级（point-wise）和块级（patch-wise）方法，实现了在准确性、效率和泛化性方面的最佳平衡。这个框架不仅提高了配准的准确性，还显著提高了配准的效率，并且在未见过的领域（unseen domains）中展现出了强大的泛化能力。</span></p></li><li><p><strong><span>等价全卷积架构</span></strong><span>：作者引入了一个等价全卷积架构（Equivariant Fully Convolutional Architecture），用于预测点级方向（orientations）和重要点（keypoints）。这种架构是轻量级的，并且对平移（translations）保持不变性，对旋转（rotations）保持等价性，这有助于提高配准的效率和准确性。</span></p></li><li><p><strong><span>新的对应关系搜索策略</span></strong><span>：论文提出了一种新的对应关系搜索策略，用于提高初始对应关系中内点（inliers）的比例。这种策略通过使用简单的神经层和通用的圆柱形特征来估计每个对应关系的刚体变换，并通过优化变换来搜索可靠的内点对应关系，从而提高整个配准框架的性能。</span></p></li></ol><p><span>这些贡献使得BUFFER在多个数据集上的实验结果中表现出色，尤其是在3DMatch、KITTI和ETH数据集上的评估表明，BUFFER在配准召回率、运行时间和泛化能力方面都超越了现有的最先进方法。此外，BUFFER的代码已经公开，这有助于研究社区进一步验证和采用这些成果。</span></p><h2 id='实验设置'><span>实验设置</span></h2><h3 id='数据集'><span>数据集</span></h3><p><span>论文中使用的数据集包括以下几个：</span></p><ol start='' ><li><p><strong><span>3DMatch</span></strong><span>: 一个室内数据集，用于评估点云配准的性能。这个数据集包含了从RGB-D重建中得到的局部点云片段。</span></p></li><li><p><strong><span>3DLoMatch</span></strong><span>: 同样是室内数据集，与3DMatch类似，但是包含了更低重叠的部分，用于测试配准方法在低重叠情况下的性能。</span></p></li><li><p><strong><span>KITTI</span></strong><span>: 一个室外数据集，通常用于评估自动驾驶相关的计算机视觉任务，包括点云配准。这个数据集包含了从移动车辆上获取的点云数据。</span></p></li><li><p><strong><span>ETH</span></strong><span>: 另一个室外数据集，用于测试点云配准方法在未见过的领域中的泛化能力。这个数据集包含了从空中和地面传感器获取的点云数据。</span></p></li></ol><h3 id='评价指标'><span>评价指标</span></h3><ol start='' ><li><p><span>论文中使用了以下评价指标来衡量点云配准方法的性能：</span></p><ol start='' ><li><p><strong><span>Registration Recall (RR)</span></strong><span>: 这是用于评估室内数据集（如3DMatch和3DLoMatch）上配准性能的主要指标。它衡量的是正确匹配的点对所占的比例。</span></p></li><li><p><strong><span>Relative Translational Error (RTE)</span></strong><span>: 这是室外数据集（如KITTI和ETH）上使用的评价指标，用于衡量估计的平移向量与真实平移向量之间的相对误差。</span></p></li><li><p><strong><span>Relative Rotation Error (RRE)</span></strong><span>: 这也是室外数据集上使用的评价指标，用于衡量估计的旋转矩阵与真实旋转矩阵之间的相对误差。</span></p></li><li><p><strong><span>Success Rate</span></strong><span>: 这是用于评估在室外数据集（如ETH）上配准性能的成功率。它通常是指在一定的误差阈值内成功配准的点云对的百分比。</span></p></li><li><p><strong><span>运行时间 (Time)</span></strong><span>: 这个指标衡量的是配准方法完成配准所需的时间，通常以秒为单位。它用于评估方法的效率。</span></p></li><li><p><strong><span>参数数量 (Number of Parameters, #Param.)</span></strong><span>: 这个指标衡量的是模型中的参数数量，它反映了模型的复杂度和内存占用。</span></p></li></ol><p><span>这些评价指标综合反映了点云配准方法在准确性、效率、鲁棒性（通过成功率来衡量）和泛化能力（通过在不同数据集上的表现来衡量）方面的性能。通过这些指标，论文能够全面地评估和比较BUFFER方法与其他现有方法。</span></p><h2 id='实验结果'><span>实验结果</span></h2><p><span>根据论文中提供的信息，以下是一些具体的数值结果和提升的数值：</span></p><ol start='' ><li><p><strong><span>3DMatch 数据集</span></strong><span>：</span></p><ul><li><p><span>BUFFER在3DMatch数据集上的配准召回率（Registration Recall, RR）达到了92.9%，运行时间为0.20秒。</span></p></li><li><p><span>相比其他方法，如GeoTrans（RR为90.18%，运行时间为0.23秒），BUFFER在配准召回率上提升了2.71%，在运行时间上则大幅减少了约13%。</span></p></li></ul></li><li><p><strong><span>3DLoMatch 数据集</span></strong><span>：</span></p><ul><li><p><span>BUFFER在3DLoMatch数据集上的配准召回率达到了71.8%，运行时间为0.20秒。</span></p></li><li><p><span>相比其他方法，如Predator（RR为69.00%，运行时间为0.54秒），BUFFER在配准召回率上提升了2.8%，在运行时间上则大幅减少了约63%。</span></p></li></ul></li><li><p><strong><span>KITTI 数据集</span></strong><span>：</span></p><ul><li><p><span>BUFFER在KITTI数据集上的成功率为97.66%，运行时间为0.26秒。</span></p></li><li><p><span>相比其他方法，如D3Feat（成功率为69.55%，运行时间为24.3秒），BUFFER在成功率上提升了28.11%，在运行时间上则大幅减少了约99.5%。</span></p></li></ul></li><li><p><strong><span>ETH 数据集</span></strong><span>：</span></p><ul><li><p><span>BUFFER在ETH数据集上的成功率为99.30%，运行时间为0.26秒。</span></p></li><li><p><span>相比其他方法，如Predator（成功率为69.00%，运行时间为0.37秒），BUFFER在成功率上提升了30.3%，在运行时间上则大幅减少了约30倍。</span></p></li></ul></li><li><p><strong><span>泛化实验</span></strong><span>：</span></p><ul><li><p><span>从3DMatch到ETH的泛化实验中，BUFFER的成功率为99.30%，而GeoTrans的成功率为90.18%。</span></p></li><li><p><span>从KITTI到ETH的泛化实验中，BUFFER的成功率为95.86%，而GeoTrans的成功率为88.47%。</span></p></li></ul></li></ol></li></ol><h1 id='deep-graph-based-spatial-consistency-for-robust-non-rigid-point-cloud-registration'><span>Deep Graph-based Spatial Consistency for Robust Non-rigid Point Cloud Registration</span></h1><h2 id='问题和解决的方案-2'><span>问题和解决的方案</span></h2><p><span>这篇论文解决的是非刚性点云配准中的离群对应点修剪问题。在非刚性点云配准中，空间一致性是一个常用的标准，用于区分内点和离群点。然而，传统的空间一致性在局部变形情况下不再适用，因此非刚性配准中的离群点拒绝问题尚未得到充分研究。</span></p><p><span>为了解决这个问题，论文提出了一个基于图的空间一致性网络（Graph-based Spatial Consistency Network，简称GraphSCNet），用于过滤非刚性配准中的离群点。该方法基于非刚性变形通常是局部刚性的这一事实，即局部形状保持近似不变。论文的主要贡献包括：</span></p><ul><li><p><span>提出了一个用于非刚性点云配准的离群点拒绝网络，这是首个基于学习的离群对应点修剪方法。</span></p></li><li><p><span>提出了一种基于图的空间一致性度量方法，用于测量局部区域内对应点之间的局部几何兼容性。</span></p></li><li><p><span>设计了一个基于注意力机制的图基对应点嵌入模块，用于从局部空间一致性中学习鲁棒的对应点表示。</span></p></li></ul><h2 id='实验设置-2'><span>实验设置</span></h2><h3 id='实验使用的数据集'><span>实验使用的数据集</span></h3><p><span>论文中使用了三个主要的数据集来评估GraphSCNet的性能：</span></p><ol><li><p><strong><span>4DMatch</span></strong><span>：这是一个用于非刚性点云配准的合成基准数据集，由DeformingThings4D动画序列构建而成，包含1232个训练序列、176个验证序列和353个测试序列。</span></p></li><li><p><strong><span>CAPE</span></strong><span>：该数据集包含15个动态人体扫描的完整模型，提供了准确的3D网格配准。数据集包含11288个点云对，用于评估模型在真实世界场景中的泛化能力。</span></p></li><li><p><strong><span>DeepDeform</span></strong><span>：由真实世界的部分RGB-D图像组成，这些图像是通过RGB-D相机扫描得到的，包含400个场景和超过390K的RGB-D帧。</span></p></li></ol><h3 id='实验使用的评价指标'><span>实验使用的评价指标</span></h3><p><span>论文中使用了以下四个评价指标来衡量非刚性点云配准的性能：</span></p><ol><li><p><strong><span>3D End Point Error (EPE)</span></strong><span>：在所有变形点上的平均误差，通过估计和真实的变形函数计算得到。</span></p></li><li><p><strong><span>3D Accuracy Strict (AccS)</span></strong><span>：点的EPE小于2.5cm或相对误差小于2.5%的比例。</span></p></li><li><p><strong><span>3D Accuracy Relaxed (AccR)</span></strong><span>：点的EPE小于5cm或相对误差小于5%的比例。</span></p></li><li><p><strong><span>Outlier Ratio (OR)</span></strong><span>：相对误差大于30%的点的比例。</span></p></li></ol><p><span>这些指标共同评估了配准结果的准确性、鲁棒性和离群点的剔除效果。通过这些评价指标，论文展示了GraphSCNet在不同数据集上的性能，并与现有方法进行了比较。</span></p><h2 id='实验结果-2'><span>实验结果</span></h2><p><span>论文中对GraphSCNet进行了广泛的实验评估，并在以下方面展示了具体数值和提升的数值：</span></p><h4 id='在4dmatch和4dlomatch数据集上的结果'><span>在4DMatch和4DLoMatch数据集上的结果：</span></h4><p><strong><span>4DMatch数据集：</span></strong></p><ul><li><p><span>GraphSCNet在4DMatch数据集上的EPE（3D End Point Error）为0.042，AccS（3D Accuracy Strict）为70.1%，AccR（3D Accuracy Relaxed）为83.8%，OR（Outlier Ratio）为9.2%。</span></p></li><li><p><span>与之前的方法NDP（Neural Deformation Pyramid）相比，GraphSCNet在AccS上提升了11个百分点，在AccR上提升了14个百分点。</span></p></li></ul><p><strong><span>4DLoMatch数据集：</span></strong></p><ul><li><p><span>GraphSCNet在4DLoMatch数据集上的EPE为0.102，AccS为40.0%，AccR为59.1%，OR为17.5%。</span></p></li><li><p><span>与NDP相比，GraphSCNet在AccS上提升了超过10个百分点，在AccR上提升了超过12个百分点。</span></p></li></ul><h4 id='在cape数据集上的结果'><span>在CAPE数据集上的结果：</span></h4><ul><li><p><span>在CAPE数据集上，GraphSCNet在没有进行微调的情况下直接进行评估，其精度（Precision）为69.3%，召回率（Recall）为83.6%，EPE为0.090，AccS为47.5%，AccR为67.1%，OR为50.1%。</span></p></li><li><p><span>与没有离群点拒绝的基线方法相比，GraphSCNet在Precision上提升了超过20个百分点，在AccS上提升了超过27个百分点。</span></p></li></ul><h4 id='在deepdeform数据集上的结果'><span>在DeepDeform数据集上的结果：</span></h4><ul><li><p><span>在DeepDeform数据集上，GraphSCNet的精度为60.7%，召回率为64.2%，EPE为0.134，AccS为24.1%，AccR为44.2%，OR为59.1%。</span></p></li><li><p><span>与PointCN和PointDSC等基线方法相比，GraphSCNet在多个评价指标上均有显著提升。</span></p></li></ul><p><span>这些结果表明，GraphSCNet在非刚性点云配准任务中有效地提高了配准精度，并显著降低了离群点的比例，证明了其在处理非刚性变形和离群点剔除方面的优越性能。</span></p><h1 id='peal-prior-embedded-explicit-attention-learning-for-low-overlap-point--cloud-registration'><span>PEAL: Prior-embedded Explicit Attention Learning for Low-overlap Point  Cloud Registration</span></h1><h2 id='问题和解决的方案-3'><span>问题和解决的方案</span></h2><p><span>这篇论文针对的是</span><strong><span>低重叠点云配准</span></strong><span>问题，提出了一种名为</span><strong><span>PEAL（Prior-embedded Explicit Attention Learning）</span></strong><span>的模型。在低重叠点云配准任务中，由于点云之间存在大量非重叠区域，传统的点云配准方法难以准确找到点云间的对应关系，导致特征不具区分性，影响配准准确性。</span></p><p><span>PEAL模型通过以下方式解决问题：</span></p><ol start='' ><li><p><strong><span>显式注意力学习</span></strong><span>：PEAL显式地学习点云间的相关性，特别是从非重叠区域到重叠区域的相关性，从而提高特征的区分度。</span></p></li><li><p><strong><span>迭代姿态细化</span></strong><span>：PEAL采用迭代姿态细化方法，通过预测的配准重叠先验（self-overlap-prior）来迭代地细化变换估计，提高配准准确性。</span></p></li><li><p><strong><span>多模态学习</span></strong><span>：PEAL利用2D图像信号辅助3D点云配准，通过投影模块将2D图像匹配转换为3D点云配准的初步估计，提高低重叠点云配准性能。</span></p></li><li><p><strong><span>改进的配准召回率</span></strong><span>：PEAL在3DLoMatch基准测试中提高了配准召回率，并在3DMatch和3DLoMatch数据集上达到了最先进的性能。</span></p></li></ol><h2 id='主要贡献-2'><span>主要贡献：</span></h2><ul><li><p><span>首次将重叠先验显式地注入到Transformer中，以促进低重叠点云配准。</span></p></li><li><p><span>提出了一个显式的单向注意力模块，可以显著减轻自注意力产生的特征歧义。</span></p></li><li><p><span>提出了一种新颖的迭代姿态细化方法，用于低重叠点云配准。</span></p></li></ul><h2 id='实验设置-3'><span>实验设置</span></h2><h3 id='实验数据集'><span>实验数据集</span></h3><p><span>这篇论文在以下两个室内基准数据集上进行了实验评估：</span></p><ol start='' ><li><p><strong><span>3DMatch</span></strong><span>：</span></p><ul><li><p><span>包含62个场景，其中46个用于训练，8个用于验证，8个用于测试。</span></p></li><li><p><span>每个场景都有对应的RGB-D数据。</span></p></li><li><p><span>点云对之间的重叠度超过0.3。</span></p></li></ul></li><li><p><strong><span>3DLoMatch</span></strong><span>：</span></p><ul><li><p><span>专为低重叠场景设计，点云对之间的重叠度在0.1到0.3之间。</span></p></li></ul></li></ol><p><span>这些数据集通过RGB-D数据获取，每个点云由连续的深度帧融合而成。</span></p><h3 id='评估指标'><span>评估指标</span></h3><p><span>论文使用了以下五个指标来评估点云配准方法的性能：</span></p><ol start='' ><li><p><strong><span>Registration Recall (RR)</span></strong><span>：配准召回率，衡量成功配准的百分比。</span></p></li><li><p><strong><span>Feature Matching Recall (FMR)</span></strong><span>：特征匹配召回率，衡量正确匹配的特征点的比例。</span></p></li><li><p><strong><span>Inlier Ratio (IR)</span></strong><span>：内点比率，衡量正确匹配的内点占总匹配点的比例。</span></p></li><li><p><strong><span>Relative Rotation Error (RRE)</span></strong><span>：相对旋转误差，衡量估计旋转与真实旋转之间的差异。</span></p></li><li><p><strong><span>Relative Translation Error (RTE)</span></strong><span>：相对平移误差，衡量估计平移与真实平移之间的差异。</span></p></li></ol><p><span>这些指标综合反映了配准方法在准确性、鲁棒性和效率方面的性能。</span></p><h3 id='实验设置-4'><span>实验设置</span></h3><ul><li><p><span>使用Adam优化器，学习率为1e-4，批量大小为1，在单个GPU（RTX3090）上训练20个周期。</span></p></li><li><p><span>对于测试，始终使用PEAL-3dprior进行迭代更新，并进行六次迭代以细化变换。</span></p></li><li><p><span>与GeoTransformer类似，使用KPConv-FPN对输入点云进行下采样并提取点特征。</span></p></li><li><p><span>使用最近邻搜索在估计的变换下生成3D重叠区域，阈值为0.0375m。</span></p></li><li><p><span>对于2D重叠先验，使用Superglue提取图像对应关系，并将XYZ坐标投影到图像平面上，阈值为0.2m。</span></p></li></ul><p><span>通过这些实验设置，PEAL在3DMatch和3DLoMatch数据集上展示了其优越的性能，特别是在低重叠场景下的配准召回率方面。</span></p><h2 id='实验结果-3'><span>实验结果</span></h2><p><span>在论文中，PEAL模型在3DMatch和3DLoMatch这两个室内基准数据集上进行了广泛的实验评估。以下是实验结果的概述：</span></p><h3 id='3dmatch-和-3dlomatch-数据集上的性能'><span>3DMatch 和 3DLoMatch 数据集上的性能：</span></h3><p><strong><span>Feature Matching Recall (FMR)</span></strong><span>: PEAL在这两个数据集上均取得了超过99%的高特征匹配召回率，表明其能够准确地匹配点云中的特征点。</span></p><p><strong><span>Inlier Ratio (IR)</span></strong><span>: PEAL在3DLoMatch数据集上的内点比率显著提高，当采样点数量较少时（例如500和250个采样点），其内点比率超过了60%，在5000个采样点的情况下，内点比率达到了87.3%。</span></p><p><strong><span>Registration Recall (RR)</span></strong><span>: PEAL在3DMatch和3DLoMatch数据集上的配准召回率均有显著提升。特别是在3DLoMatch数据集上，PEAL的配准召回率比之前的最佳方法提高了6.7%。</span></p><p><strong><span>Relative Rotation Error (RRE) 和 Relative Translation Error (RTE)</span></strong><span>: PEAL在RRE和RTE上也取得了很好的成绩，表明其估计的旋转和平移与真实值非常接近。</span></p><h3 id='使用不同估计器的性能对比'><span>使用不同估计器的性能对比：</span></h3><ul><li><p><span>使用RANSAC估计器时，PEAL在3DMatch和3DLoMatch数据集上的表现均优于其他方法。</span></p></li><li><p><span>使用RANSAC-free估计器时，PEAL同样取得了最佳的性能，特别是在3DLoMatch数据集上。</span></p></li></ul><h3 id='迭代更新模块的效果'><span>迭代更新模块的效果：</span></h3><ul><li><p><span>实验结果表明，迭代更新模块可以显著提高配准召回率，证明了PEAL模型在迭代过程中能够持续改进配准结果。</span></p></li><li><p><span>与ICP（迭代最近点）算法相比，PEAL在迭代过程中显示出更好的性能提升。</span></p></li></ul><h3 id='使用不同先验信息的性能对比'><span>使用不同先验信息的性能对比：</span></h3><ul><li><p><span>使用3D重叠先验（3dprior）和2D重叠先验（2dprior）时，PEAL均取得了显著的性能提升，表明PEAL能够有效地利用多模态信息来提高配准性能。</span></p></li></ul><h3 id='与其他transformer-based网络的结合'><span>与其他Transformer-based网络的结合：</span></h3><ul><li><p><span>PEAL与Predator网络结合后，在3DLoMatch数据集上同样显示出显著的性能提升。</span></p></li></ul><h3 id='定性结果'><span>定性结果：</span></h3><p><span>论文中还提供了一些配准结果的示例，展示了PEAL如何在低重叠场景中准确地匹配点云。这些示例包括了一些具有挑战性的场景，如结构相似或几何特征不明显的区域，PEAL都能够准确地识别和匹配。</span></p><p><span>总体而言，实验结果表明PEAL在低重叠点云配准任务中表现出色，显著提高了配准的准确性和鲁棒性。</span></p><p>&nbsp;</p><h1 id='robust-multiview-point-cloud-registration-with-reliable-pose-graph-initialization-and-history-reweighting'><span>Robust Multiview Point Cloud Registration with Reliable Pose Graph Initialization and History Reweighting</span></h1><h2 id='问题和解决的方案-4'><span>问题和解决的方案</span></h2><p><span>这篇论文主要解决了多视图点云配准中的一些关键问题。具体来说，它针对以下几个问题提出了有效的解决方案：</span></p><ol start='' ><li><p><strong><span>密集连接姿态图构建耗时且包含大量离群边</span></strong><span>：传统的多视图配准方法依赖于成对配准来构建一个密集连接的位姿图，这个过程既耗时又包含许多不准确或错误的相对位姿（离群边），使得后续的迭代重加权最小二乘（IRLS）算法难以找到正确的位姿。为了解决这个问题，论文首先提出使用神经网络来估计扫描对之间的重叠，从而能够构建一个稀疏但可靠的位姿图[2]。</span></p></li><li><p><strong><span>配准召回率低和配准误差高</span></strong><span>：由于上述问题，现有的方法在配准召回率和配准误差方面表现不佳。论文提出的方法通过减少所需的成对配准数量，同时提高配准的准确性和召回率，显著提高了性能[2]。</span></p></li><li><p><strong><span>计算效率低</span></strong><span>：由于需要对所有可能的成对配准进行计算，这些方法在处理大规模点云数据集时效率低下。论文提出的方法通过稀疏图构建和IRLS算法，大大减少了计算复杂度，提高了配准效率[2]。</span></p></li><li><p><strong><span>泛化能力差</span></strong><span>：一些学习-based的方法可能无法很好地泛化到未见过的新场景。论文提出的方法通过历史重加权函数，提高了算法的泛化能力和对离群边的鲁棒性[2]。</span></p></li></ol><p><span>总的来说，这篇论文通过提出一种新颖的多视图点云配准方法，有效地解决了现有方法在配准召回率、配准误差和计算效率方面的不足，同时提高了算法的泛化能力。</span></p><h2 id='主要贡献-3'><span>主要贡献</span></h2><ul><li><p><span>论文的主要贡献可以概括为以下几点：</span></p><ol start='' ><li><p><strong><span>稀疏但可靠的姿态图构建</span></strong><span>：论文提出了一种基于神经网络的方法，用于估计扫描对之间的重叠比率，这使得能够构建一个稀疏但可靠的姿态图。这种方法避免了构建一个密集连接的图，从而减少了计算量并提高了配准效率[2]。</span></p></li><li><p><strong><span>历史重加权函数</span></strong><span>：论文设计了一种新的IRLS（迭代重加权最小二乘）方案中的历史重加权函数。这种函数对离群边具有很强的鲁棒性，能够在迭代过程中稳定地降低离群边的权重，从而提高配准的准确性[2]。</span></p></li><li><p><strong><span>提高配准召回率和降低配准误差</span></strong><span>：与现有的多视图配准方法相比，论文提出的方法在3DMatch和ScanNet数据集上分别实现了约11%的更高配准召回率和约13%的更低配准误差，同时显著减少了所需的成对配准数量[2]。</span></p></li><li><p><strong><span>广泛的适用性</span></strong><span>：论文的方法不仅在室内数据集上表现良好，而且在室外ETH数据集上也展现出了强大的泛化能力，即使在训练集和测试集之间存在较大的域差异时，也能保持高性能[2]。</span></p></li><li><p><strong><span>详细的消融研究</span></strong><span>：论文通过消融研究验证了所提出的稀疏图构建和历史重加权IRLS模块的有效性，展示了这些设计在提高配准性能方面的重要性[45]。</span></p></li><li><p><strong><span>开源代码</span></strong><span>：论文提供了开源代码，这有助于研究社区进一步验证和采用这些方法，促进了该领域的进一步发展[2]。</span></p></li></ol></li></ul><h2 id='实验数据集-2'><span>实验数据集</span></h2><ol start='' ><li><p><span>论文使用了以下数据集进行实验和评估：</span></p><ol start='' ><li><p><strong><span>3DMatch/3DLoMatch 数据集</span></strong><span> [28, 58]：这个数据集包含了62个室内场景，其中46个场景用于训练，8个用于验证，另外8个用于测试。每个测试场景平均包含54个扫描。这个数据集被广泛用于点云配准方法的评估。</span></p></li><li><p><strong><span>ScanNet 数据集</span></strong><span> [16]：这个数据集包含了1513个室内场景的RGBD序列。作者使用了与之前工作相同的32个测试场景，并将30个RGBD图像（相隔20帧）转换为每个场景的30个扫描。总共有960个扫描，并且对所有13920个扫描对进行了评估。</span></p></li><li><p><strong><span>ETH 数据集</span></strong><span> [43]：这个数据集包含4个室外场景，每个场景平均包含33个扫描。这个数据集与3DMatch数据集在领域上有较大的差异，用于测试方法在室外场景上的泛化能力。713个扫描对被官方选中用于评估。</span></p></li></ol><p><span>这些数据集被广泛用于点云配准和三维重建领域的研究，提供了丰富的场景和多样的挑战，如不同的场景类型、扫描密度和噪声水平，使得它们成为评估多视图点云配准方法性能的理想选择。</span></p></li></ol><p>&nbsp;</p><h2 id='实验结果-4'><span>实验结果</span></h2><p>&nbsp;</p><ol start='' ><li><p><strong><span>3DMatch 和 3DLoMatch 数据集</span></strong><span>：</span></p><ul><li><p><span>在这两个数据集上，论文提出的方法相比于现有的多视图配准方法，在配准召回率上实现了约11%的提升，同时在配准误差上降低了约13%。</span></p></li><li><p><span>这表明该方法能够更准确地对齐低重叠度的扫描对，并且通过姿态同步，即使在只有30%的成对配准情况下也能达到这样的效果。</span></p></li><li><p><span>此外，与完全连接的姿态图相比，使用提出的稀疏图构建方法，在保持准确性的同时，显著减少了所需的成对配准数量。</span></p></li></ul></li><li><p><strong><span>ScanNet 数据集</span></strong><span>：</span></p><ul><li><p><span>在 ScanNet 数据集上，论文提出的方法在配准性能上超越了现有的方法，在旋转误差和翻译误差上均有显著降低。</span></p></li><li><p><span>使用 YOHO 作为成对配准算法，该方法在配准召回率上达到了 99.8%，显示出强大的泛化能力，即使是在训练集和测试集之间存在较大的域差异时。</span></p></li></ul></li><li><p><strong><span>ETH 数据集</span></strong><span>：</span></p><ul><li><p><span>在 ETH 数据集上，尽管这个数据集与 3DMatch 数据集在领域上有较大的差异，但论文提出的方法仍然实现了 99.8% 的配准召回率，这进一步证明了方法的泛化能力。</span></p></li></ul></li><li><p><strong><span>消融研究</span></strong><span>：</span></p><ul><li><p><span>论文还进行了消融研究，验证了所提出的稀疏图构建和历史重加权IRLS模块的有效性。结果表明，这些设计在提高配准性能方面起到了关键作用。</span></p></li></ul></li><li><p><strong><span>计算效率</span></strong><span>：</span></p><ul><li><p><span>论文的方法在计算效率上也有显著提升，相比于现有方法，在保持高准确度的同时，所需的成对配准数量大大减少。</span></p></li></ul></li></ol><p><span>综上所述，实验结果表明，论文提出的多视图点云配准方法在提高配准精度、召回率和计算效率方面均取得了显著进步，并且在不同数据集上展现出了强大的泛化能力。这些成果证明了该方法在多视图点云配准领域的先进性和实用性。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1 id='unsupervised-deep-probabilistic-approach-for-partial-point-cloud-registration'><span>Unsupervised Deep Probabilistic Approach for Partial Point Cloud Registration</span></h1><h2 id='问题和解决的方案-5'><span>问题和解决的方案</span></h2><p><span>这篇论文提出了一个名为 </span><strong><span>UDPReg</span></strong><span> 的无监督深度概率注册框架，用于处理部分重叠的点云注册问题。具体来说，它旨在解决以下挑战：</span></p><ol><li><p><strong><span>部分重叠点云的注册配准</span></strong><span>：现有的深度点云注册方法在处理部分</span><strong><span>重叠的点云</span></strong><span>时面临挑战，因为部分重叠区域的特征可能不足以进行准确的注册。</span></p></li><li><p><strong><span>对标记数据的依赖</span></strong><span>：许多基于学习的深度点云注册方法依赖于大量的标记数据（例如，点云对之间的真实变换），这些数据通常难以获取，成本高昂。</span></p></li><li><p><strong><span>无监督学习</span></strong><span>：为了减少对标记数据的依赖，作者提出了一种无监督学习方法，通过设计分布一致性损失（例如，自一致性、交叉一致性损失和局部对比损失）来训练特征提取器，而无需任何地面真实姿态或对应关系。</span></p></li><li><p><strong><span>分布级注册</span></strong><span>：与传统的基于点的注册方法不同，UDPReg 使用分布级方法，通过拟合点云的 Gaussian Mixture Models (GMMs) 来执行注册，这允许在没有建立显式点对应关系的情况下对齐两个点云。</span></p></li><li><p><strong><span>Sinkhorn 算法的应用</span></strong><span>：为了预测分布级别的对应关系，作者采用了 Sinkhorn 算法，这是一种用于最优传输问题的迭代方法，可以处理部分重叠点云的注册问题。</span></p></li></ol><p><span>通过这些方法，UDPReg 在多个基准测试中取得了竞争性能，包括 3DMatch/3DLoMatch 和 ModelNet/ModelLoNet 数据集。</span></p><h2 id='主要贡献-4'><span>主要贡献</span></h2><p><span>论文的主要贡献包括：</span></p><ul><li><p><span>提出了一个无监督的基于学习的概率框架，用于配准部分重叠的点云。</span></p></li><li><p><span>提供了一个深度概率框架，通过采用Sinkhorn算法预测分布级别的对应关系，从而解决了部分点云配准问题。</span></p></li><li><p><span>提出了自一致性、交叉一致性和局部对比损失，使得坐标和特征空间中的后验概率一致，从而使特征提取器能够以无监督的方式进行训练。</span></p></li><li><p><span>在包括合成数据集和真实世界数据集在内的综合实验集上取得了最先进的性能。</span></p></li><li><p><span>此外，论文还进行了消融研究，探讨了不同数量的簇对模型性能的影响，并验证了各个模块的有效性。</span></p></li></ul><h2 id='实验数据集和评价指标'><span>实验数据集和评价指标</span></h2><h3 id='实验使用的数据集-2'><span>实验使用的数据集</span></h3><p><span>论文中使用了以下数据集进行实验：</span></p><ol><li><p><strong><span>3DMatch</span></strong><span>: 这是一个广泛用于室内场景的点云数据集，包含超过30%的部分重叠场景对。数据集包含62个场景，其中46个用于训练，8个用于验证，8个用于测试。测试集包含1,623个部分重叠的点云片段及其对应的变换矩阵。</span></p></li><li><p><strong><span>3DLoMatch</span></strong><span>: 这是3DMatch数据集的子集，包含10%至30%的部分重叠场景对，用于评估点云注册方法在低重叠情况下的性能。</span></p></li><li><p><strong><span>ModelNet</span></strong><span>: 这是一个包含12,311个来自40个类别的网格CAD模型的数据集。每个点云从ModelNet中采样，包含1,024个点，并裁剪成两个部分重叠的设置：ModelNet平均有73.5%的重叠，而ModelLoNet包含较低的平均重叠53.6%。</span></p></li><li><p><strong><span>ModelLoNet</span></strong><span>: 这是ModelNet数据集的子集，用于评估点云注册方法在较低重叠情况下的性能。</span></p></li></ol><h3 id='实验使用的评价指标-2'><span>实验使用的评价指标</span></h3><p><span>论文中使用了以下评价指标来衡量点云注册方法的性能：</span></p><ol><li><p><strong><span>Relative Rotation Error (RRE)</span></strong><span>: 衡量成功注册的平均旋转误差。它是估计的旋转矩阵与真实旋转矩阵之间的差异。</span></p></li><li><p><strong><span>Relative Translation Error (RTE)</span></strong><span>: 衡量成功注册的平均平移误差。它是估计的平移向量与真实平移向量之间的差异。</span></p></li><li><p><strong><span>Registration Recall (RR)</span></strong><span>: 衡量点云对变换误差小于某个阈值（例如0.2米）的比例。它是评估最终性能的关键指标。</span></p></li><li><p><strong><span>Chamfer Distance (CD)</span></strong><span>: 在ModelNet和ModelLoNet数据集中使用，衡量扫描之间的平均距离。</span></p></li></ol><p>&nbsp;</p><h2 id='实验结果-5'><span>实验结果</span></h2><p>&nbsp;</p><h3 id='实验结果-6'><span>实验结果</span></h3><p><span>论文中提供了详细的实验结果，包括不同数据集上的性能对比。以下是一些具体的数值和性能提升的对比：</span></p><h4 id='3dmatch-和-3dlomatch-数据集上的结果'><span>3DMatch 和 3DLoMatch 数据集上的结果</span></h4><p><strong><span>3DMatch 数据集</span></strong><span>:</span></p><ul><li><p><strong><span>UDPReg</span></strong><span> 达到了 </span><strong><span>91.4%</span></strong><span> 的 Registration Recall (RR)，显著高于之前的最佳无监督方法 SGP 的 </span><strong><span>85.5%</span></strong><span>。</span></p></li><li><p><span>在 Relative Rotation Error (RRE) 和 Relative Translation Error (RTE) 方面，UDPReg 也取得了最低的平均误差。</span></p></li></ul><p><strong><span>3DLoMatch 数据集</span></strong><span>:</span></p><ul><li><p><strong><span>UDPReg</span></strong><span> 达到了 </span><strong><span>64.3%</span></strong><span> 的 Registration Recall (RR)，显著高于之前的最佳无监督方法 SGP 的 </span><strong><span>39.4%</span></strong><span>。</span></p></li><li><p><span>在 RRE 和 RTE 方面，UDPReg 同样取得了最低的平均误差。</span></p></li></ul><h4 id='modelnet-和-modellonet-数据集上的结果'><span>ModelNet 和 ModelLoNet 数据集上的结果</span></h4><p><strong><span>ModelNet 数据集</span></strong><span>:</span></p><ul><li><p><strong><span>UDPReg</span></strong><span> 在 RRE 和 RTE 方面均取得了最佳性能，分别为 </span><strong><span>1.331</span></strong><span> 和 </span><strong><span>0.011</span></strong><span>，显著低于其他方法。</span></p></li></ul><p><strong><span>ModelLoNet 数据集</span></strong><span>:</span></p><ul><li><p><strong><span>UDPReg</span></strong><span> 在 RRE 和 RTE 方面均取得了最佳性能，分别为 </span><strong><span>3.578</span></strong><span> 和 </span><strong><span>0.069</span></strong><span>，显示了其在低重叠情况下的强大性能。</span></p></li></ul><h4 id='不同损失函数的组合'><span>不同损失函数的组合</span></h4><p><span>论文中还探讨了不同损失函数组合对性能的影响：</span></p><ul><li><p><span>单独使用自一致性损失 (SC)、交叉一致性损失 (CC) 和局部对比损失 (LC) 时，自一致性损失表现最佳。</span></p></li><li><p><span>结合 SC 和 LC 损失时，性能有所提升，但结合 CC 和 SC 损失时，性能提升更为显著。</span></p></li></ul><h4 id='不同数量的聚类'><span>不同数量的聚类</span></h4><p><span>论文还探讨了不同数量的聚类对性能的影响：</span></p><ul><li><p><span>当聚类数量 L 从 16 增加到 96 时，性能稳定，表明“足够”的聚类数量对性能影响不大。</span></p></li></ul><p><span>这些结果表明，</span><strong><span>UDPReg</span></strong><span> 在多个数据集上均取得了优异的性能，显著优于其他无监督方法，并且在处理部分重叠和低重叠的点云注册问题时表现出色。</span></p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>
