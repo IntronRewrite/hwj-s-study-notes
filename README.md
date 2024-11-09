@@ -282,7 +282,7 @@ SSD算法实现(3)
 
 学习CMake
 
-[参考资料](https://intronrewrite.github.io/hwj-s-study-notes/Linux学习笔记/CMake.html)
+[参考资料](https://intronrewrite.github.io/hwj-s-study-notes/slam/CMake/CMake.html)
 
 [视频](https://www.bilibili.com/video/BV1fy4y1b7TC)
 
