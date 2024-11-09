@@ -766,7 +766,7 @@ int main(int argc,char **argv)
 
 ## IDE - VSCode
 
-### **5.1 界面介绍**
+### 界面介绍
 
 1. 侧边栏
 2. 菜单栏
