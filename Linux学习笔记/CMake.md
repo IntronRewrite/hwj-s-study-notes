@@ -19,6 +19,12 @@
 
 课程宗旨：*无干货，不视频。分享让生活更美好。*
 
+![CMake_1731165197767](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092316320.svg)
+
+
+
+
+
 ## 开始
 
 **什么是linux系统？**

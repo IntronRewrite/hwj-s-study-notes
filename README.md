@@ -18,7 +18,7 @@
 #### 2024/9/16
 
 学习图像处理与OpenCV     
-[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/OpenCV学习笔记/index.html)
 
 #### 2024/9/17
 
@@ -28,19 +28,19 @@
 
 学习图像处理与OpenCV    
 
-[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/OpenCV学习笔记/index.html)
 
 #### 2024/9/19
 
 学习图像处理与OpenCV    
 
-[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/OpenCV学习笔记/index.html)
 
 #### 2024/9/19
 
 OpenCV完结，图像处理还未学透彻。   
 
-[笔记](https://intronrewrite.github.io/hwj-s-study-notes/Opencv学习笔记/index.html)
+[笔记](https://intronrewrite.github.io/hwj-s-study-notes/OpenCV学习笔记/index.html)
 
 #### 2024/9/20-2024/9/27
 
@@ -282,3 +282,8 @@ SSD算法实现(3)
 
 学习CMake
 
+[参考资料](https://intronrewrite.github.io/hwj-s-study-notes/Linux学习笔记/CMake.html)
+
+[视频](https://www.bilibili.com/video/BV1fy4y1b7TC)
+
+五星好评！！！
