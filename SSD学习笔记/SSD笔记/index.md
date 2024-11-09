@@ -25,7 +25,7 @@
 
 ​	有很多的企图通过改进检测流程每个阶段以构建更快的检测器的尝试[（相关工作）](#相关工作)，但迄今为止，大幅度地`速度提升`带来的是大幅度地`精度下降`。
 
-![image-20241026163633171](F:\Documents\GitHub\hwj-s-study-notes\SSD学习笔记\SSD笔记\assets\image-20241026163633171.png)
+![image-20241026163633171](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092014859.png)
 
 ​	该论文提出了第一个基于深度网络的、不使用对假设框的特征和像素进行重采样的目标检测器，并且精度和其他方法一样。这大幅度提高了高精度检测的速度（在VOC测试集有59FPS，74.3%mAP，vs Faster R-CNN 7FPS,73.2%mAP,YOLO 45FPS,63.4%mAP）
 

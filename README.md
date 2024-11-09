@@ -1,6 +1,10 @@
 # hwj-s-study-notes
 # 个人笔记
 
+# 2024
+
+## 9月
+
 #### 2024/9/14
 
 学习Linux     
@@ -46,6 +50,8 @@ OpenCV完结，图像处理还未学透彻。
 
 看R-CNN,Fast-RCNN,Faster-RCNN
 
+## 10月
+
 #### 2024/9/29-2024/10/12
 
 看R-CNN,Fast-RCNN,Faster-RCNN,ResNet
@@ -64,25 +70,25 @@ OpenCV完结，图像处理还未学透彻。
 
 [2.1. 数据操作 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/ndarray.html)
 
-![image-20241016215412346](F:\Documents\GitHub\hwj-s-study-notes\assets\202410162155164-1730884421708-3.png)
+![image-20241016215412346](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013878.png)
 
 复习python所学
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
-![image-20241016222602935](F:\Documents\GitHub\hwj-s-study-notes\assets\202410162226980-1730884421707-2.png)
+![image-20241016222602935](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013880.png)
 
 ### 2024/10/17
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
-![image-20241018081419016](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842852-1730884421708-4.png)
+![image-20241018081419016](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013881.png)
 
 ### 2024/10/18
 
 python学习（1）
 
-![image-20241020094326982](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842854-1730884421708-5.png)
+![image-20241020094326982](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013882.png)
 
 [2.3. 线性代数 — 动手学深度学习 2.0.0 documentation (d2l.ai)](https://zh-v2.d2l.ai/chapter_preliminaries/linear-algebra.html)
 
@@ -90,7 +96,7 @@ python学习（1）
 
 pythoch学习(2)
 
-![image-20241020095335082](F:\Documents\GitHub\hwj-s-study-notes\assets\202410201842855-1730884421708-6.png)
+![image-20241020095335082](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013883.png)
 
 [深入浅出PyTorch — 深入浅出PyTorch](https://datawhalechina.github.io/thorough-pytorch/index.html#)
 
@@ -124,9 +130,9 @@ argparse进行调参
 
 
 
-![image-20241022032113830](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220349473-1730884421708-9.png)
+![image-20241022032113830](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013885.png)
 
-![image-20241022032440997](F:\Documents\GitHub\hwj-s-study-notes\assets\202410220349474-1730884421708-8.png)
+![image-20241022032440997](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013886.png)
 
 #### FashionMNIST数据集
 
@@ -165,7 +171,7 @@ argparse进行调参
 
 学习python（2）
 
-![image-20241028094612375](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951774-1730884421708-7.png)
+![image-20241028094612375](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013887.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -173,7 +179,7 @@ argparse进行调参
 
 学习python（3）
 
-![image-20241028094559698](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951776-1730884421708-10.png)
+![image-20241028094559698](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013888.png)
 
 [Python入门基础教程(附Python题库) - C语言网 (dotcpp.com)](https://www.dotcpp.com/course/python/)
 
@@ -181,7 +187,7 @@ argparse进行调参
 
 学习python（4）
 
-![image-20241028094544818](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951778-1730884421708-11.png)
+![image-20241028094544818](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013889.png)
 
 ### 2024/10/25
 
@@ -227,15 +233,17 @@ SSD算法实现(2)
 
 敲遗传算法解决仓库分配问题
 
+## 11月
+
 ### 2024/11/01
 
 敲遗传算法解决仓库分配问题
 
 ![best_fitness](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951779.svg+xml)
 
-![c4db41e9e5ee61bc1b7b85e5043e84e](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951780-1730884421708-12.png)
+![c4db41e9e5ee61bc1b7b85e5043e84e](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013890.png)
 
-![b69f1235feb9389338af550c8e8f133](F:\Documents\GitHub\hwj-s-study-notes\assets\202411011951781-1730884421708-13.png)
+![b69f1235feb9389338af550c8e8f133](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013891.png)
 
 SSD算法实现(3)
 
@@ -243,7 +251,7 @@ SSD算法实现(3)
 
 ### 2024/11/02
 
-![image-20241103110939523](F:\Documents\GitHub\hwj-s-study-notes\assets\image-20241103110939523-1730613921687-14-1730884421708-14.png)
+![image-20241103110939523](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411092013892.png)
 
 ### 2024/11/03
 
@@ -254,3 +262,23 @@ SSD算法实现(3)
 组会
 
 ### 2024/11/06
+
+看点云匹配综述
+
+### 2021/11/07
+
+- [x] 整理2024年CVPR会议论文
+- [x] 整理2023年CVPR会议论文
+- [x] 整理2022年CVPR会议论文
+- [x] 整理2021年CVPR会议论文
+
+### 2024/11/08
+
+**整理2023年CVPR会议论文，提取重点**
+
+[论文材料整理](https://intronrewrite.github.io/hwj-s-study-notes/Point-cloud-registration/点云配准相关论文(cpvr2023)/cpvr2023.html)
+
+### 2024/11/09
+
+学习CMake
+
