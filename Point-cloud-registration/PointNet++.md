@@ -107,6 +107,232 @@
 
 整个数据处理流程是端到端的，从原始的点云数据到最终的分类或分割结果，PointNet++模型能够有效地处理点集数据，并学习到具有区分性的特征。
 
+**<u>PointNet</u>**
+
+​	T-Net通过卷积神经网络对输入点云的坐标进行特征学习，最终学得一个空间变换矩阵，该矩阵能够对所有点的坐标进行对齐和标准化，从而减小旋转、平移和尺度变化对特征提取的影响。
+
+正则化项使用 Frobenius 范数来衡量**变换矩阵与其转置矩阵乘积**与**单位矩阵**之间的差异
+
+在损失函数中
+$$
+loss = loss\_cls + λloss\_reg
+$$
+
+
+```mermaid
+graph TD
+    title[STN3d]
+    A[输入张量 X （B, 3, N）] --> B[Conv1d （3, 64, 1）]
+    B --> C[Conv1d （64, 128, 1）]
+    C --> D[Conv1d （128, 1024, 1）]
+    D --> E[Max Pooling （dim=2）]
+    E --> z[View （-1, 1024）]
+    F[View （-1, 1024）] --> G[Linear （1024, 512）]
+    G --> H[Linear （512, 256）]
+    H --> I[Linear （256, 9）]
+    I --> J[View （-1, 3, 3）]
+    J --> L[输出张量 （B, 3, 3）]
+```
+
+```mermaid
+graph TD
+    title[STNkd]
+    A[输入张量 X （B, k, N）] --> B[Conv1d （k, 64, 1）]
+    B --> C[Conv1d （64, 128, 1）]
+    C --> D[Conv1d （128, 1024, 1）]
+    D --> E[Max Pooling （dim=2）]
+    E --> z[View （-1, 1024）]
+    F[View （-1, 1024）] --> G[Linear （1024, 512）]
+    G --> H[Linear （512, 256）]
+    H --> I[Linear （256, k*k）]
+    I --> J[View （-1, k, k）]
+    J --> L[输出张量 （B, k, k）]
+```
+
+```mermaid
+graph TD
+    title[PointNetEncoder]
+    A[输入张量 X （B, D, N）] --> B[STN3d （D, D）]
+    B --> C[Transpose （B, N, D）]
+    C --> D{D > 3?}
+    D -->|是| E[分离特征]
+    E --> F[应用空间变换矩阵]
+    F --> G[拼接特征]
+    D -->|否| F
+    G --> H[Transpose （B, D, N）]
+    H --> I[Conv1d （D, 64, 1）]
+    I --> J{特征转换?}
+    J -->|是| K[STNkd （64, 64）]
+    K --> L[应用空间变换矩阵]
+    L --> M[Transpose （B, 64, N）]
+    J -->|否| N[None]
+    M --> O[Conv1d （64, 128, 1）]
+    O --> P[Conv1d （128, 1024, 1）]
+    P --> Q[Max Pooling （dim=2）]
+    Q --> R[View （-1, 1024）]
+    R --> S{Global Feature?}
+    S -->|是| T[输出张量 （B, 1024）]
+    S -->|否| U[View （-1, 1024, 1）]
+    U --> V[Repeat （1, 1, N）]
+    V --> W[拼接特征]
+    W --> X[输出张量 （B, 1088, N）]
+```
+
+```mermaid
+graph TD
+    title[PointNet实现分类任务]
+    E[k:类别数量]
+    A[输入张量 X （B, C, N）] --> B[PointNetEncoder]
+    B --> D[Linear （1024, 512）]
+
+    
+    D --> H[Linear （512, 256）]
+    H --> I[Dropout （p=0.4）]
+    I --> M[Linear （256, k）]
+    M --> N[输出张量 （B, k）]
+```
+
+
+
+**<u>PointNet++</u>**
+
+PointNet++ utils
+
+~~~python
+def sample_and_group_all(xyz, points):
+    """
+    输入:
+        xyz: 输入点的位置信息, [B, N, 3]
+        points: 输入点的数据, [B, N, D]
+    返回:
+        new_xyz: 采样点的位置信息, [B, 1, 3]
+        new_points: 采样点的数据, [B, 1, N, 3+D]
+    """
+~~~
+
+
+
+~~~python
+def sample_and_group(npoint, radius, nsample, xyz, points, returnfps=False):
+    """
+    输入:
+        npoint: 采样点的数量
+        radius: 局部区域的半径
+        nsample: 局部区域内的最大采样点数
+        xyz: 输入点的位置信息, [B, N, 3]
+        points: 输入点的数据, [B, N, D]
+    返回:
+        new_xyz: 采样点的位置信息, [B, npoint, nsample, 3]
+        new_points: 采样点的数据, [B, npoint, nsample, 3+D]
+    """
+~~~
+
+
+
+### `PointNetSetAbstraction`
+
+#### 功能
+
+- 进行点云数据的采样和分组操作。
+- 提取局部特征。
+
+#### 特点
+
+- 使用单一尺度进行分组和特征提取。
+- 对每个采样点的局部区域进行固定半径和固定数量的邻域点采样。
+
+```mermaid
+graph TD
+    title[PointNetSetAbstraction]
+    A[输入张量 xyz （B, C, N）] --> B[Permute （0, 2, 1）]
+    B --> C[调整后的 xyz （B, N, C）]
+    
+    A2[输入张量 points （B, D, N）] --> D{points 不为 None?}
+    D -->|是| E[Permute （0, 2, 1）]
+    E --> F[调整后的 points （B, N, D）]
+    D -->|否| G[points = None]
+    
+    C --> H{group_all?}
+    F --> H
+    G --> H
+    H -->|是| I[sample_and_group_all]
+    H -->|否| J[sample_and_group]
+    I --> K[采样点 new_xyz （B, npoint, C）]
+    I --> L[采样点 new_points （B, npoint, nsample, C+D）]
+    J --> K
+    J --> L
+    
+    L --> M[Permute （0, 3, 2, 1）]
+    M --> N[调整后的 new_points （B, C+D, nsample, npoint）]
+    
+    N --> O[通过 MLP 卷积层和批量归一化层]
+    O --> P[卷积后的 new_points]
+    
+    P --> Q[Max Pooling （dim=2）]
+    Q --> R[池化后的 new_points （B, D', npoint）]
+    
+    K --> S[Permute （0, 2, 1）]
+    S --> T[调整后的 new_xyz （B, C, npoint）]
+    
+    R --> U[输出 new_points]
+    T --> V[输出 new_xyz]
+```
+
+### `PointNetSetAbstractionMsg`
+
+#### 功能
+
+- 进行点云数据的多尺度采样和分组操作。
+- 提取多尺度的局部特征。
+
+#### 特点
+
+- 使用多种尺度进行分组和特征提取。
+- 对每个采样点的局部区域进行多个不同半径和不同数量的邻域点采样。
+- 能够捕捉不同尺度的几何信息，更加丰富和全面。
+
+```mermaid
+graph TD
+    title[PointNetSetAbstractionMsg]
+    A[输入张量 xyz （B, C, N）] --> B[Permute （0, 2, 1）]
+    B --> C[调整后的 xyz （B, N, C）]
+    
+    A2[输入张量 points （B, D, N）] --> D{points 不为 None?}
+    D -->|是| E[Permute （0, 2, 1）]
+    E --> F[调整后的 points （B, N, D）]
+    D -->|否| G[points = None]
+    
+    C --> H[最远点采样]
+    H --> I[采样点 new_xyz （B, S, C）]
+    
+    I --> J[初始化 new_points_list]
+    J --> K[遍历 radius_list]
+    
+    subgraph Loop
+        direction TB
+        K --> L[查询邻域点索引]
+        L --> M[获取邻域点坐标 grouped_xyz]
+        M --> N[归一化邻域点坐标]
+        
+        N --> O{points 不为 None?}
+        O -->|是| P[获取邻域点特征 grouped_points]
+        P --> Q[拼接坐标和特征]
+        O -->|否| R[grouped_points = grouped_xyz]
+        
+        Q --> S[调整维度顺序 （B, D, K, S）]
+        R --> S
+        
+        S --> T[遍历卷积层和批量归一化层]
+        T --> U[卷积和批量归一化]
+        U --> V[最大池化 new_points （B, D', S）]
+        V --> W[添加 new_points 到 new_points_list]
+    end
+    
+    W --> X[调整采样点维度顺序 new_xyz （B, C, S）]
+    X --> Y[拼接所有 new_points]
+    Y --> Z[输出 new_xyz 和 new_points_concat]
+```
+
 
 
 ### **数学公式**
