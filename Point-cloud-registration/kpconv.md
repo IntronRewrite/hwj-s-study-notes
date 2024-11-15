@@ -204,7 +204,10 @@ $$
 
 对于点云$P\in \mathbb{R}^{N\times 3}$和对应的特征 $F\in \mathbb{R}^{N\times D}$，点云卷积操作可以定义为：
 $$
-(F*g)(x)=\sum_{x_i\in N_x}g(x_i-x)\cdot f_i
+(F*g)(x)=\sum_{x_i\in N_x}g(x_i-x)\cdot f_i\\
+g(y_i)=\sum_{k<K}h(y_i,X_k)\\
+h(y_i,X_k)=max\left(0,1-\frac{\|y_i-X_k\|}{\sigma}\right)\\
+(F*g)(x)=\sum_{x_i\in N_x}\sum_{k<K}max\left(0,1-\frac{\|y_i-X_k\|}{\sigma}\right)W_k\cdot f_i
 $$
 其中：
 
@@ -219,7 +222,7 @@ $$
 
 核心点 $\{x_k|k<K\}\subset B_r^3$ 和关联的权重矩阵 $\{W_k|k<K\}\subset\mathbb{R}^{D_{in}\times D_{out}}$ 被用来定义卷积核函数 $g$。对于任意点 $y_i\in B_r^3$，卷积核函数 $g$ 可以定义为：
 
-$g(y_i)=\sum_{k<K}h(y_i,X_k)$
+$g(y_i)=\sum_{k<K}h(y_i,X_k)W_k$
 
 其中：
 
