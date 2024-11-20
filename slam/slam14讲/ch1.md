@@ -1,99 +1,126 @@
-# 第一讲 引言
+# SLAM定义
 
-- 课程内容
+(**S**imultaneous **L**ocalization **A**nd **M**apping)
 
-  - SLAM: **S**imultaneous **L**ocalization **a**nd Mapping 同时定位与地图构建
+- **移动**设备
+- **未知**环境**未知**地点
+- 在运动过程通过传感器观测**定位**自身位置和姿态，在根据自身位姿进行增量式的**地图构建**
 
-  - 搭载特定**传感器**的主体，在**没有环境先验信息**的情况下，于**运动过程**中建立**环境**的模型，同时估计自己的运动。
+**例子**
 
-  - 视觉SLAM:以**相机**为主要传感器的SLAM
+一个人去未知的地方逛，在自己逛了一圈的过程中，观测各种建筑，标志，获悉自身位置和大致地图
 
-  - 问题:从图像中估计相机的**运动**以及环境的情况
-  
-  
+# SLAM的主要目的：定位
 
+- 定位 = location + pose (位姿)
 
+# 内部传感器
 
-- 困难之处
-
-  - 三维空间的运动
-  - 受噪声影响
-  - 数据来源只有图像
-
-  - 人类看到的是图像，计算机看到的是数值矩阵
-
-  - Make computer see?
-
-  
-
-- 从学习角度来看
-  - 牵涉到理论太广
-  - 从理论到实现困难
-  - 资料缺乏
-
-
-
-- 优势:内容丰富、推导严谨
-- 不足:
-  - 没有专门介绍SLAM
-  - 缺少实践指导
-
-
-
-- 本书的特点
-
-  - 基础、必要的理论知识
-  - 大量的编程内容
-  - 重视工程实践
-
-  
-
-- 观念:只有亲自动手实现了算法，才能谈得上理解
-
-- 旅行愉快!
-
-
-
-- 内容
-  - 第一部分:数学基础
-    - 概述 Linux
-    - 三维空间刚体运动表述 Eigen
-    - 李群与李代数 Sophus
-    - 相机模型与图像 OpenCV
-    - 非线性优化 Ceres, g2o
-  - 第二部分:视觉SLAM
-    - 视觉里程计 OpenCV
-    - 后端优化 Ceres, g2o,gtsam
-    - 第二部分:视觉SLAM
-    - 回环检测 DBoW3
-    - 地图构建 PCL,Octomap
-  - 其他
-    - 历史回顾和未来
-
-代码:https://github.com/gaoxiang12/slambook
-
-
-
-- Question 自主运动两大基本问题
-
-  - 我在什么地方?	--定位
-  - 周围长什么样子?	--迎图
-  - 机器人的“内外兼修”:定位侧对自身的了解，图侧对外在的了解
-  - 相互耦合的两个问题
-
-  - 准确的定位雷要精确的地图
-
-  - 精确的地图来自准确的定位
-
-
-
-两类传感器
-
-- 安装于环境中的:
-  - 二维码 Marker
-  - GPS
-  - 导轨、磁条
-- 携带于机器人木体上的
-  - IMU
-  -  激光
+- 移动智能体自带
   - 相机
+  - IMU
+  - 激光雷达
+  - GPS
+  - 码盘
+  - $\cdots$
+- 优缺点
+  - 可用于未知环境
+  - 通用
+  - 定位算法复杂
+
+**<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116155137987.png" alt="image-20241116155137987" style="zoom: 67%;" />**
+
+
+
+# 外部传感器
+
+- 环境中提前布设
+  - 二维码
+  - 导轨
+  - 反光柱
+- 问题
+  - 相对可靠
+  - 约束太多
+  - 不通用
+  - 不智能
+
+# 激光雷达传感器
+
+- 硬件
+
+  - 精度高
+  - 测量范围大（车上搭载有个几百米）
+  - 受环境影响小
+  - 研究充分
+  - 体积大、功耗大
+  - 价格昂贵（好几万）
+  - 信息量有限
+
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160413708.png" alt="image-20241116160413708" style="zoom:33%;" />
+
+  - 稀疏点云
+  - 无色彩信息
+  - 信息量有限
+
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160700850.png" alt="image-20241116160700850" style="zoom:50%;" />
+
+  - 机械激光雷达运动畸变
+
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160910283.png" alt="image-20241116160910283" style="zoom:50%;" />
+
+  # 视觉传感器
+
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116161024977.png" alt="image-20241116161024977" style="zoom:50%;" />
+
+  - 便宜
+  - 体积小
+  - 信息丰富
+  - 计算量大
+  - 对环境假设强
+  - 易受干扰
+
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116161734444.png" alt="image-20241116161734444" style="zoom: 50%;" />     
+
+# 视觉SLAM框架
+
+- 传感器数据处理：多源数据同步，数据对齐与读取
+- 视觉里程计（VO）:估计短期图像之间的运动（轨迹？）
+- 后端优化：滤波（估计？）、图优化；优化地图点坐标和位姿
+- 回环检测：判断是否回到曾经去过的地方，用于抑制累积误差
+- 建立地图：稀疏的地图点、稠密的点云、网格地图等
+
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116202447786.png" alt="image-20241116202447786" style="zoom:50%;" />
+
+ORB-SLAM2算法流程图 
+
+
+
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116203922065.png" alt="image-20241116203922065" style="zoom:50%;" />
+
+# SLAM优秀开源方案 
+
+视觉(惯导)SLAM ORB SLAM2 (单/双目/RGB-D) https://github.com/raulmur/ORB_SLAM2 
+
+DSO (单目) https://github.com/JakobEngel/dso 
+
+InfiniTAM v3 (RGB-D) https://github.com/victorprad/InfiniTAM 
+
+VINS-Fusion (单双目+IMU)  https://github.com/HKUST-Aerial-Robotics/VINS-Fusion 
+
+OKVIS (单双目+IMU)  https://github.com/ethz-asl/okvis 
+
+ORB SLAM3 (单双目+IMU/ RGB-D)  https://github.com/UZ-SLAMLab/ORB_SLAM3 
+
+激光(惯导)SLAM LeGO-LOAM (LIDAR)  https://github.com/RobustFieldAutonomyLab/LeGO-LOAM 
+
+LIO-SAM (LIDAR + IMU)  https://github.com/TixiaoShan/LIO-SAM 
+
+Cartographer (LIDAR + IMU) https://github.com/googlecartographer/cartographer 
+
+多传感器融合 LVI-SAM (LIDAR +单目+ IMU)  https://github.com/TixiaoShan/LVI-SAM 
+
+R3LIVE (LIDAR +单目+ IMU)  https://github.com/hku-mars/r3live
+
+
+
+尽量做热门的项目，比如ORB-SLAM

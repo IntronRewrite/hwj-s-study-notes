@@ -287,3 +287,56 @@ SSD算法实现(3)
 [视频](https://www.bilibili.com/video/BV1fy4y1b7TC)
 
 五星好评！！！
+
+2024/11/10
+
+2024/11/11
+
+看PointNet++
+
+[论文阅读笔记 PointNet++ : Deep Hierarchical Feature Learning on Point Sets in a Metric Space - 知乎](https://zhuanlan.zhihu.com/p/399432095)
+
+### 2024/11/12
+
+看PointNet++
+
+### 2024/11/13
+
+- [x] 看PointNet代码
+
+- [x] 看PointNet++代码
+
+### 2024/11/14
+
+看KPConv
+
+### 2024/11/15
+
+看roreg,看不懂，草
+
+### 2024/11/16
+
+看slam，rerog有刚性变换，李群相关知识
+
+### 2024/11/17
+
+玩去了
+
+### 2024/11/18
+
+- [x] 看slam刚性变换
+- [x] 看slam李群与李代数
+
+### 2024/11/19
+
+在看几遍slam李群与李代数
+
+### 2024/11/20
+
+整理4PCS方法
+
+还在看slam李群与李代数
+
+看视觉SLAM十四讲 5相机与图像
+
+.....有必要跟着写一遍
