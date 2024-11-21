@@ -4,14 +4,18 @@
 
 **1 原理**
 
-并非全共线的共面四点a，b，c，d，定义了两个独立的比率r1和r2，其在仿射变化中是**不变且唯一**的。现在给定一个具有n个点的点集Q，以及两个由点P得到的仿射不变的比率r1，r2，对每一对点q1，q2⊂ Q，计算他们的中间点:![图片](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411210819734.webp)若任意两对这样的点，一对由 r1计算得到的中间点和另一对由 r2计算得到的中间点在允许范围内一致，那么可以认为这两对点可能是 P中基础点的仿射对应点。将四点转化应用到全局点云转化,计算点云的匹配重叠度，若达到设置的阈值，则完成点云粗配准。![图片](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411210819736.webp)**2 核心代码**
+并非全共线的共面四点a，b，c，d，定义了两个独立的比率r1和r2，其在仿射变化中是**不变且唯一**的。现在给定一个具有n个点的点集Q，以及两个由点P得到的仿射不变的比率r1，r2，对每一对点q1，q2⊂ Q，计算他们的中间点
+$$
+e_1=q_1+r_1(q_2-q_1)\\e_2=q_1+r_2(q_2-q_1)
+$$
+若任意两对这样的点，一对由 r1计算得到的中间点和另一对由 r2计算得到的中间点在允许范围内一致，那么可以认为这两对点可能是 P中基础点的仿射对应点。将四点转化应用到全局点云转化,计算点云的匹配重叠度，若达到设置的阈值，则完成点云粗配准。![图片](https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411210819736.webp)
 
 ```
 pcl::registration::FPCSInitialAlignment<pcl::PointXYZ, pcl::PointXYZ> fpcs;
-fpcs.setInputSource(source_cloud);  // 源点云
+fpcs.setInputSource(source_cloud);  
 fpcs.setInputTarget(target_cloud);  // 目标点云
 fpcs.setApproxOverlap(0.7);         // 设置源和目标之间的近似重叠度。
-fpcs.setDelta(0.01);                // 设置常数因子delta，用于对内部计算的参数进行加权。
+fpcs.setDelta(0.01);                // 设置常数因子delta，用于对内部计算的参数进行加权
 fpcs.setNumberOfSamples(100);       // 设置验证配准效果时要使用的采样点数量
 ```
 
