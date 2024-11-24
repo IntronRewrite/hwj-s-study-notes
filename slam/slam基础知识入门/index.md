@@ -28,7 +28,7 @@
   - 通用
   - 定位算法复杂
 
-**<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116155137987.png" alt="image-20241116155137987" style="zoom: 67%;" />**
+**<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116155137987.png" alt="image-20241116155137987" style="zoom: 67%;" />**
 
 
 
@@ -56,21 +56,21 @@
   - 价格昂贵（好几万）
   - 信息量有限
 
-  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160413708.png" alt="image-20241116160413708" style="zoom:33%;" />
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116160413708.png" alt="image-20241116160413708" style="zoom:33%;" />
 
   - 稀疏点云
   - 无色彩信息
   - 信息量有限
 
-  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160700850.png" alt="image-20241116160700850" style="zoom:50%;" />
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116160700850.png" alt="image-20241116160700850" style="zoom:50%;" />
 
   - 机械激光雷达运动畸变
 
-  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116160910283.png" alt="image-20241116160910283" style="zoom:50%;" />
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116160910283.png" alt="image-20241116160910283" style="zoom:50%;" />
 
   # 视觉传感器
 
-  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116161024977.png" alt="image-20241116161024977" style="zoom:50%;" />
+  <img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116161024977.png" alt="image-20241116161024977" style="zoom:50%;" />
 
   - 便宜
   - 体积小
@@ -79,7 +79,7 @@
   - 对环境假设强
   - 易受干扰
 
-<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116161734444.png" alt="image-20241116161734444" style="zoom: 50%;" />     
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116161734444.png" alt="image-20241116161734444" style="zoom: 50%;" />     
 
 # 视觉SLAM框架
 
@@ -89,13 +89,13 @@
 - 回环检测：判断是否回到曾经去过的地方，用于抑制累积误差
 - 建立地图：稀疏的地图点、稠密的点云、网格地图等
 
-<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116202447786.png" alt="image-20241116202447786" style="zoom:50%;" />
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116202447786.png" alt="image-20241116202447786" style="zoom:50%;" />
 
 ORB-SLAM2算法流程图 
 
 
 
-<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam14讲\assets\image-20241116203922065.png" alt="image-20241116203922065" style="zoom:50%;" />
+<img src="F:\Documents\GitHub\hwj-s-study-notes\slam\slam基础知识入门\assets\image-20241116203922065.png" alt="image-20241116203922065" style="zoom:50%;" />
 
 # SLAM优秀开源方案 
 
@@ -124,3 +124,15 @@ R3LIVE (LIDAR +单目+ IMU)  https://github.com/hku-mars/r3live
 
 
 尽量做热门的项目，比如ORB-SLAM
+
+
+
+# slam学习过程
+
+SLAM综述
+OpenCv
+C++,
+圈子
+Linux
+
+https://thsvupc7er.feishu.cn/wiki/II6Cwfgxgi71XokzRqlcs8ounPc?from=from_copylink
