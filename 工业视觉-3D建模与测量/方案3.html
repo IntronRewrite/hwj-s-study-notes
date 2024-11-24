@@ -1308,61 +1308,40 @@ header,
             content: ""
         }
         
-</style><title>方案1</title>
+</style><title>方案3</title>
 </head>
-<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
-<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#对齐边界框+icp">对齐边界框+ICP</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#对src聚类去除离群点">对src聚类，去除离群点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#保留点最多的一类">保留点最多的一类</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#绘制边界框">绘制边界框</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#移动到原点">移动到原点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#旋转对齐">旋转对齐</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#icp精校">icp精校</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#评价">评价</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='对齐边界框+icp'><span>对齐边界框+ICP</span></h1><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>读取src点云数据成功</span>
-<span>读取ref点云数据成功</span>
-<span>点云的平均距离: 1.8126511386464113</span>
-<span>[Open3D DEBUG] Precompute neighbors.</span>
-<span>Precompute neighbors.[</span><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><span>] 100%</span>
-<span>[Open3D DEBUG] Done Precompute neighbors.</span>
-<span>[Open3D DEBUG] Compute Clusters</span>
-<span>Clustering[</span><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><span>] 100%</span>
-<span>[Open3D DEBUG] Done Compute Clusters: 16</span>
-<span>point cloud has 16 clusters</span>
-<span>欧式聚类成功</span>
-<span>保留点最多的一个聚类成功</span>
-<strong><span>聚类时间135.56秒</span></strong>
-<span>获取src定向边界框成功</span>
-<span>src可视化成功</span>
-<span>获取ref定向边界框成功</span>
-<span>ref点云和定向边界框已移动到原点</span>
-<span>src点云和定向边界框已移动到原点</span>
-<strong><span>粗配准时间2.08秒</span></strong>
-<span>src点云和定向边界框已旋转对齐ref</span>
-<span>ICP 变换矩阵:</span>
-<span>[[ 9.99999682e-01  3.29970815e-04 -7.26212063e-04  1.23663935e-02]</span>
-<span>[-3.29032153e-04  9.99999111e-01  1.29228600e-03  5.51283288e-02]</span>
-<span>[ 7.26637834e-04 -1.29204664e-03  9.99998901e-01 -7.43804473e-01]</span>
-<span>[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]</span>
-<strong><span>精配准时间192.96秒</span></strong>
-<span>src点云和ref点云精配准成功</span></p></div><p>&nbsp;</p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>读取src点云数据成功</span>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p>&nbsp;</p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>读取src点云数据成功</span>
 <span>src点云的点数量: 8267478</span>
 <span>读取ref点云数据成功</span>
 <span>ref点云的点数量: 1019962</span>
-<span>点云加载运行时间: 3.80677 秒</span>
+<span>点云加载运行时间: 2.60323 秒</span>
 <span>点云的平均距离: 1.81265</span>
-<span>Precompute neighbors.[</span><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><span>] 100%</span>
-<span>Clustering[</span><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><mark><span>=</span></mark><span>] 100%</span>
-<span>点云有 16 个聚类</span>
-<span>欧式聚类成功</span>
-<span>数量最多的聚类标签: 9</span>
-<span>保留数量最多的聚类成功</span>
-<span>聚类运行时间: 98.4077 秒</span>
-<span>数量最多的聚类可视化成功</span>
 <span>获取src定向边界框成功</span>
 <span>获取ref定向边界框成功</span>
 <span>定向边界框可视化成功</span>
 <span>点云和定向边界框已移动到原点</span>
 <span>平移后的点云和定向边界框可视化成功</span>
+<span>src_rotation:</span>
+<span> 0.9798  -0.178816 -0.0895379</span>
+<span>-0.182388   -0.98266 -0.0333784</span>
+<span>0.0820167 -0.0490348   0.995424</span>
+<span>ref_rotation:</span>
+<span>-0.0328222   -0.99929 -0.0185144</span>
+<span>0.771761 -0.0135697  -0.635768</span>
+<span>0.635065  -0.035156   0.771658</span>
 <span>src点云和定向边界框已旋转对齐ref</span>
-<span>粗配准运行时间: 1.85786 秒</span>
-<span>旋转对齐后的点云和定向边界框可视化成功</span></p></div><p><strong><u><span>最终效果</span></u></strong></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528296.png" referrerpolicy="no-referrer" alt="image-20241124151817104"></p><h2 id='对src聚类去除离群点'><span>对src聚类，去除离群点</span></h2><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528298.png" referrerpolicy="no-referrer" alt="image-20241124150826341"></p><h2 id='保留点最多的一类'><span>保留点最多的一类</span></h2><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528299.png" referrerpolicy="no-referrer" alt="image-20241124150918898"></p><h2 id='绘制边界框'><span>绘制边界框</span></h2><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528300.png" referrerpolicy="no-referrer" alt="image-20241124150940420"></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528301.png" referrerpolicy="no-referrer" alt="image-20241124151006268"></p><p>&nbsp;</p><h2 id='移动到原点'><span>移动到原点</span></h2><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528302.png" referrerpolicy="no-referrer" alt="image-20241124151026973"></p><p>&nbsp;</p><h2 id='旋转对齐'><span>旋转对齐</span></h2><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528303.png" referrerpolicy="no-referrer" alt="image-20241124151041844"></p><h2 id='icp精校'><span>icp精校</span></h2><p><span>ICP 变换矩阵:</span>
-<span>[[ 9.99999986e-01  1.52907717e-04 -6.43038313e-05  7.53370533e-02]</span>
-<span> [-1.52908094e-04  9.99999988e-01 -5.85090849e-06  3.33167767e-02]</span>
-<span> [ 6.43029359e-05  5.86074098e-06  9.99999998e-01 -8.69233517e-02]</span>
-<span> [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]</span></p><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411241528304.png" referrerpolicy="no-referrer" alt="image-20241124151807955"></p><p>&nbsp;</p><h2 id='评价'><span>评价</span></h2><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><strong><span>比较看粗配准效果</span></strong></p></div><p>&nbsp;</p></div></div>
+<span>粗配准运行时间: 1.24096 秒</span>
+<span>旋转对齐后的点云和定向边界框可视化成功</span>
+<span>4PCS配准运行时间: 479.702 秒</span>
+<span>4PCS配准结果转换矩阵:</span>
+<span> 0.999999   0.00127695 -0.000984353    -0.199431</span>
+<span>-0.0012769     0.999999  4.90362e-05    -0.121039</span>
+<span>0.000984415 -4.77792e-05            1    -0.261604</span>
+<span>        0            0            0            1</span>
+<span>4PCS配准结果可视化成功</span>
+<span>[1] + Done                       &quot;/usr/bin/gdb&quot; --interpreter=mi --tty=${DbgTerm} 0&lt;&quot;/tmp/Microsoft-MIEngine-In-og3efgso.del&quot; 1&gt;&quot;/tmp/Microsoft-MIEngine-Out-eumu3vaa.yhv&quot;</span>
+<span>root@host-2021:/home/lw/IndustrialVision/plan3/build# </span></p></div><p><img src="https://admin-hwj.oss-cn-beijing.aliyuncs.com/img/202411250731256.png" referrerpolicy="no-referrer" alt="image-20241125055337866"></p></div></div>
 
 <script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
 </html>
