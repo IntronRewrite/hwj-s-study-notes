@@ -27,6 +27,9 @@ thing
 *.zip
 *.tgz
 
+
+
+
 # Logs and databases #
 ######################
 *.log
